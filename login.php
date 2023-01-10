@@ -21,6 +21,11 @@
     <title>Login</title>
 </head>
 <body>
-    
+    <main>
+        <form action="#" method="post">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="password" name="passwd" placeholder="Senha">
+        </form>
+    </main>
 </body>
 </html>
