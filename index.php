@@ -17,12 +17,13 @@ session_start();
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; charset=iso-8859-1">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title>Login - Portal Acadêmico</title>
     <link href="https://apsweb.senacrs.com.br/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <title>Login - Portal Acadêmico</title>
     <link href="https://apsweb.senacrs.com.br/lib/system/bootstrap/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://apsweb.senacrs.com.br/lib/system/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="https://apsweb.senacrs.com.br/resource/extjs/css/ext-all.css?380060" rel="stylesheet" type="text/css">
     <link href="https://apsweb.senacrs.com.br/resource/extjs/css/ext-overrides.css?380060" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body onload="init();" class="  ext-safari">
