@@ -1,20 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-<!DOCTYPE html>
-<html lang="en" >
+<html lang="pt-br" >
 <head>
   <meta charset="UTF-8">
   <title>sistemareserva</title>
   <link rel="stylesheet" href="css/stylere.css">
   <link rel="stylesheet" href="css/button.css">
+  <title>A</title>
 </head>
 <body>
 
@@ -23,7 +14,7 @@
 	<table>
 		<thead>		
 			<tr>
-			<img src="img/senac_logo.png" alt="" style="padding-left: 40%;">		
+			<img src="images/senac_logo.png" alt="" style="padding-left: 40%;">		
 				<th>Andar</th>
 				<th>Sala</th>
 				<th>Professor</th>
@@ -107,8 +98,5 @@
 	<button>proximo</button>
 </div>
 </form>  
-</body>
-</html>
-
 </body>
 </html>
