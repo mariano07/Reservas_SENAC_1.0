@@ -14,7 +14,7 @@
 	<table>
 		<thead>		
 			<tr>
-			<img src="img/senac_logo.png" alt="" style="padding-left: 40%;">		
+			<img src="images/senac_logo.png" alt="" style="padding-left: 40%;">		
 				<th>Andar</th>
 				<th>Sala</th>
 				<th>Professor</th>
