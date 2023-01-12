@@ -1,147 +1,183 @@
-@import url('https://rsms.me/inter/inter-ui.css');
-::selection {
-  background: #2D2F36;
-}
-::-webkit-selection {
-  background: #2D2F36;
-}
-::-moz-selection {
-  background: #2D2F36;
-}
 body {
-  background: white;
-  font-family: 'Inter UI', sans-serif;
-  margin: 0;
-  padding: 20px;
+  font-family: Roboto "Sans Serif" Serif;
+  font-size: 18px;
+  color: #666666;
 }
-.page {
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  height: calc(100% - 40px);
-  position: absolute;
-  place-content: center;
-  width: calc(100% - 40px);
+
+h3 {
+  color: #004a8d
 }
-@media (max-width: 767px) {
-  .page {
-    height: auto;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-  }
+
+#login-esquerda {
+  background: url('https://apsweb.senacrs.com.br/resource/imagens_login/imagemUm.jpg') no-repeat; 
+  background-size: cover; 
+  height: 100vh;
 }
-.container {
-  display: flex;
-  height: 320px;
-  margin: 0 auto;
-  width: 640px;
+
+#titulo-login {
+  color: #004a8d;
+  font-size: 52px;
+  font-weight: bold;
 }
-@media (max-width: 767px) {
-  .container {
-    flex-direction: column;
-    height: 630px;
-    width: 320px;
-  }
+
+.cor-laranja {
+  color: #f7941e!important;
 }
-.left {
-  background: rgb(221, 221, 221);
-  height: calc(100% - 40px);
-  top: 20px;
-  position: relative;
-  width: 50%;
+
+.form-field {
+  height: 100%; 
+  box-shadow: 0 0 25px -1px #888; 
+  border: 1px solid #e5e5e5;
+  padding: 23px;
 }
-@media (max-width: 767px) {
-  .left {
-    height: 100%;
-    left: 20px;
-    width: calc(100% - 40px);
-    max-height: 270px;
-  }
+.form-field:focus-within {
+  border-left: solid #f7931d;
 }
-.login {
-  font-size: 50px;
-  font-weight: 900;
-  margin: 50px 40px 40px;
+.form-field.invalid {
+  border-bottom: solid #FF4949;
 }
-.eula {
-  color: #999;
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 40px;
+
+.form-field i {
+  float: right;
+  padding: 5px 5px 0 0;
+  color: #666666;
 }
-.right {
-  background: #e17808;
-  box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
-  color: #000000;
-  position: relative;
-  width: 50%;
+
+.form-input {
+  border: none; 
+  width: 90%;
+  color: #666666;
 }
-@media (max-width: 767px) {
-  .right {
-    flex-shrink: 0;
-    height: 100%;
-    width: 100%;
-    max-height: 350px;
-  }
+.form-input:focus {
+  outline: none;
 }
-svg {
-  position: absolute;
-  width: 320px;
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+      padding-left: 0;
 }
-path {
-  fill: none;
-  stroke: url(#linearGradient);
-  stroke-width: 4;
-  stroke-dasharray: 240 1386;
-}
-.form {
-  background-color: #e17808;
-  margin: 40px;
-  position: absolute;
-}
-label {
-  background-color: #e17808;
-  color:  #000000;
-  display: block;
-  font-size: 14px;
-  height: 16px;
+#acoes-login {
   margin-top: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+  font-size: 13px;
 }
-input {
-  background-color: transparent;
-  border: 0;
-  color: #000000;
-  font-size: 20px;
-  height: 30px;
-  line-height: 30px;
-  outline: none !important;
-  width: 100%;
+#lbl-lembrarme {
+  font-weight: normal;
+  display: inline;
+  margin-bottom: 0;
 }
-input::-moz-focus-inner { 
-  border: 0; 
-}
-#submit {
-  color: #000000;
-  margin-top: 40px;
-  transition: color 300ms;
-}
-#submit:focus {
-  color: #f2f2f2;
-}
-#submit:active {
-  color: #d0d0d2;
+#esqueci-senha {
+  color: #f7941e;
 }
 
-input:valid{
-
-background-color: #e17808;
-
+#msg-erro {
+  color: red;
+  font-size: 13px;
+}
+.btn-form {
+  border-radius: 0;
+    width: 205px;
+    height: 62px;
+    font-size: 22px;
+    border: none;
+    background-color: #f7941e;
+    background-image: -webkit-linear-gradient(#f7941e, #f7b21e);
+    background-image: -o-linear-gradient(#f7941e, #f7b21e);
+    background-image: linear-gradient(#f7941e, #f7b21e);
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+.btn-form:hover {
+  background-image: linear-gradient(#f7b21e,#f7941e);
+  background-image: -webkit-linear-gradient(#f7b21e,#f7941e);
+    background-image: -o-linear-gradient(#f7b21e,#f7941e);
 }
 
-.logo{
+#form-esqueci-senha, #form-logins-armazenados {
+  display: none;
+}
 
-width: 180px;
-height: 100px;
+.click, .click:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
 
+
+
+.hiperlink-login {
+  color: #666666;
+  font-size: 13px;
+}
+
+.x-window-tl, .x-window-tr, .x-window-tc, .x-window-ml, .x-window-mr, .x-window-mc, 
+.x-window-bl, .x-window-br, .x-window-bc {
+  background-image: none !important;
+  background: #eeeeee !important;
+}
+
+.x-window {
+    border: 1px solid #bfbfbf;
+}
+
+.x-window-header-text{
+  color: #000000 !important;
+}
+
+.x-window-tl .x-window-header {
+  color: #000000 !important;
+}
+
+.x-window-mc {
+  border: none !important;
+  background: #eeeeee !important;
+}
+
+.x-window-plain, .x-window-body {
+  border-left: 1px solid #e6e6e6 !important;
+    border-top: 1px solid #e6e6e6 !important;
+    border-bottom: 1px solid #eee !important;
+    border-right: 1px solid #eee !important;
+    background: transparent!important;
+}
+
+.x-progress-bar {
+  height: 18px !important;
+  background: #004a8d !important;;
+    border-top: 1px solid #000000 !important;;
+    border-bottom: 1px solid #000000 !important;;
+    border-right: 1px solid #000000 !important;;
+}
+
+.x-window-dlg .x-progress-wrap {
+  width: 100% !important;
+}
+
+.x-grid-group-hd div {
+  color: #000000 !important;
+}
+
+.x-date-mp-ybtn a {
+  background: transparent url(../../resource/extjs/images/default/panel/tool-sprites-grey.gif) no-repeat;
+}
+
+td.x-date-mp-month a:hover, td.x-date-mp-year a:hover {
+  background: #eee !important;
+}
+
+.x-date-inner a:hover, .x-date-inner .x-date-disabled a:hover {
+  background: #eee !important;
+}
+
+.x-panel-body-noheader {
+    border-top: none !important;
+}
+
+.x-panel-body {
+    border: none !important;
+}
+
+.ext-mb-text {
+  color: #000;
+  font-size: 12px;
 }
