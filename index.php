@@ -53,14 +53,14 @@ session_start();
                         <div class="row" style="height: 70px;">
                             <div class="col-md-2"></div>
                             <div class="col-md-8 form-field">
-                                <input type="text" class="form-input" name="matricula" id="matricula" placeholder="Sua Matrícula" required>
+                                <input type="text" class="form-input" name="matricula" id="matricula" placeholder="Sua Matrícula" required><i class="fa-solid fa-user"></i>
                             </div>
                             <div class="col-md-2"></div>
                         </div>
                         <div class="row" style="height: 70px; margin-top: 30px;">
                             <div class="col-md-2"></div>
                             <div class="col-md-8 form-field">
-                                <input type="password" class="form-input" name="senha" id="senha" placeholder="Senha" required="required">
+                                <input type="password" class="form-input" name="senha" id="senha" placeholder="Senha" required="required"><i class="fa-solid fa-key"></i>
                             </div>
                             <div class="col-md-2"></div>
                         </div>
