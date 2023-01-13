@@ -35,7 +35,7 @@ session_start();
                 </div>
             </div>
             <div class="col-md-6">
-                <form id="login" name="login" method="post" action="?">
+                <form id="login" name="login" method="post" action="#">
                     <div class="container-fluid">
                         <div class="row text-right" style="margin-top: 20px"></div>
                         <div class="row" style="margin-top: 20px;">
@@ -46,27 +46,23 @@ session_start();
                         <div class="row" style="min-height: 60px;">
                             <div class="col-md-2"></div>
                             <div class="col-md-8 no-gutters" style="min-height: 60px;">
-                                <p id="texto-informacoes">
-                                    <br>
-                                </p>
                             </div>
                             <div class="col-md-2"></div>
                         </div>
                     </div>
-                    <input type="hidden" name="usrLoginSalvo" id="usrLoginSalvo" value="">
                     <div class="container-fluid" id="form-login">
                         <div class="row" style="height: 20px;"></div>
                         <div class="row" style="height: 70px;">
                             <div class="col-md-2"></div>
                             <div class="col-md-8 form-field">
-                                <input type="text" placeholder="Sua Matrícula" class="form-input" id="usr-login" name="usr" required="required" value="" tabindex="1"><i class="fas fa-user"></i>
+                                <input type="text" placeholder="Sua Matrícula" class="form-input" id="matricula" name="matricula" required="required" value="" tabindex="1">
                             </div>
                             <div class="col-md-2"></div>
                         </div>
                         <div class="row" style="height: 70px; margin-top: 30px;">
                             <div class="col-md-2"></div>
                             <div class="col-md-8 form-field">
-                                <input type="password" placeholder="Senha" id="usr-password" class="form-input" name="passwd" required="required" onkeydown="javascript:checkEnter(event);" value="" tabindex="2"><i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Senha" id="senha" class="form-input" name="senha" required="required" value="" tabindex="2">
                             </div>
                             <div class="col-md-2"></div>
                         </div>
@@ -77,38 +73,13 @@ session_start();
                         </div>
                         <div class="row">
                             <div class="col-md-2"></div>
-                            <div class="col-md-5 no-gutters"><input type="button" value="Entrar" class="btn btn-primary btn-form" id="btnEntrar" onclick="" tabindex="4"></div>
+                            <div class="col-md-5 no-gutters"><input type="button" value="Entrar" class="btn btn-primary btn-form" id="btn_entrar"></div>
                             <div class="col-md-2"></div>
                         </div>
                     </div>
-                    <div class="container-fluid" id="form-esqueci-senha">
-                        <div class="row" style="height: 10px;"></div>
-                        <div class="row" style="height: 70px; margin-bottom: 30px;">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-8 form-field invalid">
-                                <input type="text" placeholder="Sua Matrícula" class="form-input rec-required" id="usr-recuperacao" value="" tabindex="1"><i class="fas fa-user"></i>
-                            </div>
-                            <div class="col-md-2"></div>
-                        </div>
-                        <div class="row" style="height: 70px; margin-bottom: 20px;">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-8 form-field">
-                                <input type="email" placeholder="E-mail cadastrado" class="form-input rec-required" id="email-recuperacao" value="" tabindex="3"><i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="col-md-2"></div>
-                        </div>
-                        <div class="row" style="margin-top:25px">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-6 no-gutters"><input type="button" value="Enviar" class="btn btn-primary btn-form" id="btnEnviar" onclick="" disabled="" tabindex="4"></div>
-                            <div class="col-md-2 text-right no-gutters" style="height: 60px; padding-top: 20px; font-size: 13px;"><a href="javascript:retornarLogin()" class="cor-laranja">Cancelar</a></div>
-                            <div class="col-md-2"></div>
-                        </div>
-                    </div>
-                    <input type="hidden" name="base" id="baseSelecionada" value="PHOENIXHA/GVDASA_GVCOLLEGE"><input type="hidden" name="postBack" value="1"><input type="hidden" name="acao" value="login"><input type="hidden" name="ViewLoginXmlXsl[method]" value="login">
                 </form>
             </div>
         </div>
     </div>
 </body>
-
 </html>
