@@ -18,37 +18,61 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Document</title> 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/dashboard_pedagoga.css">
+  <link rel="stylesheet" href="css/dashboard_pedagoga.css">
+  
 </head>
 <body>
 
 <header>
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="" alt="" height="36">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto">
-	  <li class="nav-item">
-          <a class="nav-link" href="#">Reservar</a>
-        </li>
-      </ul>
+<div class="sidebar active">
+        <div class="logo_content">
+            <div class="logo">
+                <i class='bx bxl-c-plus-plus' style="font-size: 30px;"></i>
+                <div class="logoname" style="margin-left: 5px;">Bem-Vindo</div>
+            </div>
+            <i class='bx bx-menu-alt-right' id="btn" style="font-size: 25px;"></i>
+        </div>
+        <hr>
+        <ul class="nav_list">
+        <li>
+                <a href="#">
+                    <i class='bx bx-chat' ></i>
+                    <span class="link_names">Minhas Reservas</span>
+                </a>
+                <span class="tooltip">Minhas Reservas</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_names">Reservar</span>
+                </a>
+                <span class="tooltip">Reservar</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user' ></i>
+                    <span class="link_names">Trocar senha</span>
+                </a>
+                <span class="tooltip">Trocar senha</span>
+            </li>
+            
+            <li>
+                <a href="#">
+                    <i class='bx bx-pie-chart-alt-2' ></i>
+                    <span class="link_names">Sair</span>
+                </a>
+                <span class="tooltip">Sair</span>
+            </li>     
+        </ul>
     </div>
-  </div>
-</nav>
 </header>
 
-<main style="padding-top: 14px;">
+<main>
 <table class="table table-light table-striped-columns">
 <thead>
     <tr>
-      <th scope="col"></th>
       <th scope="col">Andar</th>
       <th scope="col">Sala</th>
       <th scope="col">Professor</th>
@@ -76,6 +100,20 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+<script>
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+        let searchBtn = document.querySelector(".bx-search")
+
+        btn.onclick = function(){
+            sidebar.classList.toggle("active");
+        }
+        searchBtn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+    </script>
+
 </footer>
 
 </body>
