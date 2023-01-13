@@ -17,7 +17,7 @@ session_start();
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; charset=iso-8859-1">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <link href="https://apsweb.senacrs.com.br/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link href="images/senac_icone.png" type="image/x-icon" rel="shortcut icon">
     <title>Login - Sistema de Agendamentos</title>
     <link href="https://apsweb.senacrs.com.br/lib/system/bootstrap/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://apsweb.senacrs.com.br/lib/system/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -35,7 +35,7 @@ session_start();
                 </div>
             </div>
             <div class="col-md-6">
-                <form id="login" name="login" method="post" action="#">
+                <form id="login" name="login" method="post" action="teste.php">
                     <div class="container-fluid">
                         <div class="row text-right" style="margin-top: 20px"></div>
                         <div class="row" style="margin-top: 20px;">
@@ -45,8 +45,6 @@ session_start();
                         </div>
                         <div class="row" style="min-height: 60px;">
                             <div class="col-md-2"></div>
-                            <div class="col-md-8 no-gutters" style="min-height: 60px;">
-                            </div>
                             <div class="col-md-2"></div>
                         </div>
                     </div>
@@ -55,25 +53,25 @@ session_start();
                         <div class="row" style="height: 70px;">
                             <div class="col-md-2"></div>
                             <div class="col-md-8 form-field">
-                                <input type="text" placeholder="Sua Matrícula" class="form-input" id="matricula" name="matricula" required="required" value="" tabindex="1">
+                                <input type="text" class="form-input" name="matricula" id="matricula" placeholder="Sua Matrícula" required>
                             </div>
                             <div class="col-md-2"></div>
                         </div>
                         <div class="row" style="height: 70px; margin-top: 30px;">
                             <div class="col-md-2"></div>
                             <div class="col-md-8 form-field">
-                                <input type="password" placeholder="Senha" id="senha" class="form-input" name="senha" required="required" value="" tabindex="2">
+                                <input type="password" class="form-input" name="senha" id="senha" placeholder="Senha" required="required">
                             </div>
                             <div class="col-md-2"></div>
                         </div>
                         <div class="row" id="acoes-login">
                             <div class="col-md-7"></div>
-                            <div class="col-md-3 no-gutters text-right"><a href="" class="cor-laranja">Esqueceu a senha?</a></div>
+                            <div class="col-md-3 no-gutters text-right"><a href="recuperar_senha.php" class="cor-laranja">Esqueceu a senha?</a></div>
                             <div class="col-md-2"></div>
                         </div>
                         <div class="row">
                             <div class="col-md-2"></div>
-                            <div class="col-md-5 no-gutters"><input type="button" value="Entrar" class="btn btn-primary btn-form" id="btn_entrar"></div>
+                            <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Entrar"></div>
                             <div class="col-md-2"></div>
                         </div>
                     </div>
