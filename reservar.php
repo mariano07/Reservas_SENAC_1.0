@@ -33,7 +33,7 @@
 						<div class="booking-bg"></div>
 						<form action="" method="POST">
 							<div class="form-header">
-								<h2><img src="images/senac_logo.png" alt=""><br> Bem-vindo</h2>
+								<img src="images/senac_logo.png" alt="">
 							</div>
 							<div class="row">
 								<div class="col-md-6">
@@ -48,31 +48,9 @@
 										<input class="form-control" type="time" required name="hora" id="hora">
 									</div>
 								</div>			
-								<div class="col-md-6">
-									<div class="form-group">
-										<span class="form-label">Salas</span>			
-										<div include="form-input-select()">
-											<select required name="salas" id="salas">
-												<option value="" hidden>Salas de aula</option>
-												<option value="1">Option 1</option>
-												<option value="2">Option 2</option>
-												<option value="3">Option 3</option>
-												<option value="4">Option 4</option>
-												<option value="5">Option 5</option>
-											</select>
-										</div>
-									</div>
-								</div>
+	
 							</div>
-							<span class="form-label">Informe aqui os itens nescessarios na sala</span>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<textarea style="resize: none" id="story" name="story" rows="5" cols="44">
-										</textarea>
-									</div>
-								</div>
-							</div>
+							
 							<div class="form-btn">
 								<button class="submit-btn ">Agendar</button>
 							</div>
