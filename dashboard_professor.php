@@ -72,7 +72,6 @@
               <th scope="col">Sala</th>
               <th scope="col">Dia</th>
               <th scope="col">Horário</th>
-              <th scope="col">Status</th>
               <th scope="col">Deletar</th>
             </tr>
           </thead>
@@ -82,7 +81,6 @@
               <td>102</td>
               <td>01/01/2023</td>
               <td>13:00</td>
-              <td>Aprovado</td>
               <td><button type="button" class="btn btn-danger">Deletar</button></td> 
             </tr>
           </tbody>

@@ -79,8 +79,6 @@
               <th scope="col">Dia</th>
               <th scope="col">Horário</th>
               <th scope="col">Professor</th>
-              <th scope="col">Status</th>
-              <th scope="col">Aprovar</th>
               <th scope="col">Deletar</th>
             </tr>
           </thead>
@@ -91,8 +89,6 @@
               <td>01/01/2023</td>
               <td>13:00</td>
               <td>Mariano</td>
-              <td>Aprovado</td>
-              <td><button type="button" class="btn btn-success">Aprovar</button></td> 
               <td><button type="button" class="btn btn-danger">Deletar</button></td> 
             </tr>
           </tbody>
