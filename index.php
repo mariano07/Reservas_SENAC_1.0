@@ -91,9 +91,9 @@ session_start();
                             <div class="col-md-2"></div>
                         </div>
                         <?php
-                        if($_POST['user']==="error"){      
+                        if ($_POST['user'] === "error") {
                         ?>
-                        Usuário ou Senha Inválidos
+                            Usuário ou Senha Inválidos
                         <?php
                         }
                         ?>
@@ -113,4 +113,5 @@ session_start();
         </div>
     </div>
 </body>
+
 </html>
