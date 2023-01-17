@@ -1,6 +1,12 @@
 <?php
 	session_start();
 	$controle=1;
+	$dados = array();
+	for($x=0;$x<=3;$x++){
+		for($y=0;$y<=5;$y++){
+			$dados[$x][$y] = rand(1, 100);
+		}
+	}
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -42,11 +48,29 @@
 						<tbody>
 							<tr>
 							<td>Computadores</td>
-							<td id="qtd1">1</td>
-							<td id="qtd2">5</td>
-							<td id="qtd3">10</td>
-							<td id="qtd4">30</td>
-							<td id="qtd5">0</td>
+							<td id="pc1">1</td>
+							<td id="pc2">5</td>
+							<td id="pc3">10</td>
+							<td id="pc4">30</td>
+							<td id="pc5">0</td>
+							</tr>
+
+							<tr>
+							<td>Cadeiras</td>
+							<td id="cd1">1</td>
+							<td id="cd2">5</td>
+							<td id="cd3">10</td>
+							<td id="cd4">30</td>
+							<td id="cd5">0</td>
+							</tr>
+
+							<tr>
+							<td>Mesas</td>
+							<td id="ms1">1</td>
+							<td id="ms2">5</td>
+							<td id="ms3">10</td>
+							<td id="ms4">30</td>
+							<td id="ms5">0</td>
 							</tr>
 						</tbody>
 						</table>
@@ -60,10 +84,17 @@
 	<script>
 		function voltaAndar(){
 			var andar = parseInt(document.getElementById("controle").value,10);
+			var x=0,y=0;
 			if(andar != 1){
 				andar-=1;
 				document.getElementById("controle").value=andar;
 				document.getElementById("andar").textContent="Andar " + andar;
+				document.getElementById("sala1").textContent=andar+"01";
+				document.getElementById("sala2").textContent=andar+"02";
+				document.getElementById("sala3").textContent=andar+"03";
+				document.getElementById("sala4").textContent=andar+"04";
+				document.getElementById("sala5").textContent=andar+"05";
+				
 				
 			}
 		}
@@ -74,6 +105,12 @@
 				andar+=1;
 				document.getElementById("controle").value=andar;
 				document.getElementById("andar").textContent="Andar " + andar;
+				document.getElementById("sala1").textContent=andar+"01";
+				document.getElementById("sala2").textContent=andar+"02";
+				document.getElementById("sala3").textContent=andar+"03";
+				document.getElementById("sala4").textContent=andar+"04";
+				document.getElementById("sala5").textContent=andar+"05";
+
 				
 			}
 		}
