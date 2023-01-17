@@ -69,6 +69,7 @@
 
 
 
+  <form action="" method="post">
   <div class="b-example-divider"></div>
 
   <div class="modal modal-tour position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalTour">
@@ -117,7 +118,9 @@
           </ul>
           <hr>
           <button type="button" class="btn btn-lg btn-dark mt-5 w-100" data-bs-dismiss="modal">Proximo</button>
-          <button type="button" class="btn btn-lg btn-dark mt-5 w-100" data-bs-dismiss="modal">Cancelar</button>
+        </form>
+ 
+          <a href="reservar_data.php"><button type="button" class="btn btn-lg btn-dark mt-5 w-100" data-bs-dismiss="modal">Cancelar</button></a>
         </div>
       </div>
     </div>
