@@ -12,25 +12,6 @@ session_start();
 //     mysqli_connect_error();
 // }
 
-// if (isset($_POST['matricula'])) {
-//     $matricula = $_POST['matricula'];
-//     $passwd = $_POST['senha'];
-
-//     try {
-//         $sql = $con->query("SELECT * FROM usuario WHERE matricula='$matricula' AND senha='$passwd'"); //busca no banco 
-//         $aux_query = $sql->fetch_assoc(); //guarda os dados na aux_query
-//     if ($aux_query['cargo']==='ADM') {
-//             header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_admin.php"); //redireciona adm
-//     }else if($aux_query['cargo']==='PED'){
-//         header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_pedagogico.php"); //redireciona pedagogico
-//     }
-//     else if($aux_query['cargo']==='PED'){
-//         header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_professor.php"); //redireciona professor
-//     }
-//     } catch (\Throwable $th) {
-//         header("Location: http://localhost/Reservas_SENAC_1.0?user=error"); //atualiza a pagina com erro
-//     }
-// } 
 ?>
 <html>
 
@@ -64,9 +45,10 @@ session_start();
                     <div class="container-fluid" id="form-login">
                         <div class="row" style="height: 20px;"></div>
                         <div class="row" style="height: 70px;">
-                            <div class="col-md-2"></div>
+                            <div class="col-md-"></div>
                             <div class="col-md-3 form-field">
-                                <input type="text" class="form-input" name="email" id="email" placeholder="Email" required><i><img src="images/user-solid.svg" width="20" height="20"></i>
+                                <input type="text" class="form-input" name="email" id="email" placeholder="Email" required>
+                                <i><img src="images/user-solid.svg" width="20" height="20"></i>
                             </div>
                             <div class="col-md-2"></div>
                         </div>
@@ -83,15 +65,7 @@ session_start();
                                 <input type="password" class="form-input" name="senha" id="senha" placeholder="Confirmar senha" required="required"><i><img src="images/key-solid.svg" width="20" height="20"></i>
                             </div>
                             <div class="col-md-2"></div>
-                        </div>
-                        <?php
-                        if($_POST['user']==="error"){      
-                        ?>
-                        Usuário ou Senha Inválidos
-                        <?php
-                        }
-                        ?>
-                        
+                        </div>                        
                         <div class="row">
                             <div class="col-md-2"></div>
                             <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Proximo"></div>
