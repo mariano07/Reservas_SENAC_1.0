@@ -1,7 +1,0 @@
-function voltaAndar(){
-
-}
-
-function ProximoAndar(){
-    
-}
