@@ -1,12 +1,6 @@
 <?php
 session_start();
 $controle = 1;
-$dados = array();
-for ($x = 0; $x <= 3; $x++) {
-	for ($y = 0; $y <= 5; $y++) {
-		$dados[$x][$y] = rand(1, 100);
-	}
-}
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -27,53 +21,86 @@ for ($x = 0; $x <= 3; $x++) {
 	<div class="align-center container">
 		<div class="row">
 			<main>
-				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-					<h1 class="h2" id="andar"><a href="#"><img src="images/arrow-left-circle-fill.svg" width="50" height="50"></a> Andar 1</h1>
+				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap pt-3 pb-2 mb-3 border-bottom">
+				<a href="#"><img src="images/arrow-left-circle-fill.svg" width="50" height="50"></a><h1 class="h2" id="andar"> Andar 1</h1>
 				</div>
 				<center>
 					<button type="button" class="btn btn-primary" onclick="voltaAndar()"><- Voltar Andar</button>
-							<button type="button" class="btn btn-primary" onclick="ProximoAndar()">Próximo Andar -></button>
+					<button type="button" class="btn btn-primary" onclick="ProximoAndar()">Próximo Andar -></button>
 				</center>
 				<input type="hidden" id="controle" <?php echo "value = $controle" ?>>
 				<div class="table-responsive">
 					<table class="table table-striped table-sm">
 						<thead>
 							<tr>
-								<th scope="col">Item</th>
-								<th scope="col" id="sala1">101</th>
-								<th scope="col" id="sala2">102</th>
-								<th scope="col" id="sala3">103</th>
-								<th scope="col" id="sala4">104</th>
-								<th scope="col" id="sala5">105</th>
+								<th scope="col">SALAS</th>
+								<th scope="col" id="">Computadores</th>
+								<th scope="col" id="">Computador Professor</th>
+								<th scope="col" id="">Monitores</th>
+								<th scope="col" id="">Mouses</th>
+								<th scope="col" id="">Teclados</th>
+								<th scope="col" id="">Mesas</th>
+								<th scope="col" id="">Cadeiras</th>
+								<th scope="col" id="">Televisões</th>
+								<th scope="col" id="">Ar Condicionado</th>
+								<th scope="col" id="">Controle Ar</th>
+								<th scope="col" id="">Data Show</th>
+								<th scope="col" id="">Apagador</th>
+								<th scope="col" id="">Canetão Azul</th>
+								<th scope="col" id="">Canetão Vermelho</th>
+								<th scope="col" id="">Canetão Preto</th>
+								<th scope="col" id="">Webcam</th>
+								<th scope="col" id="">Reserva</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>Computadores</td>
-								<td id="pc1">1</td>
-								<td id="pc2">5</td>
-								<td id="pc3">10</td>
-								<td id="pc4">30</td>
-								<td id="pc5">0</td>
-							</tr>
+                    			<?php
+								$variavel = "texto";
+								$variavel1 = "SALA";
+									for($y=0;$y<5;$y++){
+										echo "<tr>";
+										echo '<td>'.$variavel1."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo "<td>".$variavel."</td>";
+										echo '<td>
+										<form action="#" method="post">
+										<input type="hidden" name="computador" value="'.$variavel.'">
+										<input type="hidden" name="computador_professor" value="'.$variavel.'">
+										<input type="hidden" name="monitor" value="'.$variavel.'">
+										<input type="hidden" name="mouse" value="'.$variavel.'">
+										<input type="hidden" name="teclado" value="'.$variavel.'">
+										<input type="hidden" name="mesa" value="'.$variavel.'">
+										<input type="hidden" name="cadeira" value="'.$variavel.'">
+										<input type="hidden" name="televisao" value="'.$variavel.'">
+										<input type="hidden" name="ar_condicionado" value="'.$variavel.'">
+										<input type="hidden" name="ar_controle" value="'.$variavel.'">
+										<input type="hidden" name="data_show" value="'.$variavel.'">
+										<input type="hidden" name="apagador" value="'.$variavel.'">
+										<input type="hidden" name="canetao_azul" value="'.$variavel.'">
+										<input type="hidden" name="canetao_vermelho" value="'.$variavel.'">
+										<input type="hidden" name="canetao_preto" value="'.$variavel.'">
+										<input type="hidden" name="webcam" value="'.$variavel.'">
+										<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+										</form>
+										</td>';
+										echo "</tr>";
+									}
 
-							<tr>
-								<td>Cadeiras</td>
-								<td id="cd1">1</td>
-								<td id="cd2">5</td>
-								<td id="cd3">10</td>
-								<td id="cd4">30</td>
-								<td id="cd5">0</td>
-							</tr>
-
-							<tr>
-								<td>Mesas</td>
-								<td id="ms1">1</td>
-								<td id="ms2">5</td>
-								<td id="ms3">10</td>
-								<td id="ms4">30</td>
-								<td id="ms5">0</td>
-							</tr>
+                    			?>
 						</tbody>
 					</table>
 				</div>
@@ -87,19 +114,10 @@ for ($x = 0; $x <= 3; $x++) {
 	<script>
 		function voltaAndar() {
 			var andar = parseInt(document.getElementById("controle").value, 10);
-			var x = 0,
-				y = 0;
 			if (andar != 1) {
 				andar -= 1;
 				document.getElementById("controle").value = andar;
 				document.getElementById("andar").textContent = "Andar " + andar;
-				document.getElementById("sala1").textContent = andar + "01";
-				document.getElementById("sala2").textContent = andar + "02";
-				document.getElementById("sala3").textContent = andar + "03";
-				document.getElementById("sala4").textContent = andar + "04";
-				document.getElementById("sala5").textContent = andar + "05";
-
-
 			}
 		}
 
@@ -109,12 +127,6 @@ for ($x = 0; $x <= 3; $x++) {
 				andar += 1;
 				document.getElementById("controle").value = andar;
 				document.getElementById("andar").textContent = "Andar " + andar;
-				document.getElementById("sala1").textContent = andar + "01";
-				document.getElementById("sala2").textContent = andar + "02";
-				document.getElementById("sala3").textContent = andar + "03";
-				document.getElementById("sala4").textContent = andar + "04";
-				document.getElementById("sala5").textContent = andar + "05";
-
 
 			}
 		}
