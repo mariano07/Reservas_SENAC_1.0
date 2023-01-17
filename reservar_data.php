@@ -38,7 +38,7 @@ session_start();
 				<div class="row">
 					<div class="booking-form">
 						<div class="booking-bg"></div>
-						<form action="" method="POST">
+						<form action="reservar_sala.php" method="POST">
 							<div class="form-header">
 								<img src="images/senac_logo.png" alt="">
 							</div>
