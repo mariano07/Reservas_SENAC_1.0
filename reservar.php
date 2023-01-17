@@ -21,6 +21,11 @@
 	<link rel="stylesheet" href="css/reserva.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+    <link href="https://apsweb.senacrs.com.br/lib/system/bootstrap/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://apsweb.senacrs.com.br/lib/system/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://apsweb.senacrs.com.br/resource/extjs/css/ext-all.css?380060" rel="stylesheet" type="text/css">
+    <link href="https://apsweb.senacrs.com.br/resource/extjs/css/ext-overrides.css?380060" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Reserva</title>
 </head>
 <body>
@@ -51,9 +56,11 @@
 	
 							</div>
 							
-							<div class="form-btn">
-								<button class="submit-btn ">Agendar</button>
-							</div>
+                            <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Proximo"></div>
+                            <div class="col-md-2"></div>
+                        </div>
 						</form>
 					</div>
 				</div>
