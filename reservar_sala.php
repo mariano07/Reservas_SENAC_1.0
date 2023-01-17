@@ -23,8 +23,8 @@
 						<h1 class="h2" id="andar">Andar 1</h1>
 					</div>
 					<center>
-						<button type="button" class="btn btn-primary" onclick="voltaAndar()"><- Voltar</button>
-						<button type="button" class="btn btn-primary" onclick="ProximoAndar()">Próximo -></button>
+						<button type="button" class="btn btn-primary" onclick="voltaAndar()"><- Voltar Andar</button>
+						<button type="button" class="btn btn-primary" onclick="ProximoAndar()">Próximo Andar -></button>
 					</center>
 					<input type="hidden" id="controle" <?php echo "value = $controle"?>>
 					<div class="table-responsive">
