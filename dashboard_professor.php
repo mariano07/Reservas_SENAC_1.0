@@ -41,12 +41,6 @@ session_start();
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#" onclick="verReservas()">
-              <span data-feather="calendar" class="align-text-bottom"></span>
-              Ver Reservas
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="reservar_sala.php">
               <span data-feather="edit-3" class="align-text-bottom"></span>
               Reservar
@@ -70,7 +64,7 @@ session_start();
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 id="titulo" class="h2">Reservas</h1>
+        <h1 id="titulo" class="h2">Minhas Reservas</h1>
       </div>
 
       <div class="table-responsive">
@@ -114,15 +108,6 @@ session_start();
 
 
       }
-      function verReservas() {
-        document.getElementById("titulo").textContent="Reservas";
-        document.getElementById("professor").textContent="Reservas";
-        document.getElementById("andar").textContent="Reservas";
-        document.getElementById("sala").textContent="Sala";
-        document.getElementById("data").textContent="Reservas";
-        document.getElementById("hora").textContent="Reservas";
-      }
-
     </script>
   </body>
 </html>
