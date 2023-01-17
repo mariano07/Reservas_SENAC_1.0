@@ -40,25 +40,25 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#" onclick="verReservas()">
+              <a class="nav-link" aria-current="page" href="dashboard_pedagogico.php" onclick="verReservas()">
                 <span data-feather="calendar" class="align-text-bottom"></span>
                 Ver Reservas
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">
+              <a class="nav-link" aria-current="page" href="dashboard_professor.php">
                 <span data-feather="user" class="align-text-bottom"></span>
                 Usuários
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="reservar_data.php">
                 <span data-feather="edit-3" class="align-text-bottom"></span>
                 Reservar
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="recuperar_senha.php">
                 <span data-feather="lock" class="align-text-bottom"></span>
                 Mudar Senha
               </a>
