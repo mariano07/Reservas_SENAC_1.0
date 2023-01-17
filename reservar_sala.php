@@ -20,7 +20,7 @@
 			<div class="row">
 				<main>
 					<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-						<h1 class="h2" id="andar">Andar 1</h1>
+						<h1 class="h2" id="andar"><a href="#"><img src="images/arrow-left-circle-fill.svg" width="50" height="50"></a> Andar 1</h1>
 					</div>
 					<center>
 						<button type="button" class="btn btn-primary" onclick="voltaAndar()"><- Voltar Andar</button>
