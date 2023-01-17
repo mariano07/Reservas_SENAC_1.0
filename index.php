@@ -61,7 +61,7 @@ session_start();
                 </div>
             </div>
             <div class="col-md-6">
-                <form id="login" name="login" method="post" action="#">
+                <form action="reservar_data.php" id=" login" name="login" method="post">
                     <div class="container-fluid">
                         <div class="row text-right" style="margin-top: 20px"></div>
                         <div class="row" style="margin-top: 20px;">
