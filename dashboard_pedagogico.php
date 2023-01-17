@@ -31,8 +31,14 @@
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-3 sidebar-sticky">
         <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="minhasReservas()">
+              <span data-feather="user" class="align-text-bottom"></span>
+              Minhas Reservas
+            </a>
+          </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
+            <a class="nav-link" aria-current="page" href="#" onclick="verReservas()">
               <span data-feather="calendar" class="align-text-bottom"></span>
               Ver Reservas
             </a>
@@ -41,6 +47,12 @@
             <a class="nav-link" href="#">
               <span data-feather="edit-3" class="align-text-bottom"></span>
               Reservar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">
+              <span data-feather="user" class="align-text-bottom"></span>
+              Usuários
             </a>
           </li>
           <li class="nav-item">
@@ -68,22 +80,22 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
+              <th scope="col">Professor</th>
               <th scope="col">Andar</th>
               <th scope="col">Sala</th>
-              <th scope="col">Dia</th>
+              <th scope="col">Data</th>
               <th scope="col">Horário</th>
-              <th scope="col">Professor</th>
-              <th scope="col">Deletar</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>102</td>
-              <td>01/01/2023</td>
-              <td>13:00</td>
-              <td>Mariano</td> 
-	            <td><button type="button" class="btn btn-danger">Deletar</button></td> 
+              <td id="professor">Mariano</td>
+              <td id="andar">1</td>
+              <td id="sala">102</td>
+              <td id="data">01/01/2023</td>
+              <td id="hora">13:00</td>
+	            <td><button type="button" class="btn btn-danger">Deletar</button></td>
+              <td><button type="button" class="btn btn-primary">Editar</button></td> 
             </tr>
           </tbody>
         </table>
@@ -94,5 +106,26 @@
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="js/dashboard.js"></script>
+    <script>
+      function minhasReservas(){
+        document.getElementById("titulo").textContent="Minhas Reservas";
+        document.getElementById("professor").textContent="Minhas Reservas";
+        document.getElementById("andar").textContent="Minhas Reservas";
+        document.getElementById("sala").textContent="Sala";
+        document.getElementById("data").textContent="Minhas Reservas";
+        document.getElementById("hora").textContent="Minhas Reservas";
+
+
+      }
+      function verReservas() {
+        document.getElementById("titulo").textContent="Reservas";
+        document.getElementById("professor").textContent="Reservas";
+        document.getElementById("andar").textContent="Reservas";
+        document.getElementById("sala").textContent="Sala";
+        document.getElementById("data").textContent="Reservas";
+        document.getElementById("hora").textContent="Reservas";
+      }
+
+    </script>
   </body>
 </html>
