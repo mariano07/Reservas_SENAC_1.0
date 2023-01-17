@@ -11,6 +11,32 @@ session_start();
 // if (!$con) {
 //     mysqli_connect_error();
 // }
+
+if (isset($_POST['matricula'])) {
+    $matricula = $_POST['matricula'];
+    $passwd = $_POST['senha'];
+
+    try {
+        $sql = $con->query("SELECT * FROM usuario WHERE matricula='$matricula' AND senha='$passwd'"); //busca no banco 
+        $aux_query = $sql->fetch_assoc(); //guarda os dados na aux_query
+    if ($aux_query['cargo']==='ADM') {
+        $_SESSION['id_user'] = $aux_query['id_usuario'];
+        $_SESSION['user'] = $aux_query['user'];
+        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_admin.php"); //redireciona adm
+    }else if($aux_query['cargo']==='PED'){
+        $_SESSION['id_user'] = $aux_query['id_usuario'];
+        $_SESSION['user'] = $aux_query['user'];
+        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_pedagogico.php"); //redireciona pedagogico
+    }
+    else if($aux_query['cargo']==='PED'){
+        $_SESSION['id_user'] = $aux_query['id_usuario'];
+        $_SESSION['user'] = $aux_query['user'];
+        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_professor.php"); //redireciona professor
+    }
+    } catch (\Throwable $th) {
+        header("Location: http://localhost/Reservas_SENAC_1.0?user=error"); //atualiza a pagina com erro
+    }
+} 
 ?>
 <html>
 
@@ -35,7 +61,7 @@ session_start();
                 </div>
             </div>
             <div class="col-md-6">
-                <form id="login" name="login" method="post" action="teste.php">
+                <form id="login" name="login" method="post" action="#">
                     <div class="container-fluid">
                         <div class="row text-right" style="margin-top: 20px"></div>
                         <div class="row" style="margin-top: 20px;">
@@ -64,6 +90,13 @@ session_start();
                             </div>
                             <div class="col-md-2"></div>
                         </div>
+                        <?php
+                        if($_POST['user']==="error"){      
+                        ?>
+                        Usuário ou Senha Inválidos
+                        <?php
+                        }
+                        ?>
                         <div class="row" id="acoes-login">
                             <div class="col-md-7"></div>
                             <div class="col-md-3 no-gutters text-right"><a href="recuperar_senha.php" class="cor-laranja">Esqueceu a senha?</a></div>
