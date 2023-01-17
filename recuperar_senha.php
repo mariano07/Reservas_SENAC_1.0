@@ -45,7 +45,7 @@ session_start();
         <div class="container-fluid" id="form-login">
             <div class="row" style="height: 20px;"></div>
             <div class="row" style="height: 70px;">
-                <div class="col-md-"></div>
+                <div class="col-md-2"></div>
                 <div class="col-md-3 form-field">
                     <input type="text" class="form-input" name="email" id="email" placeholder="Email" required>
                     <i><img src="images/user-solid.svg" width="20" height="20"></i>
@@ -66,7 +66,7 @@ session_start();
                 </div>
                 <div class="col-md-2"></div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top: 30px; margin-left: 80px;">
                 <div class="col-md-2"></div>
                 <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Proximo"></div>
                 <div class="col-md-2"></div>
