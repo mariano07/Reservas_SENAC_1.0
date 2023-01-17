@@ -1,5 +1,5 @@
 # Reservas_SENAC_1.0
-Surgimento da ideia : Devido a um ocorrido onde dois professores acabaram reservando a mesma sala ao mesmo tempo, o professor de informática Mariano B. Bitelo propôs que sua turma criasse um programa de reserva de salas para assim suprir a necessidade de uma melhor organização.
+Surgimento da ideia: Devido a um ocorrido onde dois professores acabaram reservando a mesma sala ao mesmo tempo, o professor de informática Mariano B. Bitelo propôs que sua turma criasse um programa de reserva de salas para assim suprir a necessidade de uma melhor organização.
 
 Pra que serve: Como já dito, este sistema foi desenvolvido com o intuito de permitir que os professores por meio da coordenadoria do senac possam reservar salas e materiais nos dias e horas requisitados por eles, assim evitando erros e desavenças já ocorridas.
 
