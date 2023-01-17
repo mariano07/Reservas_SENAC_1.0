@@ -98,6 +98,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="">
+                <span data-feather="edit-3" class="align-text-bottom"></span>
+                Alterar sala
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="log-out" class="align-text-bottom"></span>
                 Sair
