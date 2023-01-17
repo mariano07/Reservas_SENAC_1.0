@@ -22,7 +22,10 @@
 					<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 						<h1 class="h2" id="andar">Andar 1</h1>
 					</div>
-					<center><button onclick="voltaAndar()"><- Voltar</button><button onclick="ProximoAndar()">Proxima -></button></center>
+					<center>
+						<button type="button" class="btn btn-primary" onclick="voltaAndar()"><- Voltar</button>
+						<button type="button" class="btn btn-primary" onclick="ProximoAndar()">Próximo -></button>
+					</center>
 					<input type="hidden" id="controle" <?php echo "value = $controle"?>>
 					<div class="table-responsive">
 						<table class="table table-striped table-sm">
