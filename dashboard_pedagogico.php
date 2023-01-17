@@ -1,3 +1,49 @@
+<?php
+  session_start();
+$id = 'arthur';
+
+  // $servername = "localhost";
+  // $database = "reservassenac";
+  // $username = "root";
+  // $password = "root";
+  
+  // $con = mysqli_connect($servername, $username, $password, $database);
+  
+  // if (!$con) {
+  //     mysqli_connect_error();
+  // }
+
+  // $sql = $con->query("SELECT * FROM reservas");
+  // $aux_query = $sql->fetch_assoc();
+
+  // while ($aux_query = $sql->fetch_assoc()){
+  //   $aux_query['professor'];
+  //   $aux_query['sala'];
+  //   $aux_query['andar'];
+  //   $aux_query['horario'];
+  //   $aux_query['data'];
+  // }
+
+
+  $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+  $aux_query = $sql->fetch_assoc();
+
+  while ($aux_query = $sql->fetch_assoc()){
+    echo "<script>
+
+    function minhasReservas(){
+  
+    document.getElementById('professor').textContent =" . $aux_query['professor'];
+    echo "document.getElementById('andar').textContent =". $aux_query['andar'];
+    echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
+    echo "document.getElementById('data').textContent =" .$aux_query['data'];
+    echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+  
+    "}
+    </script>";
+  }
+
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -75,7 +121,7 @@
 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Reservas</h1>
+          <h1 id='titulo' class="h2">Reservas</h1>
         </div>
 
         <div class="table-responsive">
@@ -111,16 +157,16 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
   <script src="js/dashboard.js"></script>
   <script>
-    function minhasReservas() {
-      document.getElementById("titulo").textContent = "Minhas Reservas";
-      document.getElementById("professor").textContent = "Minhas Reservas";
-      document.getElementById("andar").textContent = "Minhas Reservas";
-      document.getElementById("sala").textContent = "Sala";
-      document.getElementById("data").textContent = "Minhas Reservas";
-      document.getElementById("hora").textContent = "Minhas Reservas";
+    // function minhasReservas() {
+    //   document.getElementById("titulo").textContent = "Minhas Reservas";
+    //   document.getElementById("professor").textContent = "Minhas Reservas";
+    //   document.getElementById("andar").textContent = "Minhas Reservas";
+    //   document.getElementById("sala").textContent = "Sala";
+    //   document.getElementById("data").textContent = "Minhas Reservas";
+    //   document.getElementById("hora").textContent = "Minhas Reservas";
 
 
-    }
+    // }
 
     function verReservas() {
       document.getElementById("titulo").textContent = "Reservas";
