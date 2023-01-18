@@ -4,14 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link href="images/senac_icone.png" type="image/x-icon" rel="shortcut icon">
   <title>Confirmação</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/confirmacao.css">
+  <link rel="stylesheet" href="css/index.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/modals/">
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="modals.css" rel="stylesheet">
 </head>
 
 <body>
@@ -38,8 +37,7 @@
     </symbol>
 
     <symbol id="bookmark-star" viewBox="0 0 16 16">
-      <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
-      <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
+    <path d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zm2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527z"/>
     </symbol>
 
     <symbol id="grid-fill" viewBox="0 0 16 16">
@@ -51,7 +49,7 @@
     </symbol>
 
     <symbol id="film" viewBox="0 0 16 16">
-      <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" />
+    <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
     </symbol>
 
     <symbol id="github" viewBox="0 0 16 16">
@@ -72,7 +70,7 @@
   <form action="" method="post">
   <div class="b-example-divider"></div>
 
-  <div class="modal modal-tour position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalTour">
+  <div class="modal modal-tour position-static d-block py-5" tabindex="-1" role="dialog" id="modalTour">
     <div class="modal-dialog" role="document">
       <div class="modal-content rounded-4 shadow">
         <div class="modal-body p-5">
@@ -117,10 +115,17 @@
             </li>
           </ul>
           <hr>
-          <button type="button" class="btn btn-lg btn-dark mt-5 w-100" data-bs-dismiss="modal">Proximo</button>
+          <div class="row" style="margin-top: 30px; margin-left: 5px;">
+                <div class="col-md-1"></div>
+                <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Proximo"></div>
+                <div class="col-md-2"></div>
+            </div>
         </form>
- 
-          <a href="reservar_data.php"><button type="button" class="btn btn-lg btn-dark mt-5 w-100" data-bs-dismiss="modal">Cancelar</button></a>
+        <div class="row" style="margin-top: 30px; margin-left: 5px;">
+        <div class="col-md-1"></div>
+        <div class="col-md-5 no-gutters"><a href="reservar_data.php"><button type="button" class="btn btn-primary btn-form" data-bs-dismiss="modal">Cancelar</button></a>
+        <div class="col-md-2"></div>
+        </div>
         </div>
       </div>
     </div>
