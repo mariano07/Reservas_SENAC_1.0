@@ -19,7 +19,7 @@ session_start();
 <body>
 
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Bem vindo(a), <?php echo $_SESSION['user'] ?></a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Bem vindo(a), <?php /* echo $_SESSION['user'] */ ?></a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,17 +35,23 @@ session_start();
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3 sidebar-sticky">
-          <ul class="nav flex-column">
+        <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="minhasReservas()">
-                <span data-feather="user" class="align-text-bottom"></span>
+                <span data-feather="bookmark" class="align-text-bottom"></span>
                 Minhas Reservas
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="reservar_sala.php">
+              <a class="nav-link" href="reservar_data.php">
                 <span data-feather="edit-3" class="align-text-bottom"></span>
                 Reservar
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">
+                <span data-feather="edit" class="align-text-bottom"></span>
+                Alterar inventário
               </a>
             </li>
             <li class="nav-item">
