@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  /*session_start();
   $id = 'arthur';
 
   $servername = "localhost";
@@ -30,7 +30,7 @@
     "}
     </script>";
   }
-
+*/
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -66,17 +66,11 @@
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3 sidebar-sticky">
-          <ul class="nav flex-column">
+        <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="minhasReservas()">
-                <span data-feather="user" class="align-text-bottom"></span>
+                <span data-feather="bookmark" class="align-text-bottom"></span>
                 Minhas Reservas
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="dashboard_professor.php" onclick="verReservas()">
-                <span data-feather="calendar" class="align-text-bottom"></span>
-                Ver Reservas
               </a>
             </li>
             <li class="nav-item">
@@ -86,9 +80,21 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="dashboard_pedagogico.php" onclick="verReservas()">
+                <span data-feather="calendar" class="align-text-bottom"></span>
+                Ver Reservas
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" aria-current="page" href="dashboard_professor.php">
                 <span data-feather="user" class="align-text-bottom"></span>
                 Usuários
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">
+                <span data-feather="edit" class="align-text-bottom"></span>
+                Alterar inventário
               </a>
             </li>
             <li class="nav-item">

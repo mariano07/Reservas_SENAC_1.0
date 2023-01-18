@@ -121,11 +121,17 @@
                 <div class="col-md-2"></div>
             </div>
         </form>
+<<<<<<< HEAD
         <div class="row" style="margin-top: 30px; margin-left: 5px;">
         <div class="col-md-1"></div>
         <div class="col-md-5 no-gutters"><a href="reservar_data.php"><button type="button" class="btn btn-primary btn-form" data-bs-dismiss="modal">Cancelar</button></a>
         <div class="col-md-2"></div>
         </div>
+=======
+
+          <a href="reservar_data.php"><button type="button" class="btn btn-lg btn-dark mt-5 w-100" data-bs-dismiss="modal">Cancelar</button></a>
+          
+>>>>>>> cc3e92eb169266fcf9b4a1cc9550cb8fbd815a98
         </div>
       </div>
     </div>

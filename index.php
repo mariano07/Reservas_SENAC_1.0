@@ -61,7 +61,7 @@ session_start();
                 </div>
             </div>
             <div class="col-md-6">
-                <form action="reservar_data.php" id=" login" name="login" method="post">
+                <form action="#" id=" login" name="login" method="post">
                     <div class="container-fluid">
                         <div class="row text-right" style="margin-top: 20px"></div>
                         <div class="row" style="margin-top: 20px;">
@@ -91,11 +91,11 @@ session_start();
                             <div class="col-md-2"></div>
                         </div>
                         <?php
-                        if ($_POST['user'] === "error") {
+                        /*if ($_POST['user'] === "error") {
                         ?>
                             Usuário ou Senha Inválidos
                         <?php
-                        }
+                        }*/
                         ?>
                         <div class="row" id="acoes-login">
                             <div class="col-md-7"></div>

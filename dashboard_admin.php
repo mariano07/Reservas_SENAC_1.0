@@ -35,8 +35,14 @@
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="minhasReservas()">
-                <span data-feather="user" class="align-text-bottom"></span>
+                <span data-feather="bookmark" class="align-text-bottom"></span>
                 Minhas Reservas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reservar_data.php">
+                <span data-feather="edit-3" class="align-text-bottom"></span>
+                Reservar
               </a>
             </li>
             <li class="nav-item">
@@ -52,9 +58,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="reservar_data.php">
-                <span data-feather="edit-3" class="align-text-bottom"></span>
-                Reservar
+              <a class="nav-link" href="">
+                <span data-feather="edit" class="align-text-bottom"></span>
+                Alterar inventário
               </a>
             </li>
             <li class="nav-item">
