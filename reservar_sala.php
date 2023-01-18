@@ -458,9 +458,6 @@ $controle = 1;
 					<?php
 				}
 				?>
-
-
-				?>
 				<center>
 					<form method="post" action="#">
 						<input type="submit" class="btn btn-primary" name="andar" value="1">
