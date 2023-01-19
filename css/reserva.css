@@ -8,7 +8,7 @@ a {
   }
   
   a:hover {
-    color: #000000
+    color: #000000;
   }
   
   /* Dropdown */
@@ -89,3 +89,4 @@ a {
     padding: 0;
     border-bottom: 1px solid #cccccc;
   }
+  
