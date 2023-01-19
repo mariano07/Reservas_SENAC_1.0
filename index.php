@@ -1,32 +1,32 @@
 <?php
-session_start();
-require_once('conexao.php');
+// session_start();
+// require_once('conexao.php');
 
-if (isset($_POST['matricula'])) {
-    $matricula = $_POST['matricula'];
-    $passwd = $_POST['senha'];
+// if (isset($_POST['matricula'])) {
+//     $matricula = $_POST['matricula'];
+//     $passwd = $_POST['senha'];
 
-    try {
-        $sql = $con->query("SELECT * FROM usuario WHERE matricula='$matricula' AND senha='$passwd'"); //busca no banco 
-        $aux_query = $sql->fetch_assoc(); //guarda os dados na aux_query
-    if ($aux_query['cargo']==='ADM') {
-        $_SESSION['id_user'] = $aux_query['id_usuario'];
-        $_SESSION['user'] = $aux_query['user'];
-        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_admin.php"); //redireciona adm
-    }else if($aux_query['cargo']==='PED'){
-        $_SESSION['id_user'] = $aux_query['id_usuario'];
-        $_SESSION['user'] = $aux_query['user'];
-        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_pedagogico.php"); //redireciona pedagogico
-    }
-    else if($aux_query['cargo']==='PED'){
-        $_SESSION['id_user'] = $aux_query['id_usuario'];
-        $_SESSION['user'] = $aux_query['user'];
-        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_professor.php"); //redireciona professor
-    }
-    } catch (\Throwable $th) {
-        header("Location: http://localhost/Reservas_SENAC_1.0?user=error"); //atualiza a pagina com erro
-    }
-} 
+//     try {
+//         $sql = $con->query("SELECT * FROM usuario WHERE matricula='$matricula' AND senha='$passwd'"); //busca no banco 
+//         $aux_query = $sql->fetch_assoc(); //guarda os dados na aux_query
+//     if ($aux_query['cargo']==='ADM') {
+//         $_SESSION['id_user'] = $aux_query['id_usuario'];
+//         $_SESSION['user'] = $aux_query['user'];
+//         header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_admin.php"); //redireciona adm
+//     }else if($aux_query['cargo']==='PED'){
+//         $_SESSION['id_user'] = $aux_query['id_usuario'];
+//         $_SESSION['user'] = $aux_query['user'];
+//         header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_pedagogico.php"); //redireciona pedagogico
+//     }
+//     else if($aux_query['cargo']==='PED'){
+//         $_SESSION['id_user'] = $aux_query['id_usuario'];
+//         $_SESSION['user'] = $aux_query['user'];
+//         header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_professor.php"); //redireciona professor
+//     }
+//     } catch (\Throwable $th) {
+//         header("Location: http://localhost/Reservas_SENAC_1.0?user=error"); //atualiza a pagina com erro
+//     }
+// } 
 ?>
 <html>
 
