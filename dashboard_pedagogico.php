@@ -1,17 +1,7 @@
 <?php
   /*session_start();
+  require_once 'conexao.php';
   $id = 'arthur';
-
-  $servername = "localhost";
-  $database = "reservassenac";
-  $username = "root";
-  $password = "root";
-  
-  $con = mysqli_connect($servername, $username, $password, $database);
-  
-  if (!$con) {
-      mysqli_connect_error();
-  }
 
   $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
   $aux_query = $sql->fetch_assoc();
