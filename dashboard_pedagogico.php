@@ -1,26 +1,46 @@
 <?php
-  /*session_start();
-  require_once 'conexao.php';
-  $id = 'arthur';
+session_start();
+// require_once 'conexao.php';
+$id = 'arthur';
 
-  $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
-  $aux_query = $sql->fetch_assoc();
+if (isset($_POST['btn_pesquisar'])) {
+  // $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+  // $aux_query = $sql->fetch_assoc();
 
-  while ($aux_query = $sql->fetch_assoc()){
-    echo "<script>
+  // while ($aux_query = $sql->fetch_assoc()){
+  //   echo "<script>
 
-    function minhasReservas(){
-  
-    document.getElementById('professor').textContent =" . $aux_query['professor'];
-    echo "document.getElementById('andar').textContent =". $aux_query['andar'];
-    echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
-    echo "document.getElementById('data').textContent =" .$aux_query['data'];
-    echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
-  
-    "}
-    </script>";
-  }
-*/
+  //   function minhasReservas(){
+
+  //   document.getElementById('professor').textContent =" . $aux_query['professor'];
+  //   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
+  //   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
+  //   echo "document.getElementById('data').textContent =" .$aux_query['data'];
+  //   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+
+  //   "}
+  //   </script>";
+  // }
+}else if (isset($_POST['btn_Mreservas'])) {
+  // $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+  // $aux_query = $sql->fetch_assoc();
+
+  // while ($aux_query = $sql->fetch_assoc()){
+  //   echo "<script>
+
+  //   function minhasReservas(){
+
+  //   document.getElementById('professor').textContent =" . $aux_query['professor'];
+  //   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
+  //   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
+  //   echo "document.getElementById('data').textContent =" .$aux_query['data'];
+  //   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+
+  //   "}
+  //   </script>";
+  // }
+}
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -38,25 +58,26 @@
 </head>
 
 <body>
-
-  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Bem vindo(a) *código php*</a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procurar professor" aria-label="Search">
-    <div class="navbar-nav">
-      <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#">Procurar</a>
+  <form action="#" method="post">
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Bem vindo(a) *código php*</a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procurar professor" aria-label="Search">
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+          <button type="submit" name="btn_pesquisar" class="btn btn-dark" onclick="Pesquisar()">Pesquisar</button>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </form>
 
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3 sidebar-sticky">
-        <ul class="nav flex-column">
+          <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="minhasReservas()">
                 <span data-feather="bookmark" class="align-text-bottom"></span>
