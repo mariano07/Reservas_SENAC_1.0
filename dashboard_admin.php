@@ -1,3 +1,27 @@
+<?php
+  /*session_start();
+  require_once 'conexao.php';
+  $id = 'arthur';
+
+  $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+  $aux_query = $sql->fetch_assoc();
+
+  while ($aux_query = $sql->fetch_assoc()){
+    echo "<script>
+
+    function minhasReservas(){
+  
+    document.getElementById('professor').textContent =" . $aux_query['professor'];
+    echo "document.getElementById('andar').textContent =". $aux_query['andar'];
+    echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
+    echo "document.getElementById('data').textContent =" .$aux_query['data'];
+    echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+  
+    "}
+    </script>";
+  }
+*/
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -116,27 +140,6 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
   <script src="js/dashboard.js"></script>
-  <script>
-    function minhasReservas() {
-      document.getElementById("titulo").textContent = "Minhas Reservas";
-      document.getElementById("professor").textContent = "Minhas Reservas";
-      document.getElementById("andar").textContent = "Minhas Reservas";
-      document.getElementById("sala").textContent = "Sala";
-      document.getElementById("data").textContent = "Minhas Reservas";
-      document.getElementById("hora").textContent = "Minhas Reservas";
-
-
-    }
-
-    function verReservas() {
-      document.getElementById("titulo").textContent = "Reservas";
-      document.getElementById("professor").textContent = "Reservas";
-      document.getElementById("andar").textContent = "Reservas";
-      document.getElementById("sala").textContent = "Sala";
-      document.getElementById("data").textContent = "Reservas";
-      document.getElementById("hora").textContent = "Reservas";
-    }
-  </script>
 </body>
 
 </html>
