@@ -19,8 +19,6 @@ session_start();
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/reserva.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://apsweb.senacrs.com.br/lib/system/bootstrap/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
 	<link href="https://apsweb.senacrs.com.br/lib/system/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -40,17 +38,17 @@ session_start();
 					<div class="booking-form">
 						<div class="booking-bg"></div>
 						<form action="reservar_sala.php" method="POST">
-							<div class="form-header">
-								<img src="images/senac_logo.png" alt="">
+							<div class="form-header" style="margin-left: 175px;">
+								<img src="images/senac_logo.png" style="width: 200px;">
 							</div>
 							<div class="row">
 								<div class="col-md-6">
-									<div class="form-group">
+									<div class="form-group" style="margin-top: 40px;">
 										<span class="form-label">data</span>
 										<input class="form-control" type="date" required name="data" id="data">
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-6" style="margin-top: 40px;">
 									<div class="form-group">
 										<span class="form-label">hora</span>
 										<input class="form-control" type="time" required name="hora" id="hora">
@@ -59,7 +57,7 @@ session_start();
 
 							</div>
 
-							<div class="row">
+							<div class="row" style="margin-left: 80px; margin-top: 75px;">
 								<div class="col-md-2"></div>
 								<div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Proximo"></div>
 								<div class="col-md-2"></div>
