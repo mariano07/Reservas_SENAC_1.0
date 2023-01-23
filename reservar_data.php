@@ -11,6 +11,20 @@ session_start();
 // if(!$con){              
 //     mysqli_connect_error();
 // }
+
+//$_SESSION['data'] = $_POST['data'];
+//$_SESSION['hora'] = $_POST['hora'];
+
+//if(isset($_SESSION['data'], $_SESSION['hora'])){
+
+//alerta
+
+//} else{
+
+	//header("Location: reservar_sala.php");
+
+//}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,7 +51,7 @@ session_start();
 				<div class="row">
 					<div class="booking-form">
 						<div class="booking-bg"></div>
-						<form action="reservar_sala.php" method="POST">
+						<form action="#" method="POST">
 							<div class="form-header" style="margin-left: 175px;">
 								<img src="images/senac_logo.png" style="width: 200px;">
 							</div>
