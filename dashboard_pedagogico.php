@@ -21,7 +21,7 @@ if (isset($_POST['btn_pesquisar'])) {
   //   "}
   //   </script>";
   // }
-}else if (isset($_POST['btn_Mreservas'])) {
+}
   // $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
   // $aux_query = $sql->fetch_assoc();
 
@@ -39,7 +39,18 @@ if (isset($_POST['btn_pesquisar'])) {
   //   "}
   //   </script>";
   // }
-}
+
+  echo '<script> 
+  function listarUsuarios(){
+    alert("listar usuarios");
+  }
+  </script>';
+
+  echo '<script> 
+  function mostrarInventario(){
+    alert("inventario");
+  }
+  </script>';
 
 ?>
 <!doctype html>
@@ -85,25 +96,25 @@ if (isset($_POST['btn_pesquisar'])) {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="reservar_data.php">
+              <a class="nav-link" href="reservar_sala.php">
                 <span data-feather="edit-3" class="align-text-bottom"></span>
                 Reservar
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="dashboard_pedagogico.php" onclick="verReservas()">
+              <a class="nav-link" aria-current="page" href="#" onclick="verReservas()">
                 <span data-feather="calendar" class="align-text-bottom"></span>
                 Ver Reservas
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="dashboard_professor.php">
+              <a class="nav-link" aria-current="page" href="#" onclick="listarUsuarios()">
                 <span data-feather="user" class="align-text-bottom"></span>
                 Usuários
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" aria-current="page" href="#" onclick="mostrarInventario()">
                 <span data-feather="edit" class="align-text-bottom"></span>
                 Alterar inventário
               </a>

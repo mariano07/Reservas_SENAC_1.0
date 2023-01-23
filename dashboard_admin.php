@@ -1,26 +1,57 @@
 <?php
-  /*session_start();
-  require_once 'conexao.php';
-  $id = 'arthur';
+session_start();
+// require_once 'conexao.php';
+$id = 'arthur';
 
-  $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
-  $aux_query = $sql->fetch_assoc();
+if (isset($_POST['btn_pesquisar'])) {
+  // $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+  // $aux_query = $sql->fetch_assoc();
 
-  while ($aux_query = $sql->fetch_assoc()){
-    echo "<script>
+  // while ($aux_query = $sql->fetch_assoc()){
+  //   echo "<script>
 
-    function minhasReservas(){
-  
-    document.getElementById('professor').textContent =" . $aux_query['professor'];
-    echo "document.getElementById('andar').textContent =". $aux_query['andar'];
-    echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
-    echo "document.getElementById('data').textContent =" .$aux_query['data'];
-    echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
-  
-    "}
-    </script>";
+  //   function minhasReservas(){
+
+  //   document.getElementById('professor').textContent =" . $aux_query['professor'];
+  //   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
+  //   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
+  //   echo "document.getElementById('data').textContent =" .$aux_query['data'];
+  //   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+
+  //   "}
+  //   </script>";
+  // }
+}
+  // $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+  // $aux_query = $sql->fetch_assoc();
+
+  // while ($aux_query = $sql->fetch_assoc()){
+  //   echo "<script>
+
+  //   function minhasReservas(){
+
+  //   document.getElementById('professor').textContent =" . $aux_query['professor'];
+  //   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
+  //   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
+  //   echo "document.getElementById('data').textContent =" .$aux_query['data'];
+  //   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+
+  //   "}
+  //   </script>";
+  // }
+
+  echo '<script> 
+  function listarUsuarios(){
+    alert("listar usuarios");
   }
-*/
+  </script>';
+
+  echo '<script> 
+  function mostrarInventario(){
+    alert("inventario");
+  }
+  </script>';
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -54,7 +85,7 @@
 
   <div class="container-fluid">
     <div class="row">
-      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3 sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
@@ -64,25 +95,25 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="reservar_data.php">
+              <a class="nav-link" href="reservar_sala.php">
                 <span data-feather="edit-3" class="align-text-bottom"></span>
                 Reservar
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="dashboard_pedagogico.php" onclick="verReservas()">
+              <a class="nav-link" aria-current="page" href="#" onclick="verReservas()">
                 <span data-feather="calendar" class="align-text-bottom"></span>
                 Ver Reservas
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="dashboard_professor.php">
+              <a class="nav-link" aria-current="page" href="#" onclick="listarUsuarios()">
                 <span data-feather="user" class="align-text-bottom"></span>
                 Usuários
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" aria-current="page" href="#" onclick="mostrarInventario()">
                 <span data-feather="edit" class="align-text-bottom"></span>
                 Alterar inventário
               </a>
