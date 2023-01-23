@@ -1,4 +1,5 @@
 <?php
+    header("Location:index.php");
     $servername="localhost";
     $database="reservassenac";
     $username="root";
@@ -8,3 +9,4 @@
     if(!$con){              
         mysqli_connect_error();
     }
+?>
