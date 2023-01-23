@@ -12,15 +12,15 @@
   <link href="https://apsweb.senacrs.com.br/resource/extjs/css/ext-overrides.css?380060" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/index.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="js/checkout.css" rel="stylesheet">
 </head>
 
-<body class="bg-light"><br><br><br>
-  <div class="container" style="padding-left: 20%; padding-top: 8%;">
+<body class="bg-light" style="background: #e5e5e5;"><br><br><br>
+  <div class="container" style=" background: white; max-width: 560px;">
     <main>
       <div class="py-2 text-center">
 
+      <div class="centralizar" style="padding-top: 50px; margin-left: 100%;">
       </div>
       <div class="col-md-7 col-lg-7">
         <form class="needs-validation" novalidate>
@@ -61,9 +61,10 @@
           <br>
           <hr class="my-4">
           <br>
-          <div class="col-md-3"></div>
+          <div class="col-md-7"></div>
           <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-warning btn-form" value="Proximo"></div>
           <div class="col-md-3"></div>
+          </div>
           </form>
         </div>
       </div>
