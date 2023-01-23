@@ -1,5 +1,6 @@
 <?php
 session_start();
+//require 'vendor/autoload.php';
 
 // $servername = "localhost";
 // $database = "reservassenac";
@@ -12,6 +13,31 @@ session_start();
 //     mysqli_connect_error();
 // }
 
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
+// use PHPMailer\PHPMailer\SMTP;
+// $mail= new PHPMailer(true);
+// $mensagem = "";
+//     try {
+//         $mail->isSMTP();
+//         $mail->Host       = 'smtp.gmail.com';
+//         $mail->SMTPAuth   = true;
+//         $mail->Username   = '';
+//         $mail->Password   = '';
+//         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+//         $mail->Port       = 465;       
+//         $mail->setFrom('', '');
+//         $mail->addAddress('', '');
+//         $mail->addReplyTo('');
+//         $mail->isHTML(true); 
+//         $mail->Subject = '';
+//         $mail->Body    = $mensagem;
+//         $mail->AltBody = $mensagem;
+//         $mail->send();
+//         header("");
+//     } catch (Exception $e) {
+//         header("");
+//     }
 ?>
 <html>
 
@@ -68,7 +94,7 @@ session_start();
             </div>
             <div class="row" style="margin-top: 30px; margin-left: 80px;">
                 <div class="col-md-2"></div>
-                <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Proximo"></div>
+                <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Recuperar"></div>
                 <div class="col-md-2"></div>
             </div>
         </div>
