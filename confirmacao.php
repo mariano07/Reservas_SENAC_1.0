@@ -51,7 +51,7 @@
           <hr>
           <ul class="d-grid gap-4 my-5 list-unstyled">
             <li class="d-flex gap-4">
-              <svg class="bi text-muted flex-shrink-0" width="48" height="48">
+              <svg class="bi text-primary flex-shrink-0" width="48" height="48">
                 <use xlink:href="#exclamation-triangle-fill" />
               </svg>
               <div>
@@ -60,7 +60,7 @@
               </div>
             </li>
             <li class="d-flex gap-4">
-              <svg class="bi text-muted flex-shrink-0" width="48" height="48">
+              <svg class="bi text-primary flex-shrink-0" width="48" height="48">
                 <use xlink:href="#grid-fill" />
               </svg>
               <div>
@@ -69,7 +69,7 @@
               </div>
             </li>
             <li class="d-flex gap-4">
-              <svg class="bi text-warning flex-shrink-0" width="48" height="48">
+              <svg class="bi text-primary flex-shrink-0" width="48" height="48">
                 <use xlink:href="#bookmark-star" />
               </svg>
               <div>
