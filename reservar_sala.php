@@ -1,6 +1,11 @@
 <?php
 session_start();
 $controle = 1;
+require_once('conexao.php');
+if(isset($_POST['submit'])){
+	
+}
+
 ?>
 <!doctype html>
 <html lang="pt-br">
