@@ -12,15 +12,18 @@ if (isset($_POST['btn_entrar'])) {
     if ($aux_query['permissao']==='ADM') {
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
+        $_SESSION['permissao'] = $aux_query['permissao'];
         header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_admin.php"); //redireciona adm
 
     }else if($aux_query['permissao']==='PED'){
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
+        $_SESSION['permissao'] = $aux_query['permissao'];
         header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_pedagogico.php"); //redireciona pedagogico
     }else if($aux_query['permissao']==='USE'){
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
+        $_SESSION['permissao'] = $aux_query['permissao'];
         header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_professor.php"); //redireciona professor
     }else{
         header("Location: http://localhost/Reservas_SENAC_1.0/index.php?passwd=error");

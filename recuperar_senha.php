@@ -2,11 +2,6 @@
 session_start();
 //require 'vendor/autoload.php';
 
-// $servername = "localhost";
-// $database = "reservassenac";
-// $username = "root";
-// $password = "root";
-
 // $con = mysqli_connect($servername, $username, $password, $database);
 
 // if (!$con) {
