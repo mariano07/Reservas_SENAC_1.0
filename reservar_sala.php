@@ -1,6 +1,11 @@
 <?php
 session_start();
 $controle = 1;
+require_once('conexao.php');
+if(isset($_POST['submit'])){
+	
+}
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -20,6 +25,9 @@ $controle = 1;
 <style>
 	body{
 		background-color: rgb(224, 224, 224);
+	}
+	.nav-link{
+		font-size: medium;
 	}
 </style>
 
