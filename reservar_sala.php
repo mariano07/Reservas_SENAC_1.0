@@ -17,15 +17,44 @@ $controle = 1;
 	<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/dashboard.css" rel="stylesheet">
 </head>
+<style>
+	body{
+		background-color: rgb(224, 224, 224);
+	}
+</style>
 
 <body>
-	<div class="align-center container">
-		<div class="row">
-			<main>
-				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap pt-3 pb-2 mb-3 border-bottom">
-					<a href="#"><img src="images/arrow-left-circle-fill.svg" width="50" height="50"></a>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-primary bg-light static-top">
+			<div class="container">
+				<a class="navbar" href="#">
+					<img src="images/logo-senac.png" alt="Logo Senac" height="45" width="100%">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<strong><a class="nav-link active text-primary" aria-current="page" href="#">Reservar Sala</a></strong>
+						</li>
+						<li class="nav-item">
+							<strong><a class="nav-link text-primary" href="#">Painel de Controle</a></strong>
+						</li>
+						<li class="nav-item">
+							<strong><a class="nav-link text-primary" href="#">Sair</a></strong>
+						</li>
+					</ul>
 				</div>
+			</div>
+		</nav>
+	</header>
 
+	<div class="align-center" style="margin: 1rem;">
+		<div class="row">
+			<main style="padding-top:20px; ">
 				<?php
 				if (isset($_POST['andar'])) {
 					switch ($_POST['andar']) {
@@ -35,24 +64,21 @@ $controle = 1;
 								<table class="table table-striped table-sm">
 									<thead>
 										<tr>
-											<th scope="col">SALAS</th>
-											<th scope="col" id="">Computadores</th>
-											<th scope="col" id="">Computador Professor</th>
-											<th scope="col" id="">Monitores</th>
-											<th scope="col" id="">Mouses</th>
-											<th scope="col" id="">Teclados</th>
-											<th scope="col" id="">Mesas</th>
-											<th scope="col" id="">Cadeiras</th>
-											<th scope="col" id="">Televisões</th>
-											<th scope="col" id="">Ar Condicionado</th>
-											<th scope="col" id="">Controle Ar</th>
-											<th scope="col" id="">Data Show</th>
-											<th scope="col" id="">Apagador</th>
-											<th scope="col" id="">Canetão Azul</th>
-											<th scope="col" id="">Canetão Vermelho</th>
-											<th scope="col" id="">Canetão Preto</th>
-											<th scope="col" id="">Webcam</th>
-											<th scope="col" id="">Reserva</th>
+											<th style="font-size: 13px;" scope="col">SALAS</th>
+											<th style="font-size: 13px;" scope="col" id="">Computadores</th>
+											<th style="font-size: 13px;" scope="col" id="">Computador Professor</th>
+											<th style="font-size: 13px;" scope="col" id="">Monitores</th>
+											<th style="font-size: 13px;" scope="col" id="">Mouses</th>
+											<th style="font-size: 13px;" scope="col" id="">Teclados</th>
+											<th style="font-size: 13px;" scope="col" id="">Mesas</th>
+											<th style="font-size: 13px;" scope="col" id="">Cadeiras</th>
+											<th style="font-size: 13px;" scope="col" id="">Televisões</th>
+											<th style="font-size: 13px;" scope="col" id="">Ar Condicionado</th>
+											<th style="font-size: 13px;" scope="col" id="">Controle Ar</th>
+											<th style="font-size: 13px;" scope="col" id="">Data Show</th>
+											<th style="font-size: 13px;" scope="col" id="">Apagador</th>
+											<th style="font-size: 13px;" scope="col" id="">Canetão</th>
+											<th style="font-size: 13px;" scope="col" id="">Webcam</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -109,11 +135,8 @@ $controle = 1;
 											<th scope="col" id="">Controle Ar</th>
 											<th scope="col" id="">Data Show</th>
 											<th scope="col" id="">Apagador</th>
-											<th scope="col" id="">Canetão Azul</th>
-											<th scope="col" id="">Canetão Vermelho</th>
-											<th scope="col" id="">Canetão Preto</th>
+											<th scope="col" id="">Canetão</th>
 											<th scope="col" id="">Webcam</th>
-											<th scope="col" id="">Reserva</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -169,11 +192,8 @@ $controle = 1;
 											<th scope="col" id="">Controle Ar</th>
 											<th scope="col" id="">Data Show</th>
 											<th scope="col" id="">Apagador</th>
-											<th scope="col" id="">Canetão Azul</th>
-											<th scope="col" id="">Canetão Vermelho</th>
-											<th scope="col" id="">Canetão Preto</th>
+											<th scope="col" id="">Canetão</th>
 											<th scope="col" id="">Webcam</th>
-											<th scope="col" id="">Reserva</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -229,11 +249,8 @@ $controle = 1;
 											<th scope="col" id="">Controle Ar</th>
 											<th scope="col" id="">Data Show</th>
 											<th scope="col" id="">Apagador</th>
-											<th scope="col" id="">Canetão Azul</th>
-											<th scope="col" id="">Canetão Vermelho</th>
-											<th scope="col" id="">Canetão Preto</th>
+											<th scope="col" id="">Canetão</th>
 											<th scope="col" id="">Webcam</th>
-											<th scope="col" id="">Reserva</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -289,11 +306,8 @@ $controle = 1;
 											<th scope="col" id="">Controle Ar</th>
 											<th scope="col" id="">Data Show</th>
 											<th scope="col" id="">Apagador</th>
-											<th scope="col" id="">Canetão Azul</th>
-											<th scope="col" id="">Canetão Vermelho</th>
-											<th scope="col" id="">Canetão Preto</th>
+											<th scope="col" id="">Canetão</th>
 											<th scope="col" id="">Webcam</th>
-											<th scope="col" id="">Reserva</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -349,11 +363,8 @@ $controle = 1;
 											<th scope="col" id="">Controle Ar</th>
 											<th scope="col" id="">Data Show</th>
 											<th scope="col" id="">Apagador</th>
-											<th scope="col" id="">Canetão Azul</th>
-											<th scope="col" id="">Canetão Vermelho</th>
-											<th scope="col" id="">Canetão Preto</th>
+											<th scope="col" id="">Canetão</th>
 											<th scope="col" id="">Webcam</th>
-											<th scope="col" id="">Reserva</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -413,9 +424,7 @@ $controle = 1;
 									<th scope="col" id="">Controle Ar</th>
 									<th scope="col" id="">Data Show</th>
 									<th scope="col" id="">Apagador</th>
-									<th scope="col" id="">Canetão Azul</th>
-									<th scope="col" id="">Canetão Vermelho</th>
-									<th scope="col" id="">Canetão Preto</th>
+									<th scope="col" id="">Canetão</th>
 									<th scope="col" id="">Webcam</th>
 									<th scope="col" id="">Reserva</th>
 								</tr>
@@ -460,12 +469,14 @@ $controle = 1;
 				?>
 				<center>
 					<form method="post" action="#">
+						<a href="#" class="btn btn-primary">Voltar</a>
 						<input type="submit" class="btn btn-primary" name="andar" value="1">
 						<input type="submit" class="btn btn-primary" name="andar" value="2">
 						<input type="submit" class="btn btn-primary" name="andar" value="3">
 						<input type="submit" class="btn btn-primary" name="andar" value="4">
 						<input type="submit" class="btn btn-primary" name="andar" value="5">
 					</form>
+					
 				</center>
 			</main>
 		</div>

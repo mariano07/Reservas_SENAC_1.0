@@ -1,10 +1,6 @@
 <?php
 session_start();
-require('conexao.php');
-
-if(!$con){              
-    mysqli_connect_error();
-}
+require_once('conexao.php');
 
 if (isset($_POST['btn_entrar'])) {
     $matricula = $_POST['matricula'];
@@ -87,13 +83,13 @@ if (isset($_POST['btn_entrar'])) {
                             <div class="col-md-2"></div>
                         </div>
                         <div style="padding-top: 15px; color: red;" align="center">
-                        <?php
-                            if(!empty($_GET['user']) || !empty($_GET['passwd'])){      
+                        <!-- <?php
+                            //if(!empty($_GET['user']) || !empty($_GET['passwd'])){      
                         ?>
                             Usuário ou Senha Inválidos
                         <?php
-                            }
-                        ?>
+                          //  }
+                        ?> -->
                         </div>
                         <div class="row" id="acoes-login">
                             <div class="col-md-7"></div>
