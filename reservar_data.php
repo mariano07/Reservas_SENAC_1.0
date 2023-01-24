@@ -1,10 +1,12 @@
 <?php
 session_start();
+require_once('conexao.php');
+if(isset($_POST['proximo'])){
+	$data = $_POST['data'];
+	$hora= $_POST['hora'];
+	header("Location: http://localhost/Reservas_SENAC_1.0/confirmacao.php");
+}
 
-// $servername="localhost";
-// $database="reservassenac";
-// $username="root";
-// $password="root";
 
 // $con = mysqli_connect($servername, $username, $password, $database);
 
@@ -73,7 +75,7 @@ session_start();
 
 							<div class="row" style="margin-left: 80px; margin-top: 75px;">
 								<div class="col-md-2"></div>
-								<div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Proximo"></div>
+								<div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="proximo" name="proximo"></div>
 								<div class="col-md-2"></div>
 							</div>
 						</form>

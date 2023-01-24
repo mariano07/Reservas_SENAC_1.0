@@ -3,7 +3,8 @@ session_start();
 $controle = 1;
 require_once('conexao.php');
 if(isset($_POST['submit'])){
-	
+	$sala = $_POST['sala'];
+	header("Location: http://localhost/Reservas_SENAC_1.0/reservar_data.php");
 }
 
 ?>
