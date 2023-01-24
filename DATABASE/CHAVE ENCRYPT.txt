@@ -1,0 +1,21 @@
+@R353rV453n4C#
+
+matricula arthur
+691700279
+
+matricula cris
+692100154
+
+matricula vic
+182110028
+
+matricula anthony
+692000034
+
+matricula maciel
+691920003
+
+matricula paulo
+691500905
+
+AES_ENCRYPT("[dado inserido]","@R353rV453n4C#")
