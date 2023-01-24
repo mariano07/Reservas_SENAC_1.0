@@ -1,38 +1,10 @@
 <?php
 session_start();
-//require 'vendor/autoload.php';
-
 // $con = mysqli_connect($servername, $username, $password, $database);
 
 // if (!$con) {
 //     mysqli_connect_error();
 // }
-
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\Exception;
-// use PHPMailer\PHPMailer\SMTP;
-// $mail= new PHPMailer(true);
-// $mensagem = "";
-//     try {
-//         $mail->isSMTP();
-//         $mail->Host       = 'smtp.gmail.com';
-//         $mail->SMTPAuth   = true;
-//         $mail->Username   = '';
-//         $mail->Password   = '';
-//         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-//         $mail->Port       = 465;       
-//         $mail->setFrom('', '');
-//         $mail->addAddress('', '');
-//         $mail->addReplyTo('');
-//         $mail->isHTML(true); 
-//         $mail->Subject = '';
-//         $mail->Body    = $mensagem;
-//         $mail->AltBody = $mensagem;
-//         $mail->send();
-//         header("");
-//     } catch (Exception $e) {
-//         header("");
-//     }
 ?>
 <html>
 
