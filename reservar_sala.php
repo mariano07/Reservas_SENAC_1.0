@@ -26,6 +26,9 @@ if(isset($_POST['submit'])){
 	body{
 		background-color: rgb(224, 224, 224);
 	}
+	.nav-link{
+		font-size: medium;
+	}
 </style>
 
 <body>
