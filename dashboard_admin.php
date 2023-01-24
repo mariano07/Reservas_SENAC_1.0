@@ -4,13 +4,13 @@ require_once('conexao.php');
 $id = 'arthur';
 
 if (isset($_POST['btn_pesquisar'])) {
-  // $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+  // $sql = $con->query("SELECT * FROM reservas WHERE ");
   // $aux_query = $sql->fetch_assoc();
 
   // while ($aux_query = $sql->fetch_assoc()){
   //   echo "<script>
 
-  //   function minhasReservas(){
+  //   function verReservas(){
 
   //   document.getElementById('professor').textContent =" . $aux_query['professor'];
   //   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
@@ -22,36 +22,67 @@ if (isset($_POST['btn_pesquisar'])) {
   //   </script>";
   // }
 }
-  // $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
-  // $aux_query = $sql->fetch_assoc();
+$sql = $con->query("");
+$aux_query = $sql->fetch_assoc();
 
-  // while ($aux_query = $sql->fetch_assoc()){
-  //   echo "<script>
+while ($aux_query = $sql->fetch_assoc()) {
+  echo "<script>
 
-  //   function minhasReservas(){
+  function minhasReservas(){
 
-  //   document.getElementById('professor').textContent =" . $aux_query['professor'];
-  //   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
-  //   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
-  //   echo "document.getElementById('data').textContent =" .$aux_query['data'];
-  //   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+  document.getElementById('professor').textContent =" . $aux_query['professor'];
+  echo "document.getElementById('andar').textContent =" . $aux_query['andar'];
+  echo "document.getElementById('sala').textContent =" . $aux_query['sala'];
+  echo "document.getElementById('data').textContent =" . $aux_query['data'];
+  echo "document.getElementById('hora').textContent =" . $aux_query['horario'];
 
-  //   "}
-  //   </script>";
-  // }
+  "}
+  </script>";
+}
 
-  echo '<script> 
+echo '<script> 
   function listarUsuarios(){
     alert("listar usuarios");
   }
   </script>';
 
-  echo '<script> 
+echo '<script> 
   function mostrarInventario(){
     alert("inventario");
   }
   </script>';
 
+echo '<script> 
+  function recuperarSenha(){
+    alert("Um email foi enviado com o link para recuperação");
+  }
+  </script>';
+
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
+// use PHPMailer\PHPMailer\SMTP;
+// $mail= new PHPMailer(true);
+// $mensagem = "";
+//     try {
+//         $mail->isSMTP();
+//         $mail->Host       = 'smtp.gmail.com';
+//         $mail->SMTPAuth   = true;
+//         $mail->Username   = '';
+//         $mail->Password   = '';
+//         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+//         $mail->Port       = 465;       
+//         $mail->setFrom('', '');
+//         $mail->addAddress('', '');
+//         $mail->addReplyTo('');
+//         $mail->isHTML(true); 
+//         $mail->Subject = '';
+//         $mail->Body    = $mensagem;
+//         $mail->AltBody = $mensagem;
+//         $mail->send();
+//         header("");
+//     } catch (Exception $e) {
+//         header("");
+//     }
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -85,9 +116,15 @@ if (isset($_POST['btn_pesquisar'])) {
 
   <div class="container-fluid">
     <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3 sidebar-sticky">
           <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" onclick="verReservas()">
+                <span data-feather="calendar" class="align-text-bottom"></span>
+                Todas Reservas
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="minhasReservas()">
                 <span data-feather="bookmark" class="align-text-bottom"></span>
@@ -98,12 +135,6 @@ if (isset($_POST['btn_pesquisar'])) {
               <a class="nav-link" href="reservar_sala.php">
                 <span data-feather="edit-3" class="align-text-bottom"></span>
                 Reservar
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#" onclick="verReservas()">
-                <span data-feather="calendar" class="align-text-bottom"></span>
-                Ver Reservas
               </a>
             </li>
             <li class="nav-item">
@@ -119,7 +150,7 @@ if (isset($_POST['btn_pesquisar'])) {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="recuperar_senha.php">
+              <a class="nav-link" href="#" onclick="recuperarSenha()">
                 <span data-feather="lock" class="align-text-bottom"></span>
                 Mudar Senha
               </a>

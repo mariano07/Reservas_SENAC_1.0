@@ -89,6 +89,12 @@ if (isset($_POST['btn_pesquisar'])) {
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3 sidebar-sticky">
           <ul class="nav flex-column">
+          <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" onclick="verReservas()">
+                <span data-feather="calendar" class="align-text-bottom"></span>
+                Todas Reservas
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="minhasReservas()">
                 <span data-feather="bookmark" class="align-text-bottom"></span>
@@ -99,12 +105,6 @@ if (isset($_POST['btn_pesquisar'])) {
               <a class="nav-link" href="reservar_sala.php">
                 <span data-feather="edit-3" class="align-text-bottom"></span>
                 Reservar
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#" onclick="verReservas()">
-                <span data-feather="calendar" class="align-text-bottom"></span>
-                Ver Reservas
               </a>
             </li>
             <li class="nav-item">
