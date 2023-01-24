@@ -1,22 +1,3 @@
-<?php
-// session_start();
-// require_once('conexao.php');
-
-// if (isset($_POST['cadastrar'])) {
-//   $nome = $_POST['nome'];
-//   $telefone = $_POST['telefone'];
-//   $email = $_POST['email'];
-//   $matricula = $_POST['matricula'];
-//   $senha = $_POST['senha'];
-//   $curso = $_POST['curso'];
-//   try {
-//    $con->query("INSERT INTO `usuarios`(`nome`, `telefone`, `email`, `maticula`, `senha`, `cargo`, `permissao`) VALUES ('$nome','$telefone','$email','$matricula','$senha','Professor','USE')");
-
-//   } catch (Exception $e) {
-//     header("Location: http://localhost/Reservas_SENAC_1.0/index.php?user=error"); //atualiza a pagina com erro
-//   }
-// }
-?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -39,51 +20,51 @@
     <main>
       <div class="py-2 text-center">
 
-        <div class="centralizar" style="padding-top: 50px; margin-left: 100%;">
-        </div>
-        <div class="col-md-7 col-lg-7">
-          <form action="#" method="post">
-        </div>
-
-        <div class="row g-3">
-            <div class="col-sm-6">
-              <label for="firstName" class="form-label">Nome</label>
-              <input type="text" class="form-control" name="nome" placeholder="Nome" value="" required>
+      <div class="centralizar" style="padding-top: 50px; margin-left: 100%;">
+      </div>
+      <div class="col-md-7 col-lg-7">
+        <form class="needs-validation" novalidate>
+      </div>
+      
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="firstName" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="firstName" placeholder="Nome" value="" required>
+          <div class="invalid-feedback">
+          </div>
+          <br>
+          <div class="col-12">
+            <label for="username" class="form-label">Mátricula</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text"></span>
+              <input type="text" class="form-control" id="username" placeholder="matricula" required>
               <div class="invalid-feedback">
-              </div>
-              <br>
-              <div class="col-12">
-                <label for="username" class="form-label">Mátricula</label>
-                <div class="input-group has-validation">
-                  <span class="input-group-text"></span>
-                  <input type="text" class="form-control" name="matricula" placeholder="Mátricula" required>
-                  <div class="invalid-feedback">
 
-                  </div>
-                </div>
               </div>
-              <br>
-              <div class="col-12">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="email@exemplo.com">
-                <div class="invalid-feedback">
-
-                </div>
-              </div>
-              <br>
-              <div class="col-12">
-                <label for="address" class="form-label">Curso</label>
-                <input type="text" class="form-control" name="curso" placeholder="Inglês" required>
-                <div class="invalid-feedback">
-                </div>
-              </div>
-              <br>
-              <hr class="my-4">
-              <br>
-              <div class="col-md-7"></div>
-              <div class="col-md-5 no-gutters"><input type="submit" name="cadastrar" class="btn btn-warning btn-form" value="Cadastrar"></div>
-              <div class="col-md-3"></div>
             </div>
+          </div>
+          <br>
+          <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="seu@example.com">
+            <div class="invalid-feedback">
+
+            </div>
+          </div>
+          <br>
+          <div class="col-12">
+            <label for="address" class="form-label">Curso</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <br>
+          <hr class="my-4">
+          <br>
+          <div class="col-md-7"></div>
+          <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-warning btn-form" value="Proximo"></div>
+          <div class="col-md-3"></div>
+          </div>
           </form>
         </div>
       </div>
@@ -92,6 +73,7 @@
     <br>
     <br>
   </div>
+  <script src="js/checkout.js"></script>
 </body>
 
 </html>

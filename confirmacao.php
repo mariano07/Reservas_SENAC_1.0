@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  require_once('conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -97,7 +101,7 @@
 
         <div class="row" style="margin-top: 30px; margin-left: 5px;">
         <div class="col-md-1"></div>
-        <div class="col-md-5 no-gutters"><a href="reservar_data.php"><button type="button" class="btn btn-primary btn-form" data-bs-dismiss="modal">Cancelar</button></a>
+        <div class="col-md-5 no-gutters"><a href="reservar_sala.php"><button type="button" class="btn btn-primary btn-form" data-bs-dismiss="modal">Cancelar</button></a>
         <div class="col-md-2"></div>
         </div>
       </div>
