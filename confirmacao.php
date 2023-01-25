@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  require_once('conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -64,7 +68,7 @@
                 <use xlink:href="#grid-fill" />
               </svg>
               <div>
-                <h5 class="mb-0">Data</h5>
+                <h5 class="mb-0" value=<?php echo $_POST['data']?>>Data</h5>
                 " "
               </div>
             </li>
@@ -73,7 +77,7 @@
                 <use xlink:href="#bookmark-star" />
               </svg>
               <div>
-                <h5 class="mb-0">Hora</h5>
+                <h5 class="mb-0" value=<?php echo $_POST['hora']?>>Hora </h5>
                 " "
               </div>
             </li>
@@ -97,7 +101,7 @@
 
         <div class="row" style="margin-top: 30px; margin-left: 25px;">
         <div class="col-md-1"></div>
-        <div class="col-md-5 no-gutters"><a href="reservar_data.php"><button type="button" class="btn btn-primary btn-form" data-bs-dismiss="modal">Cancelar</button></a>
+        <div class="col-md-5 no-gutters"><a href="reservar_sala.php"><button type="button" class="btn btn-primary btn-form" data-bs-dismiss="modal">Cancelar</button></a>
         <div class="col-md-2"></div>
         </div>
       </div>

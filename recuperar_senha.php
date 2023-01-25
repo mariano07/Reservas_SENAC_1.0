@@ -1,17 +1,10 @@
 <?php
 session_start();
-
-// $servername = "localhost";
-// $database = "reservassenac";
-// $username = "root";
-// $password = "root";
-
 // $con = mysqli_connect($servername, $username, $password, $database);
 
 // if (!$con) {
 //     mysqli_connect_error();
 // }
-
 ?>
 <html>
 
@@ -68,7 +61,7 @@ session_start();
             </div>
             <div class="row" style="margin-top: 30px; margin-left: 80px;">
                 <div class="col-md-2"></div>
-                <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Proximo"></div>
+                <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Recuperar"></div>
                 <div class="col-md-2"></div>
             </div>
         </div>

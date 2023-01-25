@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Jan-2023 às 01:30
+-- Tempo de geração: 24-Jan-2023 às 01:56
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -40,16 +40,10 @@ CREATE TABLE `agendamentos` (
 -- Acionadores `agendamentos`
 --
 DELIMITER $$
-CREATE TRIGGER `verifica_disponibilidade` BEFORE INSERT ON `agendamentos` FOR EACH ROW IF(NEW.id_sala NOT IN (SELECT * FROM agendamentos)) THEN
-	INSERT INTO `agendamentos`(id_sala,id_usuario,dia,inicio,fim)VALUES(NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
-    
-ELSEIF(NEW.dia NOT IN (SELECT * FROM agendamentos WHERE id_sala = NEW.id_sala)) THEN
-	INSERT INTO `agendamentos`(id_sala,id_usuario,dia,inicio,fim)VALUES(NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
-    
-ELSEIF(NEW.id_sala NOT IN (SELECT id_sala FROM agendamentos WHERE inicio <= NEW.inicio AND fim >= NEW.inicio AND id_sala = NEW.id_sala AND dia = NEW.dia) AND NEW.id_sala NOT IN (SELECT id_sala FROM agendamentos WHERE inicio <= NEW.fim AND fim >= NEW.fim AND id_sala = NEW.id_sala AND dia = NEW.dia)) THEN
-	INSERT INTO `agendamentos`(id_sala,id_usuario,dia,inicio,fim)VALUES(NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
+CREATE TRIGGER `verifica_disponibilidade` AFTER INSERT ON `agendamentos` FOR EACH ROW IF (NEW.id_sala NOT IN (SELECT id_sala FROM reservados WHERE id_sala = NEW.id_sala AND dia = NEW.dia AND inicio <= NEW.inicio AND fim >= NEW.inicio) AND NEW.id_sala NOT IN (SELECT id_sala FROM reservados WHERE id_sala = NEW.id_sala AND dia = NEW.dia AND inicio <= NEW.fim AND fim >= NEW.fim)) THEN
+    INSERT INTO reservados (id_sala,id_usuario,dia,inicio,fim) VALUES (NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
 ELSE
-	INSERT INTO `espera`(id_sala,id_usuario,dia,inicio,fim) VALUES (NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
+	INSERT INTO espera (id_sala,id_usuario,dia,inicio,fim) VALUES (NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
 END IF
 $$
 DELIMITER ;
@@ -103,6 +97,34 @@ CREATE TABLE `inventario` (
 INSERT INTO `inventario` (`id`, `id_sala`, `computador`, `computador_prof`, `monitor`, `mouse`, `teclado`, `mesa`, `cadeira`, `televisao`, `ar_condicionado`, `controle_ar`, `data_show`, `apagador`, `canetao_azul`, `canetao_vermelho`, `canetao_preto`, `webcam`) VALUES
 (1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `reservados`
+--
+
+CREATE TABLE `reservados` (
+  `id` int(11) NOT NULL,
+  `id_sala` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `dia` date NOT NULL,
+  `inicio` time NOT NULL,
+  `fim` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Acionadores `reservados`
+--
+DELIMITER $$
+CREATE TRIGGER `andamento_espera` AFTER DELETE ON `reservados` FOR EACH ROW BEGIN
+IF (EXISTS(SELECT FIRST id_sala FROM espera WHERE id_sala = OLD.id_sala ORDER BY id ASC)) THEN
+	SET @id_usuario = (SELECT FIRST id_usuario FROM espera WHERE id_sala = OLD.id_sala ORDER BY id ASC);
+    INSERT INTO reservados (id_sala,id_usuario,dia,inicio,fim) VALUES (OLD.id_sala,@id_usuario,OLD.dia,OLD.inicio,OLD.fim);
+END IF;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -214,6 +236,14 @@ ALTER TABLE `inventario`
   ADD KEY `id_sala` (`id_sala`);
 
 --
+-- Índices para tabela `reservados`
+--
+ALTER TABLE `reservados`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_sala` (`id_sala`),
+  ADD KEY `id_usuario` (`id_usuario`);
+
+--
 -- Índices para tabela `salas`
 --
 ALTER TABLE `salas`
@@ -248,6 +278,12 @@ ALTER TABLE `espera`
 --
 ALTER TABLE `inventario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `reservados`
+--
+ALTER TABLE `reservados`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `salas`
@@ -285,6 +321,13 @@ ALTER TABLE `espera`
 ALTER TABLE `inventario`
   ADD CONSTRAINT `inventario_ibfk_1` FOREIGN KEY (`id_sala`) REFERENCES `salas` (`id`),
   ADD CONSTRAINT `inventario_ibfk_2` FOREIGN KEY (`id_sala`) REFERENCES `salas` (`id`);
+
+--
+-- Limitadores para a tabela `reservados`
+--
+ALTER TABLE `reservados`
+  ADD CONSTRAINT `reservados_ibfk_1` FOREIGN KEY (`id_sala`) REFERENCES `salas` (`id`),
+  ADD CONSTRAINT `reservados_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
