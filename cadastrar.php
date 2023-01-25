@@ -59,7 +59,7 @@
           <br>
           <div class="col-12">
             <label for="email" class="form-label">Telefone</label>
-            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="tel" maxlength="15" class="form-control" name="telefone" placeholder="Número de contato" required/>
+            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="tel" maxlength="15" class="form-control" name="(xx) 9xxxx-xxxx" placeholder="Número de contato" required/>
 
           </div>
       </td>
