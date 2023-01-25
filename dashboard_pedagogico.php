@@ -78,6 +78,7 @@ if (isset($_POST['btn_pesquisar'])) {
       <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procurar professor" aria-label="Search">
       <div class="navbar-nav">
         <div class="nav-item text-nowrap">
+          <input type="hidden" name="pesquisa" id="pesquisa" value="depois eu penso nisso">
           <button type="submit" name="btn_pesquisar" class="btn btn-dark" onclick="Pesquisar()">Pesquisar</button>
         </div>
       </div>

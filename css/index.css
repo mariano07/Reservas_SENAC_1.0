@@ -85,7 +85,7 @@ h3 {
 
 .btn-form {
   border-radius: 0;
-  width: 205px;
+  width: 180px;
   height: 62px;
   font-size: 22px;
   border: none;
@@ -203,4 +203,16 @@ td.x-date-mp-year a:hover {
 .ext-mb-text {
   color: #000;
   font-size: 12px;
+}
+
+.container{
+  width: 550px;
+  background: white;
+  padding-top: 20px;
+  box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  left: 50px;
+  border:solid 1px;
+  border-color:#bfbfbf;
 }
