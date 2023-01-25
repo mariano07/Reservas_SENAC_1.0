@@ -1,12 +1,5 @@
 <?php
 session_start();
-$controle = 1;
-require_once('conexao.php');
-if(($_POST['submit'])){
-	$sala = $_POST['sala'];
-	header("Location: http://localhost/Reservas_SENAC_1.0/reservar_data.php");
-}
-
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -171,8 +164,8 @@ if(($_POST['submit'])){
 												<td>sala</td>
 												<td>
 													<form action="reservar_data.php" method="post">
-														<input type="hidden" name="sala" value="'.$variavel.'">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+									
+														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -227,9 +220,9 @@ if(($_POST['submit'])){
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="#" method="post">
-														<input type="hidden" name="sala" value="'.$variavel.'">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+													<form action="reservar_data.php" method="post">
+				
+														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -284,9 +277,9 @@ if(($_POST['submit'])){
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="#" method="post">
-														<input type="hidden" name="sala" value="'.$variavel.'">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+													<form action="reservar_data.php" method="post">
+					
+														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -341,9 +334,8 @@ if(($_POST['submit'])){
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="#" method="post">
-														<input type="hidden" name="sala" value="'.$variavel.'">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+													<form action="reservar_data.php" method="post">
+														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -398,9 +390,8 @@ if(($_POST['submit'])){
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="#" method="post">
-														<input type="hidden" name="sala" value="'.$variavel.'">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+													<form action="reservar_data.php" method="post">
+														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
 											</tr>

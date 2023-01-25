@@ -1,19 +1,11 @@
 <?php
 session_start();
-require_once('conexao.php');
-if(($_POST['proximo'])){
-	$data = $_POST['data'];
-	$hora= $_POST['hora'];
-	header("Location: http://localhost/Reservas_SENAC_1.0/confirmacao.php");
-}
-
-
+$_SESSION['sala'] = $_POST['sala'];
 // $con = mysqli_connect($servername, $username, $password, $database);
 
 // if(!$con){              
 //     mysqli_connect_error();
 // }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -33,18 +25,19 @@ if(($_POST['proximo'])){
 </head>
 
 <body>
-
+	
 	<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container1">
 				<div class="row">
 					<div class="booking-form">
 						<div class="booking-bg"></div>
-						<form action="confirmacao.php" method="Post" >
+						
 							<input type="hidden" value=>
 							<div class="form-header" style="margin-left: 175px;">
 								<img src="images/senac_logo.png" style="width: 200px;">
 							</div>
+                            <form action="confirmacao.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group" style="margin-top: 40px;">
@@ -58,7 +51,6 @@ if(($_POST['proximo'])){
 										<input class="form-control" type="time" required name="hora" id="hora">
 									</div>
 								</div>
-
 							</div>
 
 							<div class="row" style="margin-left: 80px; margin-top: 75px;">
@@ -66,14 +58,12 @@ if(($_POST['proximo'])){
 								<div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="proximo" name="proximo"></div>
 								<div class="col-md-2"></div>
 							</div>
-						</form>
+                            </form>					
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</body>
-
 </body>
 
 </html>
