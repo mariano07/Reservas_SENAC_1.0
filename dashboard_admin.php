@@ -22,8 +22,8 @@ if (isset($_POST['btn_pesquisar'])) {
   //   </script>";
   // }
 }
-// SQL - SELECT salas.andar,salas.numero,reservados.dia,reservados.inicio,usuarios.nome FROM `reservados` INNER JOIN salas ON salas.id = reservados.id_sala INNER JOIN usuarios ON usuarios.id = reservados.id_usuario;
-// SQL - SELECT salas.andar,salas.numero,reservados.dia,reservados.inicio,usuarios.nome FROM `reservados` INNER JOIN salas ON salas.id = reservados.id_sala INNER JOIN usuarios ON usuarios.id = reservados.id_usuario WHERE salas.andar LIKE '$variavel' OR salas.numero LIKE '$variavel' OR usuarios.nome LIKE '$variavel';
+// SQL - SELECT salas.*,reservados.*,usuarios.* FROM `reservados` INNER JOIN salas ON salas.id = reservados.id_sala INNER JOIN usuarios ON usuarios.id = reservados.id_usuario;
+// SQL - SELECT salas.*,reservados.*,usuarios.* FROM `reservados` INNER JOIN salas ON salas.id = reservados.id_sala INNER JOIN usuarios ON usuarios.id = reservados.id_usuario WHERE salas.andar LIKE '$variavel' OR salas.numero LIKE '$variavel' OR usuarios.nome LIKE '$variavel';
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios;
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE nome LIKE '$variavel';
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE permissao = 'USE';
