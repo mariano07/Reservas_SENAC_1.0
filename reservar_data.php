@@ -7,7 +7,6 @@ if(($_POST['proximo'])){
 	header("Location: reservar_sala.php");
 }
 
-
 // $con = mysqli_connect($servername, $username, $password, $database);
 
 // if(!$con){              
@@ -33,7 +32,7 @@ if(($_POST['proximo'])){
 </head>
 
 <body>
-<form action="#" method="post">
+	
 	<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container1">
@@ -45,6 +44,7 @@ if(($_POST['proximo'])){
 							<div class="form-header" style="margin-left: 175px;">
 								<img src="images/senac_logo.png" style="width: 200px;">
 							</div>
+                            <form action="reservar_data.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group" style="margin-top: 40px;">
@@ -66,15 +66,12 @@ if(($_POST['proximo'])){
 								<div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="proximo" name="proximo"></div>
 								<div class="col-md-2"></div>
 							</div>
-						
+                            </form>					
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</form>
-</body>
-
 </body>
 
 </html>

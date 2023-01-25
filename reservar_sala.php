@@ -164,7 +164,7 @@ session_start();
 												<td>sala</td>
 												<td>
 													<form action="confirmacao.php" method="post">
-														<input type="hidden" name="sala" value="'.$variavel.'">
+														<input type="hidden" name="sala" value="">
 														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 													</form>
 												</td>
