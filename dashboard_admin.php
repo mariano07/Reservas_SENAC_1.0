@@ -22,23 +22,23 @@ if (isset($_POST['btn_pesquisar'])) {
   //   </script>";
   // }
 }
-$sql = $con->query("");
-$aux_query = $sql->fetch_assoc();
+// $sql = $con->query("");
+// $aux_query = $sql->fetch_assoc();
 
-while ($aux_query = $sql->fetch_assoc()) {
-  echo "<script>
+// while ($aux_query = $sql->fetch_assoc()) {
+//   echo "<script>
 
-  function minhasReservas(){
+//   function minhasReservas(){
 
-  document.getElementById('professor').textContent =" . $aux_query['professor'];
-  echo "document.getElementById('andar').textContent =" . $aux_query['andar'];
-  echo "document.getElementById('sala').textContent =" . $aux_query['sala'];
-  echo "document.getElementById('data').textContent =" . $aux_query['data'];
-  echo "document.getElementById('hora').textContent =" . $aux_query['horario'];
+//   document.getElementById('professor').textContent =" . $aux_query['professor'];
+//   echo "document.getElementById('andar').textContent =" . $aux_query['andar'];
+//   echo "document.getElementById('sala').textContent =" . $aux_query['sala'];
+//   echo "document.getElementById('data').textContent =" . $aux_query['data'];
+//   echo "document.getElementById('hora').textContent =" . $aux_query['horario'];
 
-  "}
-  </script>";
-}
+//   "}
+//   </script>";
+// }
 
 echo '<script> 
   function listarUsuarios(){
@@ -67,8 +67,8 @@ echo '<script>
 //         $mail->isSMTP();
 //         $mail->Host       = 'smtp.gmail.com';
 //         $mail->SMTPAuth   = true;
-//         $mail->Username   = '';
-//         $mail->Password   = '';
+//         $mail->Username   = 'senacreservas@gmail.com';
+//         $mail->Password   = 'zgynwxdeajftoxxh';
 //         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 //         $mail->Port       = 465;       
 //         $mail->setFrom('', '');
@@ -106,7 +106,7 @@ echo '<script>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procurar" aria-label="Search">
+    <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procure pelo nome de um professor,sala ou andar" aria-label="Search">
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
         <a class="nav-link px-3" href="#">Procurar</a>
