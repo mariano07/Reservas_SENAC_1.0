@@ -70,7 +70,7 @@
               </svg>
               <div>
                 <h5 class="mb-0">data</h5>
-                ""
+                "<?php echo $_SESSION['data']; ?>"
               </div>
             </li>
             <li class="d-flex gap-4">

@@ -4,7 +4,7 @@ require_once('conexao.php');
 if(($_POST['proximo'])){
 	$_SESSION['data'] = $_POST['data'];
 	$_SESSION['hora'] = $_POST['hora'];
-	header("Location: http://localhost/Reservas_SENAC_1.0/confirmacao.php");
+	header("Location: reservar_sala.php");
 }
 
 
@@ -33,7 +33,7 @@ if(($_POST['proximo'])){
 </head>
 
 <body>
-<form action="reservar_sala.php" method="post">
+<form action="#" method="post">
 	<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container1">
