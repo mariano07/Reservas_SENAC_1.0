@@ -7,10 +7,10 @@
   <title>Confirmação</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/confirmacao.css">
-  <link rel="stylesheet" href="css/index.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/modals/">
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -88,14 +88,14 @@
             </li>
           </ul>
           <hr>
-          <div class="row" style="margin-top: 30px; margin-left: 5px;">
+          <div class="row" style="margin-top: 30px; margin-left: 25px;">
                 <div class="col-md-1"></div>
                 <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Proximo"></div>
                 <div class="col-md-2"></div>
             </div>
         </form>
 
-        <div class="row" style="margin-top: 30px; margin-left: 5px;">
+        <div class="row" style="margin-top: 30px; margin-left: 25px;">
         <div class="col-md-1"></div>
         <div class="col-md-5 no-gutters"><a href="reservar_data.php"><button type="button" class="btn btn-primary btn-form" data-bs-dismiss="modal">Cancelar</button></a>
         <div class="col-md-2"></div>
