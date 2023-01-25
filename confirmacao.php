@@ -1,6 +1,9 @@
 <?php
   session_start();
   require_once('conexao.php');
+
+  $nomesala = $_POST['sala'];
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,8 +21,6 @@
 </head>
 
 <body>
-
-
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="bootstrap" viewBox="0 0 118 94">
@@ -68,8 +69,8 @@
                 <use xlink:href="#grid-fill" />
               </svg>
               <div>
-                <h5 class="mb-0" value=<?php echo $_POST['data']?>>Data</h5>
-                " "
+                <h5 class="mb-0">data</h5>
+                ""
               </div>
             </li>
             <li class="d-flex gap-4">
@@ -77,8 +78,8 @@
                 <use xlink:href="#bookmark-star" />
               </svg>
               <div>
-                <h5 class="mb-0" value=<?php echo $_POST['hora']?>>Hora </h5>
-                " "
+                <h5 class="mb-0">Hora</h5>
+                "<?php echo $_SESSION['hora']; ?>"
               </div>
             </li>
             <li class="d-flex gap-4">
@@ -87,7 +88,7 @@
               </svg>
               <div>
                 <h5 class="mb-0">Sala</h5>
-                " "
+                "<?php echo $nomesala;?>"
               </div>
             </li>
           </ul>

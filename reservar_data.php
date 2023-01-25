@@ -2,8 +2,8 @@
 session_start();
 require_once('conexao.php');
 if(($_POST['proximo'])){
-	$data = $_POST['data'];
-	$hora= $_POST['hora'];
+	$_SESSION['data'] = $_POST['data'];
+	$_SESSION['hora'] = $_POST['hora'];
 	header("Location: http://localhost/Reservas_SENAC_1.0/confirmacao.php");
 }
 
@@ -33,7 +33,7 @@ if(($_POST['proximo'])){
 </head>
 
 <body>
-
+<form action="reservar_sala.php" method="post">
 	<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container1">
@@ -66,12 +66,13 @@ if(($_POST['proximo'])){
 								<div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="proximo" name="proximo"></div>
 								<div class="col-md-2"></div>
 							</div>
-						</form>
+						
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</form>
 </body>
 
 </body>
