@@ -68,7 +68,7 @@
                 <use xlink:href="#grid-fill" />
               </svg>
               <div>
-                <h5 class="mb-0" value=<?php $_POST['data']?>>Data</h5>
+                <h5 class="mb-0" value=<?php echo $_POST['data']?>>Data</h5>
                 " "
               </div>
             </li>
@@ -77,7 +77,7 @@
                 <use xlink:href="#bookmark-star" />
               </svg>
               <div>
-                <h5 class="mb-0" value=<?php $_POST['hora']?>>Hora </h5>
+                <h5 class="mb-0" value=<?php echo $_POST['hora']?>>Hora </h5>
                 " "
               </div>
             </li>
