@@ -1,18 +1,10 @@
 <?php
 session_start();
-require_once('conexao.php');
-if(($_POST['proximo'])){
-	$_SESSION['data'] = $_POST['data'];
-	$_SESSION['hora'] = $_POST['hora'];
-	header("Location: reservar_sala.php");
-}
-
 // $con = mysqli_connect($servername, $username, $password, $database);
 
 // if(!$con){              
 //     mysqli_connect_error();
 // }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
