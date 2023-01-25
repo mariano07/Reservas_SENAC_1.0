@@ -1,6 +1,7 @@
 <?php
   session_start();
-  $nomesala = $_POST['sala'];
+ $data = $_POST['data'];
+ $hora = $_POST['hora'];
 
 ?>
 <!DOCTYPE html>
@@ -68,7 +69,7 @@
               </svg>
               <div>
                 <h5 class="mb-0">data</h5>
-                "<?php echo $_SESSION['data']; ?>"
+                "<?php echo $data; ?>"
               </div>
             </li>
             <li class="d-flex gap-4">
@@ -77,7 +78,7 @@
               </svg>
               <div>
                 <h5 class="mb-0">Hora</h5>
-                "<?php echo $_SESSION['hora']; ?>"
+                "<?php echo $hora; ?>"
               </div>
             </li>
             <li class="d-flex gap-4">
@@ -86,7 +87,7 @@
               </svg>
               <div>
                 <h5 class="mb-0">Sala</h5>
-                "<?php echo $nomesala;?>"
+                "<?php echo $_SESSION['sala'];?>"
               </div>
             </li>
           </ul>
