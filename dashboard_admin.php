@@ -8,12 +8,11 @@
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE id = '$variavel';
 session_start();
 require_once('conexao.php');
-$id = 'arthur';
 
 if (isset($_POST['btn_pesquisar'])) {
 }
 
-$sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+$sql = $con->query("SELECT salas.*,reservados.*,usuarios.* FROM `reservados` INNER JOIN salas ON salas.id = reservados.id_sala INNER JOIN usuarios ON usuarios.id = reservados.id_usuario;");
 $aux_query = $sql->fetch_assoc();
 
 while ($aux_query = $sql->fetch_assoc()){

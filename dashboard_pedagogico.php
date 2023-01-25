@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once('conexao.php');
-$id = 'arthur';
 
 if (isset($_POST['btn_pesquisar'])) {
 }
