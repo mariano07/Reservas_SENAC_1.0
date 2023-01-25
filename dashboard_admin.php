@@ -1,27 +1,35 @@
 <?php
+// SQL - SELECT salas.*,reservados.*,usuarios.* FROM `reservados` INNER JOIN salas ON salas.id = reservados.id_sala INNER JOIN usuarios ON usuarios.id = reservados.id_usuario;
+// SQL - SELECT salas.*,reservados.*,usuarios.* FROM `reservados` INNER JOIN salas ON salas.id = reservados.id_sala INNER JOIN usuarios ON usuarios.id = reservados.id_usuario WHERE salas.andar LIKE '$variavel' OR salas.numero LIKE '$variavel' OR usuarios.nome LIKE '$variavel';
+// SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios;
+// SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE nome LIKE '$variavel';
+// SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE permissao = 'USE';
+// SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE nome LIKE '$variavel' AND permissao = 'USE';
+// SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE id = '$variavel';
 session_start();
 require_once('conexao.php');
 $id = 'arthur';
 
 if (isset($_POST['btn_pesquisar'])) {
 }
-// $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
-// $aux_query = $sql->fetch_assoc();
 
-// while ($aux_query = $sql->fetch_assoc()){
-//   echo "<script>
+$sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+$aux_query = $sql->fetch_assoc();
 
-//   function minhasReservas(){
+while ($aux_query = $sql->fetch_assoc()){
+  echo "<script>
 
-//   document.getElementById('professor').textContent =" . $aux_query['professor'];
-//   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
-//   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
-//   echo "document.getElementById('data').textContent =" .$aux_query['data'];
-//   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+  function minhasReservas(){
 
-//   "}
-//   </script>";
-// }
+  document.getElementById('professor').textContent =" . $aux_query['professor'];
+  echo "document.getElementById('andar').textContent =". $aux_query['andar'];
+  echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
+  echo "document.getElementById('data').textContent =" .$aux_query['data'];
+  echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+
+  "}
+  </script>";
+}
 
 echo '<script> 
   function listarUsuarios(){
