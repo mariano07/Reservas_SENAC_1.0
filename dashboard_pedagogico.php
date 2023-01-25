@@ -4,16 +4,13 @@ require_once('conexao.php');
 
 if (isset($_POST['btn_pesquisar'])) {
 }
-echo "<script>";
+echo "<script>
+function minhasReservas(){";
 $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
 $aux_query = $sql->fetch_assoc();
 
 while ($aux_query = $sql->fetch_assoc()){
-  
-
-  echo "function minhasReservas(){
-
-  document.getElementById('professor').textContent =" . $aux_query['professor'];
+  echo "document.getElementById('professor').textContent =" . $aux_query['professor'];
   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
   echo "document.getElementById('data').textContent =" .$aux_query['data'];
