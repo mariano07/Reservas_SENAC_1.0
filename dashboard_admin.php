@@ -58,31 +58,7 @@ echo '<script>
   }
   </script>';
 
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\Exception;
-// use PHPMailer\PHPMailer\SMTP;
-// $mail= new PHPMailer(true);
-// $mensagem = "";
-//     try {
-//         $mail->isSMTP();
-//         $mail->Host       = 'smtp.gmail.com';
-//         $mail->SMTPAuth   = true;
-//         $mail->Username   = 'senacreservas@gmail.com';
-//         $mail->Password   = 'zgynwxdeajftoxxh';
-//         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-//         $mail->Port       = 465;       
-//         $mail->setFrom('', '');
-//         $mail->addAddress('', '');
-//         $mail->addReplyTo('');
-//         $mail->isHTML(true); 
-//         $mail->Subject = '';
-//         $mail->Body    = $mensagem;
-//         $mail->AltBody = $mensagem;
-//         $mail->send();
-//         header("");
-//     } catch (Exception $e) {
-//         header("");
-//     }
+
 ?>
 <!doctype html>
 <html lang="pt-br">

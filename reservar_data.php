@@ -49,7 +49,7 @@ if(($_POST['proximo'])){
 
 	<div id="booking" class="section">
 		<div class="section-center">
-			<div class="container">
+			<div class="container1">
 				<div class="row">
 					<div class="booking-form">
 						<div class="booking-bg"></div>
