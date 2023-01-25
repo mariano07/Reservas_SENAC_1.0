@@ -22,23 +22,24 @@ if (isset($_POST['btn_pesquisar'])) {
   //   </script>";
   // }
 }
-// $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
-// $aux_query = $sql->fetch_assoc();
+echo "<script>";
+$sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+$aux_query = $sql->fetch_assoc();
 
-// while ($aux_query = $sql->fetch_assoc()){
-//   echo "<script>
+while ($aux_query = $sql->fetch_assoc()){
+  
 
-//   function minhasReservas(){
+  echo "function minhasReservas(){
 
-//   document.getElementById('professor').textContent =" . $aux_query['professor'];
-//   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
-//   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
-//   echo "document.getElementById('data').textContent =" .$aux_query['data'];
-//   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+  document.getElementById('professor').textContent =" . $aux_query['professor'];
+  echo "document.getElementById('andar').textContent =". $aux_query['andar'];
+  echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
+  echo "document.getElementById('data').textContent =" .$aux_query['data'];
+  echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
 
-//   "}
-//   </script>";
-// }
+  "}
+  </script>";
+}
 
 echo '<script> 
   function listarUsuarios(){
