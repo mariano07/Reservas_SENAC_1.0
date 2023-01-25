@@ -6,7 +6,7 @@ if (isset($_POST['btn_entrar'])) {
     $matricula = $_POST['matricula'];
     $passwd = $_POST['senha'];
     try {
-        $sql = $con->query("SELECT * FROM usuarios WHERE maticula='$matricula' AND senha='$passwd'"); //busca no banco 
+        $sql = $con->query("SELECT AES_DECRYPT(matricula,'@R353rV453n4C#'), cargo, permissao, id, nome FROM usuarios WHERE matricula = AES_ENCRYPT('$matricula', '@R353rV453n4C#') AND senha =AES_ENCRYPT('$passwd', '@R353rV453n4C#')"); //busca no banco 
         $aux_query = $sql->fetch_assoc(); //guarda os dados na aux_query
 
     if ($aux_query['permissao']==='ADM') {
@@ -14,7 +14,6 @@ if (isset($_POST['btn_entrar'])) {
         $_SESSION['user'] = $aux_query['nome'];
         $_SESSION['permissao'] = $aux_query['permissao'];
         header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_admin.php"); //redireciona adm
-
     }else if($aux_query['permissao']==='PED'){
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
@@ -86,13 +85,13 @@ if (isset($_POST['btn_entrar'])) {
                             <div class="col-md-2"></div>
                         </div>
                         <div style="padding-top: 15px; color: red;" align="center">
-                        <!-- <?php
-                            //if(!empty($_GET['user']) || !empty($_GET['passwd'])){      
+                        <?php
+                            if(!empty($_GET['user']) || !empty($_GET['passwd'])){      
                         ?>
                             Usuário ou Senha Inválidos
                         <?php
-                          //  }
-                        ?> -->
+                           }
+                        ?>
                         </div>
                         <div class="row" id="acoes-login">
                             <div class="col-md-7"></div>

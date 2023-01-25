@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('conexao.php');
-if(isset($_POST['proximo'])){
+if(($_POST['proximo'])){
 	$data = $_POST['data'];
 	$hora= $_POST['hora'];
 	header("Location: http://localhost/Reservas_SENAC_1.0/confirmacao.php");
@@ -53,7 +53,8 @@ if(isset($_POST['proximo'])){
 				<div class="row">
 					<div class="booking-form">
 						<div class="booking-bg"></div>
-						<form action="#" method="POST">
+						<form action="confirmacao.php" method="Post" >
+							<input type="hidden" value=>
 							<div class="form-header" style="margin-left: 175px;">
 								<img src="images/senac_logo.png" style="width: 200px;">
 							</div>
