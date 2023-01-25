@@ -164,7 +164,7 @@ session_start();
 												<td>sala</td>
 												<td>
 													<form action="reservar_data.php" method="post">
-									
+														<input type="hidden" name="sala" value=" . $variavel . ">
 														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
@@ -221,7 +221,7 @@ session_start();
 												<td>sala</td>
 												<td>
 													<form action="reservar_data.php" method="post">
-				
+													<input type="hidden" name="sala" value=" . $variavel . ">
 														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
@@ -278,7 +278,7 @@ session_start();
 												<td>sala</td>
 												<td>
 													<form action="reservar_data.php" method="post">
-					
+														<input type="hidden" name="sala" value=" . $variavel . ">
 														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
@@ -335,6 +335,7 @@ session_start();
 												<td>sala</td>
 												<td>
 													<form action="reservar_data.php" method="post">
+														<input type="hidden" name="sala" value=" . $variavel . ">
 														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
@@ -391,7 +392,8 @@ session_start();
 												<td>sala</td>
 												<td>
 													<form action="reservar_data.php" method="post">
-														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
+														<input type="hidden" name="sala" value=" . $variavel . ">
+														<input class="btn btn-success" type="submit" value="Reservar">
 													</form>
 												</td>
 											</tr>
