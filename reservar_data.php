@@ -1,18 +1,10 @@
 <?php
 session_start();
-require_once('conexao.php');
-if(($_POST['proximo'])){
-	$_SESSION['data'] = $_POST['data'];
-	$_SESSION['hora'] = $_POST['hora'];
-	header("Location: reservar_sala.php");
-}
-
 // $con = mysqli_connect($servername, $username, $password, $database);
 
 // if(!$con){              
 //     mysqli_connect_error();
 // }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -39,12 +31,12 @@ if(($_POST['proximo'])){
 				<div class="row">
 					<div class="booking-form">
 						<div class="booking-bg"></div>
-						<form action="confirmacao.php" method="Post" >
+						<form action="reservar_sala.php" method="Post">
 							<input type="hidden" value=>
 							<div class="form-header" style="margin-left: 175px;">
 								<img src="images/senac_logo.png" style="width: 200px;">
 							</div>
-                            <form action="reservar_data.php" method="post">
+                            <form action="reservar_sala.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group" style="margin-top: 40px;">
