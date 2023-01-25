@@ -22,23 +22,23 @@ if (isset($_POST['btn_pesquisar'])) {
   //   </script>";
   // }
 }
-$sql = $con->query("");
-$aux_query = $sql->fetch_assoc();
+// $sql = $con->query("");
+// $aux_query = $sql->fetch_assoc();
 
-while ($aux_query = $sql->fetch_assoc()) {
-  echo "<script>
+// while ($aux_query = $sql->fetch_assoc()) {
+//   echo "<script>
 
-  function minhasReservas(){
+//   function minhasReservas(){
 
-  document.getElementById('professor').textContent =" . $aux_query['professor'];
-  echo "document.getElementById('andar').textContent =" . $aux_query['andar'];
-  echo "document.getElementById('sala').textContent =" . $aux_query['sala'];
-  echo "document.getElementById('data').textContent =" . $aux_query['data'];
-  echo "document.getElementById('hora').textContent =" . $aux_query['horario'];
+//   document.getElementById('professor').textContent =" . $aux_query['professor'];
+//   echo "document.getElementById('andar').textContent =" . $aux_query['andar'];
+//   echo "document.getElementById('sala').textContent =" . $aux_query['sala'];
+//   echo "document.getElementById('data').textContent =" . $aux_query['data'];
+//   echo "document.getElementById('hora').textContent =" . $aux_query['horario'];
 
-  "}
-  </script>";
-}
+//   "}
+//   </script>";
+// }
 
 echo '<script> 
   function listarUsuarios(){
@@ -67,8 +67,8 @@ echo '<script>
 //         $mail->isSMTP();
 //         $mail->Host       = 'smtp.gmail.com';
 //         $mail->SMTPAuth   = true;
-//         $mail->Username   = '';
-//         $mail->Password   = '';
+//         $mail->Username   = 'senacreservas@gmail.com';
+//         $mail->Password   = 'zgynwxdeajftoxxh';
 //         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 //         $mail->Port       = 465;       
 //         $mail->setFrom('', '');
