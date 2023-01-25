@@ -165,7 +165,7 @@ session_start();
 												<td>
 													<form action="reservar_data.php" method="post">
 														<input type="hidden" name="sala" value=" . $variavel . ">
-														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
+														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -222,7 +222,7 @@ session_start();
 												<td>
 													<form action="reservar_data.php" method="post">
 													<input type="hidden" name="sala" value=" . $variavel . ">
-														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
+														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -279,7 +279,7 @@ session_start();
 												<td>
 													<form action="reservar_data.php" method="post">
 														<input type="hidden" name="sala" value=" . $variavel . ">
-														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
+														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -336,7 +336,7 @@ session_start();
 												<td>
 													<form action="reservar_data.php" method="post">
 														<input type="hidden" name="sala" value=" . $variavel . ">
-														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
+														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -393,7 +393,7 @@ session_start();
 												<td>
 													<form action="reservar_data.php" method="post">
 														<input type="hidden" name="sala" value=" . $variavel . ">
-														<input class="btn btn-success" type="submit" value="Reservar">
+														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 													</form>
 												</td>
 											</tr>
