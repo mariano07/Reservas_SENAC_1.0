@@ -1,5 +1,39 @@
 <?php
 session_start();
+require_once('conexao.php');
+
+if (isset($_POST['btn_pesquisar'])) {
+}
+// $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+// $aux_query = $sql->fetch_assoc();
+
+// while ($aux_query = $sql->fetch_assoc()){
+//   echo "<script>
+
+//   function minhasReservas(){
+
+//   document.getElementById('professor').textContent =" . $aux_query['professor'];
+//   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
+//   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
+//   echo "document.getElementById('data').textContent =" .$aux_query['data'];
+//   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+
+//   "}
+//   </script>";
+// }
+
+echo '<script> 
+  function listarUsuarios(){
+    alert("listar usuarios");
+  }
+  </script>';
+
+echo '<script> 
+  function mostrarInventario(){
+    alert("inventario");
+  }
+  </script>';
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -8,40 +42,34 @@ session_start();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="images/senac_icone.png" type="image/x-icon" rel="shortcut icon">
-  <title>Dashboard Professor</title>
+  <title>Dashboard Pedagógico</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/dashboard.css" rel="stylesheet">
 </head>
 
 <body>
-
+  <form action="#" method="post">
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Bem vindo(a), <?php /* echo $_SESSION['user'] */ ?></a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Bem vindo(a) *código php*</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procurar sala" aria-label="Search">
-    <select class="btn btn-dark" name="filtro">
-      <option class="btn btn-dark" value="professores">Professor</option>
-      <option class="btn btn-dark" value="sala">Sala</option>
-      <option class="btn btn-dark" value="andar">Andar</option>
-      <option class="btn btn-dark" value="usuarios">Usuários</option>
-    </select>
+    <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procurar por Professor/Sala/Andar" aria-label="Search">
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#">Procurar</a>
+        <button type="submit" name="btn_pesquisar" class="btn btn-dark">Pesquisar</button>
       </div>
     </div>
   </header>
+  </form>
 
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3 sidebar-sticky">
-        <ul class="nav flex-column">
+          <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="minhasReservas()">
                 <span data-feather="bookmark" class="align-text-bottom"></span>
@@ -49,15 +77,9 @@ session_start();
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="reservar_data.php">
+              <a class="nav-link" href="reservar_sala.php">
                 <span data-feather="edit-3" class="align-text-bottom"></span>
                 Reservar
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">
-                <span data-feather="edit" class="align-text-bottom"></span>
-                Alterar inventário
               </a>
             </li>
             <li class="nav-item">
@@ -78,7 +100,7 @@ session_start();
 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 id="titulo" class="h2">Minhas Reservas</h1>
+          <h1 id='titulo' class="h2">Reservas</h1>
         </div>
 
         <div class="table-responsive">
@@ -88,9 +110,8 @@ session_start();
                 <th scope="col">Professor</th>
                 <th scope="col">Andar</th>
                 <th scope="col">Sala</th>
-                <th scope="col">Dia</th>
+                <th scope="col">Data</th>
                 <th scope="col">Horário</th>
-                <th scope="col">Deletar</th>
               </tr>
             </thead>
             <tbody>
@@ -101,6 +122,7 @@ session_start();
                 <td id="data">01/01/2023</td>
                 <td id="hora">13:00</td>
                 <td><button type="button" class="btn btn-danger">Deletar</button></td>
+                <td><button type="button" class="btn btn-primary">Editar</button></td>
               </tr>
             </tbody>
           </table>
@@ -113,18 +135,6 @@ session_start();
   <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
   <script src="js/dashboard.js"></script>
-  <script>
-    function minhasReservas() {
-      document.getElementById("titulo").textContent = "Minhas Reservas";
-      document.getElementById("professor").textContent = "Minhas Reservas";
-      document.getElementById("andar").textContent = "Minhas Reservas";
-      document.getElementById("sala").textContent = "Sala";
-      document.getElementById("data").textContent = "Minhas Reservas";
-      document.getElementById("hora").textContent = "Minhas Reservas";
-
-
-    }
-  </script>
 </body>
 
 </html>

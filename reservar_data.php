@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['sala'] = $_POST['sala'];
 // $con = mysqli_connect($servername, $username, $password, $database);
 
 // if(!$con){              
@@ -31,12 +32,12 @@ session_start();
 				<div class="row">
 					<div class="booking-form">
 						<div class="booking-bg"></div>
-						<form action="confirmacao.php" method="Post" >
+						
 							<input type="hidden" value=>
 							<div class="form-header" style="margin-left: 175px;">
 								<img src="images/senac_logo.png" style="width: 200px;">
 							</div>
-                            <form action="reservar_data.php" method="post">
+                            <form action="confirmacao.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group" style="margin-top: 40px;">
@@ -50,7 +51,6 @@ session_start();
 										<input class="form-control" type="time" required name="hora" id="hora">
 									</div>
 								</div>
-
 							</div>
 
 							<div class="row" style="margin-left: 80px; margin-top: 75px;">

@@ -163,8 +163,8 @@ session_start();
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="confirmacao.php" method="post">
-														<input type="hidden" name="sala" value="">
+													<form action="reservar_data.php" method="post">
+														<input type="hidden" name="sala" value=" . $variavel . ">
 														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 													</form>
 												</td>
@@ -220,8 +220,8 @@ session_start();
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="confirmacao.php" method="post">
-														<input type="hidden" name="sala" value="'.$variavel.'">
+													<form action="reservar_data.php" method="post">
+													<input type="hidden" name="sala" value=" . $variavel . ">
 														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 													</form>
 												</td>
@@ -277,8 +277,8 @@ session_start();
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="confirmacao.php" method="post">
-														<input type="hidden" name="sala" value="'.$variavel.'">
+													<form action="reservar_data.php" method="post">
+														<input type="hidden" name="sala" value=" . $variavel . ">
 														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 													</form>
 												</td>
@@ -334,8 +334,8 @@ session_start();
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="confirmacao.php" method="post">
-														<input type="hidden" name="sala" value="'.$variavel.'">
+													<form action="reservar_data.php" method="post">
+														<input type="hidden" name="sala" value=" . $variavel . ">
 														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 													</form>
 												</td>
@@ -391,8 +391,8 @@ session_start();
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="confirmacao.php" method="post">
-														<input type="hidden" name="sala" value="'.$variavel.'">
+													<form action="reservar_data.php" method="post">
+														<input type="hidden" name="sala" value=" . $variavel . ">
 														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 													</form>
 												</td>

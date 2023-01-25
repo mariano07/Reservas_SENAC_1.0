@@ -1,27 +1,4 @@
 <?php
-session_start();
-require_once('conexao.php');
-$id = 'arthur';
-
-if (isset($_POST['btn_pesquisar'])) {
-  // $sql = $con->query("SELECT * FROM reservas WHERE ");
-  // $aux_query = $sql->fetch_assoc();
-
-  // while ($aux_query = $sql->fetch_assoc()){
-  //   echo "<script>
-
-  //   function verReservas(){
-
-  //   document.getElementById('professor').textContent =" . $aux_query['professor'];
-  //   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
-  //   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
-  //   echo "document.getElementById('data').textContent =" .$aux_query['data'];
-  //   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
-
-  //   "}
-  //   </script>";
-  // }
-}
 // SQL - SELECT salas.*,reservados.*,usuarios.* FROM `reservados` INNER JOIN salas ON salas.id = reservados.id_sala INNER JOIN usuarios ON usuarios.id = reservados.id_usuario;
 // SQL - SELECT salas.*,reservados.*,usuarios.* FROM `reservados` INNER JOIN salas ON salas.id = reservados.id_sala INNER JOIN usuarios ON usuarios.id = reservados.id_usuario WHERE salas.andar LIKE '$variavel' OR salas.numero LIKE '$variavel' OR usuarios.nome LIKE '$variavel';
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios;
@@ -29,23 +6,29 @@ if (isset($_POST['btn_pesquisar'])) {
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE permissao = 'USE';
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE nome LIKE '$variavel' AND permissao = 'USE';
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE id = '$variavel';
-//$sql = $con->query("");
-//$aux_query = $sql->fetch_assoc();
+session_start();
+require_once('conexao.php');
 
-// while ($aux_query = $sql->fetch_assoc()) {
-//   echo "<script>
+if (isset($_POST['btn_pesquisar'])) {
+}
 
-//   function minhasReservas(){
+$sql = $con->query("SELECT salas.*,reservados.*,usuarios.* FROM `reservados` INNER JOIN salas ON salas.id = reservados.id_sala INNER JOIN usuarios ON usuarios.id = reservados.id_usuario;");
+$aux_query = $sql->fetch_assoc();
 
-//   document.getElementById('professor').textContent =" . $aux_query['professor'];
-//   echo "document.getElementById('andar').textContent =" . $aux_query['andar'];
-//   echo "document.getElementById('sala').textContent =" . $aux_query['sala'];
-//   echo "document.getElementById('data').textContent =" . $aux_query['data'];
-//   echo "document.getElementById('hora').textContent =" . $aux_query['horario'];
+while ($aux_query = $sql->fetch_assoc()){
+  echo "<script>
 
-//   "}
-//   </script>";
-// }
+  function minhasReservas(){
+
+  document.getElementById('professor').textContent =" . $aux_query['professor'];
+  echo "document.getElementById('andar').textContent =". $aux_query['andar'];
+  echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
+  echo "document.getElementById('data').textContent =" .$aux_query['data'];
+  echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+
+  "}
+  </script>";
+}
 
 echo '<script> 
   function listarUsuarios(){
@@ -59,13 +42,6 @@ echo '<script>
   }
   </script>';
 
-echo '<script> 
-  function recuperarSenha(){
-    alert("Um email foi enviado com o link para recuperação");
-  }
-  </script>';
-
-
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -74,34 +50,28 @@ echo '<script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="images/senac_icone.png" type="image/x-icon" rel="shortcut icon">
-  <title>Dashboard Admin</title>
+  <title>Dashboard Pedagógico</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/dashboard.css" rel="stylesheet">
 </head>
 
 <body>
-
+  <form action="#" method="post">
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Bem vindo(a), <?php echo $_SESSION['user']?></a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Bem vindo(a) *código php*</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procure pelo nome de um professor,sala ou andar" aria-label="Search">
-    <select class="btn btn-dark" name="filtro">
-      <option class="btn btn-dark" value="professores">Professor</option>
-      <option class="btn btn-dark" value="sala">Sala</option>
-      <option class="btn btn-dark" value="andar">Andar</option>
-      <option class="btn btn-dark" value="usuarios">Usuários</option>
-    </select>
+    <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procurar por Professor/Sala/Andar" aria-label="Search">
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#">Procurar</a>
+        <button type="submit" name="btn_pesquisar" class="btn btn-dark">Pesquisar</button>
       </div>
     </div>
   </header>
+  </form>
 
   <div class="container-fluid">
     <div class="row">
@@ -139,7 +109,7 @@ echo '<script>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="recuperarSenha()">
+              <a class="nav-link" href="recuperar_senha.php">
                 <span data-feather="lock" class="align-text-bottom"></span>
                 Mudar Senha
               </a>
@@ -156,18 +126,18 @@ echo '<script>
 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Reservas</h1>
+          <h1 id='titulo' class="h2">Reservas</h1>
         </div>
 
         <div class="table-responsive">
           <table class="table table-striped table-sm">
             <thead>
               <tr>
+                <th scope="col">Professor</th>
                 <th scope="col">Andar</th>
                 <th scope="col">Sala</th>
-                <th scope="col">Dia</th>
+                <th scope="col">Data</th>
                 <th scope="col">Horário</th>
-                <th scope="col">Professor</th>
               </tr>
             </thead>
             <tbody>

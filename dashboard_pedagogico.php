@@ -1,26 +1,8 @@
 <?php
 session_start();
 require_once('conexao.php');
-$id = 'arthur';
 
 if (isset($_POST['btn_pesquisar'])) {
-  // $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
-  // $aux_query = $sql->fetch_assoc();
-
-  // while ($aux_query = $sql->fetch_assoc()){
-  //   echo "<script>
-
-  //   function minhasReservas(){
-
-  //   document.getElementById('professor').textContent =" . $aux_query['professor'];
-  //   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
-  //   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
-  //   echo "document.getElementById('data').textContent =" .$aux_query['data'];
-  //   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
-
-  //   "}
-  //   </script>";
-  // }
 }
 echo "<script>";
 $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
@@ -69,24 +51,20 @@ echo '<script>
 </head>
 
 <body>
+  <form action="#" method="post">
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Bem vindo(a) *código php*</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procurar professor" aria-label="Search">
-    <select class="btn btn-dark" name="filtro">
-      <option class="btn btn-dark" value="professores">Professor</option>
-      <option class="btn btn-dark" value="sala">Sala</option>
-      <option class="btn btn-dark" value="andar">Andar</option>
-      <option class="btn btn-dark" value="usuarios">Usuários</option>
-    </select>
+    <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procurar por Professor/Sala/Andar" aria-label="Search">
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <button type="submit" name="btn_pesquisar" class="btn btn-dark" onclick="Pesquisar()">Pesquisar</button>
+        <button type="submit" name="btn_pesquisar" class="btn btn-dark">Pesquisar</button>
       </div>
     </div>
   </header>
+  </form>
 
   <div class="container-fluid">
     <div class="row">
@@ -176,27 +154,6 @@ echo '<script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
   <script src="js/dashboard.js"></script>
-  <script>
-    // function minhasReservas() {
-    //   document.getElementById("titulo").textContent = "Minhas Reservas";
-    //   document.getElementById("professor").textContent = "Minhas Reservas";
-    //   document.getElementById("andar").textContent = "Minhas Reservas";
-    //   document.getElementById("sala").textContent = "Sala";
-    //   document.getElementById("data").textContent = "Minhas Reservas";
-    //   document.getElementById("hora").textContent = "Minhas Reservas";
-
-
-    // }
-
-    function verReservas() {
-      document.getElementById("titulo").textContent = "Reservas";
-      document.getElementById("professor").textContent = "Reservas";
-      document.getElementById("andar").textContent = "Reservas";
-      document.getElementById("sala").textContent = "Sala";
-      document.getElementById("data").textContent = "Reservas";
-      document.getElementById("hora").textContent = "Reservas";
-    }
-  </script>
 </body>
 
 </html>
