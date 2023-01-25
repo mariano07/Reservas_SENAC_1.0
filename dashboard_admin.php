@@ -29,8 +29,8 @@ if (isset($_POST['btn_pesquisar'])) {
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE permissao = 'USE';
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE nome LIKE '$variavel' AND permissao = 'USE';
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE id = '$variavel';
-$sql = $con->query("");
-$aux_query = $sql->fetch_assoc();
+//$sql = $con->query("");
+//$aux_query = $sql->fetch_assoc();
 
 // while ($aux_query = $sql->fetch_assoc()) {
 //   echo "<script>
@@ -90,6 +90,12 @@ echo '<script>
       <span class="navbar-toggler-icon"></span>
     </button>
     <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procure pelo nome de um professor,sala ou andar" aria-label="Search">
+    <select class="btn btn-dark" name="filtro">
+      <option class="btn btn-dark" value="professores">Professor</option>
+      <option class="btn btn-dark" value="sala">Sala</option>
+      <option class="btn btn-dark" value="andar">Andar</option>
+      <option class="btn btn-dark" value="usuarios">Usuários</option>
+    </select>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
         <a class="nav-link px-3" href="#">Procurar</a>
