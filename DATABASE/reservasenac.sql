@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Jan-2023 às 01:56
+-- Tempo de geração: 25-Jan-2023 às 23:45
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -40,11 +40,24 @@ CREATE TABLE `agendamentos` (
 -- Acionadores `agendamentos`
 --
 DELIMITER $$
-CREATE TRIGGER `verifica_disponibilidade` AFTER INSERT ON `agendamentos` FOR EACH ROW IF (NEW.id_sala NOT IN (SELECT id_sala FROM reservados WHERE id_sala = NEW.id_sala AND dia = NEW.dia AND inicio <= NEW.inicio AND fim >= NEW.inicio) AND NEW.id_sala NOT IN (SELECT id_sala FROM reservados WHERE id_sala = NEW.id_sala AND dia = NEW.dia AND inicio <= NEW.fim AND fim >= NEW.fim)) THEN
-    INSERT INTO reservados (id_sala,id_usuario,dia,inicio,fim) VALUES (NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
+CREATE TRIGGER `verifica_disponibilidade` AFTER INSERT ON `agendamentos` FOR EACH ROW BEGIN
+
+IF (NEW.id_sala NOT IN (SELECT id_sala FROM reservados)) THEN
+	INSERT INTO reservados (id_sala, id_usuario, dia, inicio, fim) VALUES (NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
+ELSEIF (NEW.dia NOT IN (SELECT dia FROM reservados WHERE id_sala = NEW.id_sala)) THEN
+	INSERT INTO reservados (id_sala, id_usuario, dia, inicio, fim) VALUES (NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
 ELSE
-	INSERT INTO espera (id_sala,id_usuario,dia,inicio,fim) VALUES (NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
-END IF
+	SET @inicio = (SELECT inicio FROM reservados WHERE id_sala = NEW.id_sala AND dia = NEW.dia);
+    SET @fim = (SELECT fim FROM reservados WHERE id_sala = NEW.id_sala AND dia = NEW.dia);
+    IF (NEW.inicio < @inicio AND NEW.fim < @inicio) THEN
+    	INSERT INTO reservados (id_sala, id_usuario, dia, inicio, fim) VALUES (NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
+    ELSEIF (NEW.inicio > @fim AND NEW.fim > @fim ) THEN
+    	INSERT INTO reservados (id_sala, id_usuario, dia, inicio, fim) VALUES (NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
+    ELSE
+    	INSERT INTO espera (id_sala, id_usuario, dia, inicio, fim) VALUES (NEW.id_sala,NEW.id_usuario,NEW.dia,NEW.inicio,NEW.fim);
+    END IF;
+END IF;
+END
 $$
 DELIMITER ;
 
@@ -118,7 +131,7 @@ CREATE TABLE `reservados` (
 --
 DELIMITER $$
 CREATE TRIGGER `andamento_espera` AFTER DELETE ON `reservados` FOR EACH ROW BEGIN
-IF (EXISTS(SELECT FIRST id_sala FROM espera WHERE id_sala = OLD.id_sala ORDER BY id ASC)) THEN
+IF (OLD.id_sala = (SELECT id_sala FROM espera)) THEN
 	SET @id_usuario = (SELECT FIRST id_usuario FROM espera WHERE id_sala = OLD.id_sala ORDER BY id ASC);
     INSERT INTO reservados (id_sala,id_usuario,dia,inicio,fim) VALUES (OLD.id_sala,@id_usuario,OLD.dia,OLD.inicio,OLD.fim);
 END IF;

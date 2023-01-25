@@ -27,7 +27,7 @@ if (isset($_POST['btn_pesquisar'])) {
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios;
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE nome LIKE '$variavel';
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE permissao = 'USE';
-// SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE nome LIKE '$variavel' AND permissao = '$USE';
+// SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE nome LIKE '$variavel' AND permissao = 'USE';
 // SQL - SELECT nome, AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave'), AES_DECRYPT(telefone,'$chave') FROM usuarios WHERE id = '$variavel';
 $sql = $con->query("");
 $aux_query = $sql->fetch_assoc();
