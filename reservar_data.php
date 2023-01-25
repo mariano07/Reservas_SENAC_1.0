@@ -14,19 +14,6 @@ if(($_POST['proximo'])){
 //     mysqli_connect_error();
 // }
 
-//$_SESSION['data'] = $_POST['data'];
-//$_SESSION['hora'] = $_POST['hora'];
-
-//if(isset($_SESSION['data'], $_SESSION['hora'])){
-
-//alerta
-
-//} else{
-
-	//header("Location: reservar_sala.php");
-
-//}
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
