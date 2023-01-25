@@ -37,7 +37,7 @@ $_SESSION['sala'] = $_POST['sala'];
 							<div class="form-header" style="margin-left: 175px;">
 								<img src="images/senac_logo.png" style="width: 200px;">
 							</div>
-                            <form action="reservar_sala.php" method="post">
+                            <form action="confirmacao.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group" style="margin-top: 40px;">
