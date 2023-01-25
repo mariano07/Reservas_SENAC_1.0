@@ -1,9 +1,5 @@
 <?php
 session_start();
-
-$_SESSION['data'] = $_POST['data'];
-$_SESSION['hora'] = $_POST['hora'];
-
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -167,9 +163,9 @@ $_SESSION['hora'] = $_POST['hora'];
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="confirmacao.php" method="post">
-														<input type="hidden" name="sala" value="">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+													<form action="reservar_data.php" method="post">
+									
+														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -224,9 +220,9 @@ $_SESSION['hora'] = $_POST['hora'];
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="confirmacao.php" method="post">
-														<input type="hidden" name="sala" value="">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+													<form action="reservar_data.php" method="post">
+				
+														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -281,9 +277,9 @@ $_SESSION['hora'] = $_POST['hora'];
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="confirmacao.php" method="post">
-														<input type="hidden" name="sala" value="">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+													<form action="reservar_data.php" method="post">
+					
+														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -338,9 +334,8 @@ $_SESSION['hora'] = $_POST['hora'];
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="confirmacao.php" method="post">
-														<input type="hidden" name="sala" value="">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+													<form action="reservar_data.php" method="post">
+														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
 											</tr>
@@ -395,9 +390,8 @@ $_SESSION['hora'] = $_POST['hora'];
 												<td>sala</td>
 												<td>sala</td>
 												<td>
-													<form action="confirmacao.php" method="post">
-														<input type="hidden" name="sala" value="">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+													<form action="reservar_data.php" method="post">
+														<input class="btn btn-success" type="submit" name="sala" value="Reservar">
 													</form>
 												</td>
 											</tr>

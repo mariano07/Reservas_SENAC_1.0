@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['sala'] = $_POST['sala'];
 // $con = mysqli_connect($servername, $username, $password, $database);
 
 // if(!$con){              
@@ -50,7 +51,6 @@ session_start();
 										<input class="form-control" type="time" required name="hora" id="hora">
 									</div>
 								</div>
-
 							</div>
 
 							<div class="row" style="margin-left: 80px; margin-top: 75px;">
