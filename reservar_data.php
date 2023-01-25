@@ -32,7 +32,7 @@ $_SESSION['sala'] = $_POST['sala'];
 				<div class="row">
 					<div class="booking-form">
 						<div class="booking-bg"></div>
-						<form action="reservar_sala.php" method="Post">
+						
 							<input type="hidden" value=>
 							<div class="form-header" style="margin-left: 175px;">
 								<img src="images/senac_logo.png" style="width: 200px;">
