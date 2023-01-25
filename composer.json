@@ -1,0 +1,17 @@
+{
+    "name": "arthur/reservas_senac_1.0",
+    "autoload": {
+        "psr-4": {
+            "Arthur\\ReservasSenac10\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Arthur",
+            "email": "84734090+rapach01@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.7"
+    }
+}
