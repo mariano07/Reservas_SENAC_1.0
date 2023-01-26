@@ -6,7 +6,7 @@ if (isset($_POST['btn_entrar'])) {
     $matricula = $_POST['matricula'];
     $passwd = $_POST['senha'];
     try {
-        $sql = $con->query("SELECT AES_DECRYPT(matricula,'@R353rV453n4C#'), cargo, permissao, id, nome FROM usuarios WHERE matricula = AES_ENCRYPT('$matricula', '@R353rV453n4C#') AND senha =AES_ENCRYPT('$passwd', '@R353rV453n4C#')"); //busca no banco 
+        $sql = $con->query("SELECT AES_DECRYPT(matricula,'$cryptokey'), cargo, permissao, id, nome FROM usuarios WHERE matricula = AES_ENCRYPT('$matricula', '$cryptokey') AND senha =AES_ENCRYPT('$passwd', '$cryptokey')"); //busca no banco 
         $aux_query = $sql->fetch_assoc(); //guarda os dados na aux_query
 
     if ($aux_query['permissao']==='ADM') {

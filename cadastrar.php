@@ -20,6 +20,7 @@
     <main>
       <div class="py-2 text-center">
       <div class="centralizar" style="padding-top: 50px; margin-left: 100%;"></div>
+      <h2 class="titulo">Cadastro</h2>
       <div class="col-md-7 col-lg-3">
         <form class="needs-validation" novalidate>
       </div>
@@ -29,15 +30,14 @@
       <td>
       
         <div class="invalid-feedback">
-          <label for="firstName" class="form-label">Nome</label>
+          <label for="nome" class="form-label">Nome</label>
           <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 11px;" type="text" class="form-control" name="nome" placeholder="Nome" value="" required/>
       </td>
           
           <br>
       <td>
         <div class="col-12">
-          <label for="username" class="form-label">Mátricula</label>
-            
+          <label for="matricula" class="form-label" style=" margin-left: 60px;">Mátricula</label>
           <span class="input-group-text"></span>
           <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="text" class="form-control" name="matricula" placeholder="matricula" required/>
       
@@ -52,14 +52,14 @@
           <br>
           <div class="col-12">
             <label for="email" class="form-label">E-mail</label>
-            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 11px;" type="text" class="form-control" name="e_mail" placeholder="seu@exemplo.com" required/>
+            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 11px;" type="text" class="form-control" name="email" placeholder="seu@exemplo.com" required/>
       </td>
           </div>
       <td>
           <br>
           <div class="col-12">
-            <label for="email" class="form-label">Telefone</label>
-            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="tel" maxlength="15" class="form-control" name="(xx) 9xxxx-xxxx" placeholder="Número de contato" required/>
+            <label for="telefone" class="form-label" style=" margin-left: 60px;">Telefone</label>
+            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="tel" maxlength="15" class="form-control" name="telefone" placeholder="(xx) 9xxxx-xxxx" required/>
 
           </div>
       </td>
@@ -71,7 +71,7 @@
       <td>
           <br>
           <div class="col-12">
-            <label for="email" class="form-label">Senha</label>
+            <label for="senha" class="form-label">Senha</label>
             <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 11px;" type="password" class="form-control" name="senha" placeholder="*****" required/>
           </div>
       </td>
@@ -79,7 +79,7 @@
       <td>
           <br>
           <div class="col-12">
-            <label for="address" class="form-label">Curso</label>
+            <label for="curso" class="form-label" style=" margin-left: 60px;">Curso</label>
             <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="text" class="form-control" name="curso" placeholder="Curso" required/>
           </div>
           </div>
