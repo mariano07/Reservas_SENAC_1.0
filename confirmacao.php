@@ -59,7 +59,7 @@
                 <use xlink:href="#exclamation-triangle-fill" />
               </svg>
               <div>
-                <h5 class="mb-0">Nome</h5>
+                <h5 class="mb-0"><?php echo $_SESSION['nome'] ?></h5>
                 " "
               </div>
             </li>
