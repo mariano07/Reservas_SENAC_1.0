@@ -68,21 +68,20 @@ require ('conexao.php');
 								<table class="table table-striped table-sm">
 									<thead>
 										<tr>
-											<th style="font-size: 13px;" scope="col">SALAS</th>
-											<th style="font-size: 13px;" scope="col" id="">Computadores</th>
-											<th style="font-size: 13px;" scope="col" id="">Computador Professor</th>
-											<th style="font-size: 13px;" scope="col" id="">Monitores</th>
-											<th style="font-size: 13px;" scope="col" id="">Mouses</th>
-											<th style="font-size: 13px;" scope="col" id="">Teclados</th>
-											<th style="font-size: 13px;" scope="col" id="">Mesas</th>
-											<th style="font-size: 13px;" scope="col" id="">Cadeiras</th>
-											<th style="font-size: 13px;" scope="col" id="">Televisões</th>
-											<th style="font-size: 13px;" scope="col" id="">Ar Condicionado</th>
-											<th style="font-size: 13px;" scope="col" id="">Controle Ar</th>
-											<th style="font-size: 13px;" scope="col" id="">Data Show</th>
-											<th style="font-size: 13px;" scope="col" id="">Apagador</th>
-											<th style="font-size: 13px;" scope="col" id="">Canetão</th>
-											<th style="font-size: 13px;" scope="col" id="">Webcam</th>
+											<th scope="col">SALAS</th>
+											<th scope="col" id="">Andar</th>
+											<th scope="col" id="">Computadores</th>
+											<th scope="col" id="">Computador Professor</th>
+											<th scope="col" id="">Monitores</th>
+											<th scope="col" id="">Mouses</th>
+											<th scope="col" id="">Teclados</th>
+											<th scope="col" id="">Televisões</th>
+											<th scope="col" id="">Ar Condicionado</th>
+											<th scope="col" id="">Controle Ar</th>
+											<th scope="col" id="">Data Show</th>
+											<th scope="col" id="">Apagador</th>
+											<th scope="col" id="">Canetão</th>
+											<th scope="col" id="">Webcam</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -104,9 +103,6 @@ require ('conexao.php');
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
 										echo '<td>
 												<form action="reservar_data.php" method="post">
 												<input type="hidden" name="sala" value="' . $variavel . '">
@@ -114,8 +110,6 @@ require ('conexao.php');
 												</form>
 												</td>';
 										echo "</tr>";
-
-
 										?>
 									</tbody>
 								</table>
@@ -129,6 +123,7 @@ require ('conexao.php');
 									<thead>
 										<tr>
 											<th scope="col">SALAS</th>
+											<th scope="col" id="">Andar</th>
 											<th scope="col" id="">Computadores</th>
 											<th scope="col" id="">Computador Professor</th>
 											<th scope="col" id="">Monitores</th>
@@ -162,9 +157,6 @@ require ('conexao.php');
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
 										echo '<td>
 												<form action="reservar_data.php" method="post">
 												<input type="hidden" name="sala" value="' . $variavel . '">
@@ -172,8 +164,6 @@ require ('conexao.php');
 												</form>
 												</td>';
 										echo "</tr>";
-
-
 										?>
 									</tbody>
 								</table>
@@ -187,6 +177,7 @@ require ('conexao.php');
 									<thead>
 										<tr>
 											<th scope="col">SALAS</th>
+											<th scope="col" id="">Andar</th>
 											<th scope="col" id="">Computadores</th>
 											<th scope="col" id="">Computador Professor</th>
 											<th scope="col" id="">Monitores</th>
@@ -220,9 +211,6 @@ require ('conexao.php');
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
 										echo '<td>
 												<form action="reservar_data.php" method="post">
 												<input type="hidden" name="sala" value="' . $variavel . '">
@@ -230,8 +218,6 @@ require ('conexao.php');
 												</form>
 												</td>';
 										echo "</tr>";
-
-
 										?>
 									</tbody>
 								</table>
@@ -245,6 +231,7 @@ require ('conexao.php');
 									<thead>
 										<tr>
 											<th scope="col">SALAS</th>
+											<th scope="col" id="">Andar</th>
 											<th scope="col" id="">Computadores</th>
 											<th scope="col" id="">Computador Professor</th>
 											<th scope="col" id="">Monitores</th>
@@ -278,9 +265,6 @@ require ('conexao.php');
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
 										echo '<td>
 												<form action="reservar_data.php" method="post">
 												<input type="hidden" name="sala" value="' . $variavel . '">
@@ -288,8 +272,6 @@ require ('conexao.php');
 												</form>
 												</td>';
 										echo "</tr>";
-
-
 										?>
 									</tbody>
 								</table>
@@ -303,6 +285,7 @@ require ('conexao.php');
 									<thead>
 										<tr>
 											<th scope="col">SALAS</th>
+											<th scope="col" id="">Andar</th>
 											<th scope="col" id="">Computadores</th>
 											<th scope="col" id="">Computador Professor</th>
 											<th scope="col" id="">Monitores</th>
@@ -336,9 +319,6 @@ require ('conexao.php');
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
 										echo '<td>
 												<form action="reservar_data.php" method="post">
 												<input type="hidden" name="sala" value="' . $variavel . '">
@@ -346,21 +326,20 @@ require ('conexao.php');
 												</form>
 												</td>';
 										echo "</tr>";
-
-
 										?>
 									</tbody>
 								</table>
 							</div>
 							<?php
 							break;
-						case '6':
+						case '5':
 							?>
 							<div class="table-responsive">
 								<table class="table table-striped table-sm">
 									<thead>
 										<tr>
 											<th scope="col">SALAS</th>
+											<th scope="col" id="">Andar</th>
 											<th scope="col" id="">Computadores</th>
 											<th scope="col" id="">Computador Professor</th>
 											<th scope="col" id="">Monitores</th>
@@ -394,9 +373,6 @@ require ('conexao.php');
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
 										echo '<td>
 												<form action="reservar_data.php" method="post">
 												<input type="hidden" name="sala" value="' . $variavel . '">
@@ -404,42 +380,36 @@ require ('conexao.php');
 												</form>
 												</td>';
 										echo "</tr>";
-
-
 										?>
 									</tbody>
 								</table>
 							</div>
-
 							<?php
 							break;
 					}
-
 				} else {
 					?>
 					<div class="table-responsive">
-						<table class="table table-striped table-sm">
-							<thead>
-								<tr>
-									<th scope="col">SALAS</th>
-									<th scope="col" id="">Computadores</th>
-									<th scope="col" id="">Computador Professor</th>
-									<th scope="col" id="">Monitores</th>
-									<th scope="col" id="">Mouses</th>
-									<th scope="col" id="">Teclados</th>
-									<th scope="col" id="">Mesas</th>
-									<th scope="col" id="">Cadeiras</th>
-									<th scope="col" id="">Televisões</th>
-									<th scope="col" id="">Ar Condicionado</th>
-									<th scope="col" id="">Controle Ar</th>
-									<th scope="col" id="">Data Show</th>
-									<th scope="col" id="">Apagador</th>
-									<th scope="col" id="">Canetão</th>
-									<th scope="col" id="">Webcam</th>
-									<th scope="col" id="">Reserva</th>
-								</tr>
-							</thead>
-							<tbody>
+								<table class="table table-striped table-sm">
+									<thead>
+										<tr>
+											<th scope="col">SALAS</th>
+											<th scope="col" id="">Andar</th>
+											<th scope="col" id="">Computadores</th>
+											<th scope="col" id="">Computador Professor</th>
+											<th scope="col" id="">Monitores</th>
+											<th scope="col" id="">Mouses</th>
+											<th scope="col" id="">Teclados</th>
+											<th scope="col" id="">Televisões</th>
+											<th scope="col" id="">Ar Condicionado</th>
+											<th scope="col" id="">Controle Ar</th>
+											<th scope="col" id="">Data Show</th>
+											<th scope="col" id="">Apagador</th>
+											<th scope="col" id="">Canetão</th>
+											<th scope="col" id="">Webcam</th>
+										</tr>
+									</thead>
+									<tbody>
 										<?php
 										$variavel = "texto";
 										$variavel1 = "SALA";
@@ -458,9 +428,6 @@ require ('conexao.php');
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
-										echo "<td>" . $variavel . "</td>";
 										echo '<td>
 												<form action="reservar_data.php" method="post">
 												<input type="hidden" name="sala" value="' . $variavel . '">
@@ -468,18 +435,16 @@ require ('conexao.php');
 												</form>
 												</td>';
 										echo "</tr>";
-
-
 										?>
 									</tbody>
-						</table>
-					</div>
+								</table>
+							</div>
 					<?php
 				}
 				?>
 				<center>
 					<form method="post" action="#">
-						<a href="#" class="btn btn-primary">Voltar</a>
+						<a href="dashboard.php" class="btn btn-primary">Voltar</a>
 						<input type="submit" class="btn btn-primary" name="andar" value="1">
 						<input type="submit" class="btn btn-primary" name="andar" value="2">
 						<input type="submit" class="btn btn-primary" name="andar" value="3">
