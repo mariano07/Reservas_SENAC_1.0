@@ -35,7 +35,7 @@ $_SESSION['sala'] = $_POST['sala'];
 						
 							<input type="hidden" value=>
 							<div class="form-header" style="margin-left: 175px;">
-								<img src="images/senac_logo.png" style="width: 200px;">
+								<img style="padding-left: 25%; padding-top: 5%;" src="images/senac_logo.png" style="width: 200px;">
 							</div>
                             <form action="confirmacao.php" method="post">
 							<div class="row">
