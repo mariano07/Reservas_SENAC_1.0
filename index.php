@@ -6,29 +6,29 @@ if (isset($_POST['btn_entrar'])) {
     $matricula = $_POST['matricula'];
     $passwd = $_POST['senha'];
     try {
-        $sql = $con->query("SELECT AES_DECRYPT(matricula,'@R353rV453n4C#'), cargo, permissao, id, nome FROM usuarios WHERE matricula = AES_ENCRYPT('$matricula', '@R353rV453n4C#') AND senha =AES_ENCRYPT('$passwd', '@R353rV453n4C#')"); //busca no banco 
+        $sql = $con->query("SELECT AES_DECRYPT(matricula,'$cryptokey'), cargo, permissao, id, nome FROM usuarios WHERE matricula = AES_ENCRYPT('$matricula', '$cryptokey') AND senha =AES_ENCRYPT('$passwd', '$cryptokey')"); //busca no banco 
         $aux_query = $sql->fetch_assoc(); //guarda os dados na aux_query
 
     if ($aux_query['permissao']==='ADM') {
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
         $_SESSION['permissao'] = $aux_query['permissao'];
-        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_admin.php"); //redireciona adm
+        header("Location: dashboard.php"); //redireciona adm
     }else if($aux_query['permissao']==='PED'){
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
         $_SESSION['permissao'] = $aux_query['permissao'];
-        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_pedagogico.php"); //redireciona pedagogico
+        header("Location: dashboard.php"); //redireciona pedagogico
     }else if($aux_query['permissao']==='USE'){
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
         $_SESSION['permissao'] = $aux_query['permissao'];
-        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_professor.php"); //redireciona professor
+        header("Location: dashboard.php"); //redireciona professor
     }else{
-        header("Location: http://localhost/Reservas_SENAC_1.0/index.php?passwd=error");
+        header("Location: index.php?passwd=error");
     }
     } catch (Exception $e) {
-        header("Location: http://localhost/Reservas_SENAC_1.0/index.php?user=error"); //atualiza a pagina com erro
+        header("Location: index.php?user=error"); //atualiza a pagina com erro
     }
 } 
 ?>

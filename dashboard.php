@@ -1,24 +1,25 @@
 <?php
 session_start();
 require_once('conexao.php');
-
 if (isset($_POST['btn_pesquisar'])) {
 }
-echo "<script>
-function minhasReservas(){";
-$sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
-$aux_query = $sql->fetch_assoc();
+// $sql = $con->query("SELECT * FROM reservas WHERE id = '$id'");
+// $aux_query = $sql->fetch_assoc();
 
-while ($aux_query = $sql->fetch_assoc()){
-  echo "document.getElementById('professor').textContent =" . $aux_query['professor'];
-  echo "document.getElementById('andar').textContent =". $aux_query['andar'];
-  echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
-  echo "document.getElementById('data').textContent =" .$aux_query['data'];
-  echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+// while ($aux_query = $sql->fetch_assoc()){
+//   echo "<script>
 
-  "}
-  </script>";
-}
+//   function minhasReservas(){
+
+//   document.getElementById('professor').textContent =" . $aux_query['professor'];
+//   echo "document.getElementById('andar').textContent =". $aux_query['andar'];
+//   echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
+//   echo "document.getElementById('data').textContent =" .$aux_query['data'];
+//   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
+
+//   "}
+//   </script>";
+// }
 
 echo '<script> 
   function listarUsuarios(){
@@ -50,7 +51,7 @@ echo '<script>
 <body>
   <form action="#" method="post">
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Bem vindo(a) *código php*</a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Bem vindo(a) <?php echo $_SESSION['user'] ?></a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -62,8 +63,9 @@ echo '<script>
     </div>
   </header>
   </form>
-
-  <div class="container-fluid">
+  <?php
+  if($_SESSION['permissao'] === "ADM"){
+    echo'<div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3 sidebar-sticky">
@@ -112,7 +114,95 @@ echo '<script>
             </li>
           </ul>
         </div>
-      </nav>
+      </nav>';
+  }else if($_SESSION['permissao'] === "PED"){
+    echo'<div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3 sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" onclick="verReservas()">
+                <span data-feather="calendar" class="align-text-bottom"></span>
+                Todas Reservas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="minhasReservas()">
+                <span data-feather="bookmark" class="align-text-bottom"></span>
+                Minhas Reservas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reservar_sala.php">
+                <span data-feather="edit-3" class="align-text-bottom"></span>
+                Reservar
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" onclick="listarUsuarios()">
+                <span data-feather="user" class="align-text-bottom"></span>
+                Usuários
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" onclick="mostrarInventario()">
+                <span data-feather="edit" class="align-text-bottom"></span>
+                Alterar inventário
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="recuperar_senha.php">
+                <span data-feather="lock" class="align-text-bottom"></span>
+                Mudar Senha
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="log-out" class="align-text-bottom"></span>
+                Sair
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>s';
+  }else if($_SESSION['permissao'] === "USE"){
+    echo'<div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3 sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="minhasReservas()">
+                <span data-feather="bookmark" class="align-text-bottom"></span>
+                Minhas Reservas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reservar_sala.php">
+                <span data-feather="edit-3" class="align-text-bottom"></span>
+                Reservar
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="recuperar_senha.php">
+                <span data-feather="lock" class="align-text-bottom"></span>
+                Mudar Senha
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="log-out" class="align-text-bottom"></span>
+                Sair
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>';
+  }else{
+  
+}
+?>
 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
