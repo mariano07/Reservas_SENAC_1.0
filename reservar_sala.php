@@ -106,7 +106,7 @@ session_start();
 										echo "<td>" . $variavel . "</td>";
 										echo "<td>" . $variavel . "</td>";
 										echo '<td>
-												<form action="#" method="post">
+												<form action="reservar_data.php" method="post">
 												<input type="hidden" name="sala" value="' . $variavel . '">
 												<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 												</form>
@@ -403,7 +403,7 @@ session_start();
 									</tbody>
 								</table>
 							</div>
-							
+
 							<?php
 							break;
 					}
