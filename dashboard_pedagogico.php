@@ -16,10 +16,10 @@ while ($aux_query = $sql->fetch_assoc()){
   echo "document.getElementById('data').textContent =" .$aux_query['data'];
   echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
 
-  "}
-  </script>";
+ 
 }
-
+"}
+</script>";
 echo '<script> 
   function listarUsuarios(){
     alert("listar usuarios");

@@ -13,22 +13,22 @@ if (isset($_POST['btn_entrar'])) {
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
         $_SESSION['permissao'] = $aux_query['permissao'];
-        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_admin.php"); //redireciona adm
+        header("Location: dashboard.php"); //redireciona adm
     }else if($aux_query['permissao']==='PED'){
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
         $_SESSION['permissao'] = $aux_query['permissao'];
-        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_pedagogico.php"); //redireciona pedagogico
+        header("Location: dashboard.php"); //redireciona pedagogico
     }else if($aux_query['permissao']==='USE'){
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
         $_SESSION['permissao'] = $aux_query['permissao'];
-        header("Location: http://localhost/Reservas_SENAC_1.0/dashboard_professor.php"); //redireciona professor
+        header("Location: dashboard.php"); //redireciona professor
     }else{
-        header("Location: http://localhost/Reservas_SENAC_1.0/index.php?passwd=error");
+        header("Location: index.php?passwd=error");
     }
     } catch (Exception $e) {
-        header("Location: http://localhost/Reservas_SENAC_1.0/index.php?user=error"); //atualiza a pagina com erro
+        header("Location: index.php?user=error"); //atualiza a pagina com erro
     }
 } 
 ?>

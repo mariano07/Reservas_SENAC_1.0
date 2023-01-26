@@ -12,35 +12,19 @@ require_once('conexao.php');
 if (isset($_POST['btn_pesquisar'])) {
 }
 
-$sql = $con->query("SELECT salas.*,reservados.*,usuarios.* FROM `reservados` INNER JOIN salas ON salas.id = reservados.id_sala INNER JOIN usuarios ON usuarios.id = reservados.id_usuario;");
+echo "<script>
+function minhasReservas(){";
+$sql = $con->query("SELECT * FROM reservados WHERE 1");
 $aux_query = $sql->fetch_assoc();
 
 while ($aux_query = $sql->fetch_assoc()){
-  echo "<script>
-
-  function minhasReservas(){
-
-  document.getElementById('professor').textContent =" . $aux_query['professor'];
-  echo "document.getElementById('andar').textContent =". $aux_query['andar'];
-  echo "document.getElementById('sala').textContent =" .$aux_query['sala'];
-  echo "document.getElementById('data').textContent =" .$aux_query['data'];
-  echo "document.getElementById('hora').textContent =" .$aux_query['horario'];
-
-  "}
-  </script>";
+  echo "document.getElementById('professor').innerHTML =" . $aux_query['id']."
+   document.getElementById('andar').innerHTML =". $aux_query['id_sala'].";
+   document.getElementById('sala').innerHTML =". $aux_query['dia'];
+ 
 }
-
-echo '<script> 
-  function listarUsuarios(){
-    alert("listar usuarios");
-  }
-  </script>';
-
-echo '<script> 
-  function mostrarInventario(){
-    alert("inventario");
-  }
-  </script>';
+echo"}
+</script>";
 
 ?>
 <!doctype html>
