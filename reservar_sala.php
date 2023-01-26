@@ -1,5 +1,7 @@
 <?php
 session_start();
+require ('conexao.php');
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -145,32 +147,33 @@ session_start();
 										<?php
 										$variavel = "texto";
 										$variavel1 = "SALA";
-										for ($y = 0; $y < 5; $y++) { ?>
-											<tr>
-												<td><?php echo $variavel1 ?></td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>
-													<form action="reservar_data.php" method="post">
-														<input type="hidden" name="sala" value=" . $variavel . ">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
-													</form>
-												</td>
-											</tr>
-											<?php
-										}
+										echo "<tr>";
+										echo '<td>' . $variavel1 . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo '<td>
+												<form action="reservar_data.php" method="post">
+												<input type="hidden" name="sala" value="' . $variavel . '">
+												<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+												</form>
+												</td>';
+										echo "</tr>";
+
+
 										?>
 									</tbody>
 								</table>
@@ -202,32 +205,33 @@ session_start();
 										<?php
 										$variavel = "texto";
 										$variavel1 = "SALA";
-										for ($y = 0; $y < 5; $y++) { ?>
-											<tr>
-												<td><?php echo $variavel1 ?></td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>
-													<form action="reservar_data.php" method="post">
-													<input type="hidden" name="sala" value=" . $variavel . ">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
-													</form>
-												</td>
-											</tr>
-											<?php
-										}
+										echo "<tr>";
+										echo '<td>' . $variavel1 . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo '<td>
+												<form action="reservar_data.php" method="post">
+												<input type="hidden" name="sala" value="' . $variavel . '">
+												<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+												</form>
+												</td>';
+										echo "</tr>";
+
+
 										?>
 									</tbody>
 								</table>
@@ -259,32 +263,33 @@ session_start();
 										<?php
 										$variavel = "texto";
 										$variavel1 = "SALA";
-										for ($y = 0; $y < 5; $y++) { ?>
-											<tr>
-												<td><?php echo $variavel1 ?></td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>
-													<form action="reservar_data.php" method="post">
-														<input type="hidden" name="sala" value=" . $variavel . ">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
-													</form>
-												</td>
-											</tr>
-											<?php
-										}
+										echo "<tr>";
+										echo '<td>' . $variavel1 . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo '<td>
+												<form action="reservar_data.php" method="post">
+												<input type="hidden" name="sala" value="' . $variavel . '">
+												<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+												</form>
+												</td>';
+										echo "</tr>";
+
+
 										?>
 									</tbody>
 								</table>
@@ -316,32 +321,33 @@ session_start();
 										<?php
 										$variavel = "texto";
 										$variavel1 = "SALA";
-										for ($y = 0; $y < 5; $y++) { ?>
-											<tr>
-												<td><?php echo $variavel1 ?></td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>
-													<form action="reservar_data.php" method="post">
-														<input type="hidden" name="sala" value=" . $variavel . ">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
-													</form>
-												</td>
-											</tr>
-											<?php
-										}
+										echo "<tr>";
+										echo '<td>' . $variavel1 . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo '<td>
+												<form action="reservar_data.php" method="post">
+												<input type="hidden" name="sala" value="' . $variavel . '">
+												<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+												</form>
+												</td>';
+										echo "</tr>";
+
+
 										?>
 									</tbody>
 								</table>
@@ -373,32 +379,33 @@ session_start();
 										<?php
 										$variavel = "texto";
 										$variavel1 = "SALA";
-										for ($y = 0; $y < 5; $y++) { ?>
-											<tr>
-												<td><?php echo $variavel1 ?></td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>sala</td>
-												<td>
-													<form action="reservar_data.php" method="post">
-														<input type="hidden" name="sala" value=" . $variavel . ">
-														<input class="btn btn-success" type="submit" name="submit" value="Reservar">
-													</form>
-												</td>
-											</tr>
-											<?php
-										}
+										echo "<tr>";
+										echo '<td>' . $variavel1 . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo '<td>
+												<form action="reservar_data.php" method="post">
+												<input type="hidden" name="sala" value="' . $variavel . '">
+												<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+												</form>
+												</td>';
+										echo "</tr>";
+
+
 										?>
 									</tbody>
 								</table>
@@ -433,38 +440,38 @@ session_start();
 								</tr>
 							</thead>
 							<tbody>
-								<?php
-								$variavel = "texto";
-								$variavel1 = "SALA";
-								echo "<tr>";
-								echo '<td>' . $variavel1 . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo "<td>" . $variavel . "</td>";
-								echo '<td>
-											<form action="#" method="post">
-											<input type="hidden" name="sala" value="' . $variavel . '">
-											<input class="btn btn-success" type="submit" name="submit" value="Reservar">
-											</form>
-											</td>';
-								echo "</tr>";
+										<?php
+										$variavel = "texto";
+										$variavel1 = "SALA";
+										echo "<tr>";
+										echo '<td>' . $variavel1 . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo "<td>" . $variavel . "</td>";
+										echo '<td>
+												<form action="reservar_data.php" method="post">
+												<input type="hidden" name="sala" value="' . $variavel . '">
+												<input class="btn btn-success" type="submit" name="submit" value="Reservar">
+												</form>
+												</td>';
+										echo "</tr>";
 
 
-								?>
-							</tbody>
+										?>
+									</tbody>
 						</table>
 					</div>
 					<?php
