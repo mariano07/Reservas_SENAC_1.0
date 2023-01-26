@@ -89,7 +89,7 @@
           <br>
         
           <br>
-          <div class="col-md-5 no-gutters"><input style="margin-left: 170px; margin-bottom: 50px;" style="" type="submit" class="btn btn-warning btn-form" value="Proximo"></div>
+          <div class="col-md-5 no-gutters"><input style="margin-left: 170px; margin-bottom: 50px;"type="submit" class="btn btn-warning btn-form" value="Proximo"></div>
           </div>
           </form>
         </div>
