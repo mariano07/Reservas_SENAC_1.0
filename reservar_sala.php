@@ -62,7 +62,7 @@ require('conexao.php');
 						case '1':
 				?>
 							<div class="table-responsive">
-								<table class="table table-striped table-sm">
+								<table class="table table-striped table-sm table-bordered">
 									<thead>
 										<tr>
 											<th scope="col">SALAS</th>
@@ -119,7 +119,7 @@ require('conexao.php');
 						case '2':
 						?>
 							<div class="table-responsive">
-								<table class="table table-striped table-sm">
+								<table class="table table-striped table-sm table-bordered">
 									<thead>
 										<tr>
 											<th scope="col">SALAS</th>
@@ -176,7 +176,7 @@ require('conexao.php');
 						case '3':
 						?>
 							<div class="table-responsive">
-								<table class="table table-striped table-sm">
+								<table class="table table-striped table-sm table-bordered">
 									<thead>
 										<tr>
 											<th scope="col">SALAS</th>
@@ -233,7 +233,7 @@ require('conexao.php');
 						case '4':
 						?>
 							<div class="table-responsive">
-								<table class="table table-striped table-sm">
+								<table class="table table-striped table-sm table-bordered">
 									<thead>
 										<tr>
 											<th scope="col">SALAS</th>
@@ -290,7 +290,7 @@ require('conexao.php');
 						case '5':
 						?>
 							<div class="table-responsive">
-								<table class="table table-striped table-sm">
+								<table class="table table-striped table-sm table-bordered">
 									<thead>
 										<tr>
 											<th scope="col">SALAS</th>
@@ -347,7 +347,7 @@ require('conexao.php');
 						case '5':
 						?>
 							<div class="table-responsive">
-								<table class="table table-striped table-sm">
+								<table class="table table-striped table-sm table-bordered">
 									<thead>
 										<tr>
 											<th scope="col">SALAS</th>
@@ -405,7 +405,7 @@ require('conexao.php');
 				} else {
 					?>
 					<div class="table-responsive">
-						<table class="table table-striped table-sm">
+						<table class="table table-striped table-sm table-bordered">
 							<thead>
 								<tr>
 									<th scope="col">SALAS</th>

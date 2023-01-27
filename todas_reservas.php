@@ -158,7 +158,7 @@ require_once('conexao.php');
         </div>
 
         <div class="table-responsive">
-            <table class="table table-striped table-sm">
+            <table class="table table-striped table-sm table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Professor</th>
