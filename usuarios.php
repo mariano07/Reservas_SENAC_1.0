@@ -16,7 +16,7 @@ require_once('conexao.php');
     } else if ($_SESSION['permissao'] === "PED") {
         echo '<title>Dashboard Pedagógico</title>';
     } else if ($_SESSION['permissao'] === "USE") {
-        echo '<title>Dashboard Professor</title>';
+        header("Location:minhas_reservas.php");
     } else {
         header("Location:index.php");
     }
