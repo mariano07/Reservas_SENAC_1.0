@@ -56,7 +56,7 @@ require_once('conexao.php');
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="dashboard.php">
+              <a class="nav-link" href="minhas_reservas.php">
                 <span data-feather="bookmark" class="align-text-bottom"></span>
                 Minhas Reservas
               </a>
@@ -107,7 +107,7 @@ require_once('conexao.php');
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="dashboard.php">
+              <a class="nav-link" href="minhas_reservas.php">
                 <span data-feather="bookmark" class="align-text-bottom"></span>
                 Minhas Reservas
               </a>
