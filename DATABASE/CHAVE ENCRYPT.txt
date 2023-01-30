@@ -27,6 +27,7 @@ AES_ENCRYPT("[dado inserido]","@R353rV453n4C#")
 "CALL `proc_reservas_user` ('$id_usuario')" - Faz uma busca nas reservas existentes conforme oque o ID do usuario.
 "CALL `proc_login` ('$matricula','$senha')" - Verifica se exite registro conforme a matricula e senha informada.
 "CALL `proc_new_senha` ('$id_usuario','$new_senha')" - Edita a senha do usuario.
+"CALL `proc_salas_andar` ('$andar')" - Busca as salas conforme o andar indicado.
 "SELECT * FROM `view_professores`" - Pesquisa por usuarios com a permissão de "USE".
 "SELECT * FROM `view_reservas`" - Busca todas as reservas.
 "SELECT * FROM `view_salas`" - Busca todas as salas e seus respectivos inventarios.
