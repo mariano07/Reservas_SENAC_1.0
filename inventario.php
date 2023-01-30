@@ -186,7 +186,7 @@ require_once('conexao.php');
                 </thead>
                 <tbody>
                     <?php
-                    $sql = $con->query("SELECT * FROM inventario");
+                    $sql = $con->query("SELECT * FROM `view_salas`");
                     $aux_query = $sql->fetch_assoc();
 
                     while ($aux_query = $sql->fetch_assoc()) {

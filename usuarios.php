@@ -170,7 +170,7 @@ require_once('conexao.php');
 
                     <?php
                     if ($_SESSION['permissao'] === "ADM") {
-                        $sql = $con->query("");
+                        $sql = $con->query("SELECT * FROM `view_usuarios`");
                         $aux_query = $sql->fetch_assoc();
 
                         while ($aux_query = $sql->fetch_assoc()) {
@@ -182,7 +182,7 @@ require_once('conexao.php');
                             echo "</tr>";
                         }
                     } else if ($_SESSION['permissao'] === "PED") {
-                        $sql = $con->query("");
+                        $sql = $con->query("SELECT * FROM `view_professores`");
                         $aux_query = $sql->fetch_assoc();
 
                         while ($aux_query = $sql->fetch_assoc()) {

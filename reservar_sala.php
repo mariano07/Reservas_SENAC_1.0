@@ -93,7 +93,7 @@ require('conexao.php');
 										while ($aux_query = $sql->fetch_assoc()) {
 											echo "<tr>";
 											echo '<td>' . $aux_query['id_sala'] . "</td>";
-											//echo "<td>" . $aux_query['andar'] . "</td>";
+											echo "<td> 1 </td>";
 											echo "<td>" . $aux_query['computador'] . "</td>";
 											echo "<td>" . $aux_query['computador_prof'] . "</td>";
 											echo "<td>" . $aux_query['monitor'] . "</td>";
@@ -150,7 +150,7 @@ require('conexao.php');
 										while ($aux_query = $sql->fetch_assoc()) {
 											echo "<tr>";
 											echo '<td>' . $aux_query['id_sala'] . "</td>";
-											//echo "<td>" . $aux_query['andar'] . "</td>";
+											echo "<td> 2 </td>";
 											echo "<td>" . $aux_query['computador'] . "</td>";
 											echo "<td>" . $aux_query['computador_prof'] . "</td>";
 											echo "<td>" . $aux_query['monitor'] . "</td>";
@@ -207,7 +207,7 @@ require('conexao.php');
 										while ($aux_query = $sql->fetch_assoc()) {
 											echo "<tr>";
 											echo '<td>' . $aux_query['id_sala'] . "</td>";
-											//echo "<td>" . $aux_query['andar'] . "</td>";
+											echo "<td> 3 </td>";
 											echo "<td>" . $aux_query['computador'] . "</td>";
 											echo "<td>" . $aux_query['computador_prof'] . "</td>";
 											echo "<td>" . $aux_query['monitor'] . "</td>";
@@ -264,7 +264,7 @@ require('conexao.php');
 										while ($aux_query = $sql->fetch_assoc()) {
 											echo "<tr>";
 											echo '<td>' . $aux_query['id_sala'] . "</td>";
-											//echo "<td>" . $aux_query['andar'] . "</td>";
+											echo "<td> 4 </td>";
 											echo "<td>" . $aux_query['computador'] . "</td>";
 											echo "<td>" . $aux_query['computador_prof'] . "</td>";
 											echo "<td>" . $aux_query['monitor'] . "</td>";
@@ -321,7 +321,7 @@ require('conexao.php');
 										while ($aux_query = $sql->fetch_assoc()) {
 											echo "<tr>";
 											echo '<td>' . $aux_query['id_sala'] . "</td>";
-											//echo "<td>" . $aux_query['andar'] . "</td>";
+											echo "<td> 5 </td>";
 											echo "<td>" . $aux_query['computador'] . "</td>";
 											echo "<td>" . $aux_query['computador_prof'] . "</td>";
 											echo "<td>" . $aux_query['monitor'] . "</td>";
@@ -378,7 +378,7 @@ require('conexao.php');
 										while ($aux_query = $sql->fetch_assoc()) {
 											echo "<tr>";
 											echo '<td>' . $aux_query['id_sala'] . "</td>";
-											//echo "<td>" . $aux_query['andar'] . "</td>";
+											echo "<td> 6 </td>";
 											echo "<td>" . $aux_query['computador'] . "</td>";
 											echo "<td>" . $aux_query['computador_prof'] . "</td>";
 											echo "<td>" . $aux_query['monitor'] . "</td>";
@@ -436,7 +436,7 @@ require('conexao.php');
 								while ($aux_query = $sql->fetch_assoc()) {
 									echo "<tr>";
 									echo '<td>' . $aux_query['id_sala'] . "</td>";
-									//echo "<td>" . $aux_query['andar'] . "</td>";
+									echo "<td> 1 </td>";
 									echo "<td>" . $aux_query['computador'] . "</td>";
 									echo "<td>" . $aux_query['computador_prof'] . "</td>";
 									echo "<td>" . $aux_query['monitor'] . "</td>";

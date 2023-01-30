@@ -1,10 +1,13 @@
 <?php
 session_start();
-// $con = mysqli_connect($servername, $username, $password, $database);
+require_once('conexao.php');
 
-// if (!$con) {
-//     mysqli_connect_error();
-// }
+$con = mysqli_connect($servername, $username, $password, $database);
+
+if (!$con) {
+     mysqli_connect_error();
+}
+ $con->query("CALL `proc_new_senha` ('$id_usuario','$new_senha')");
 ?>
 <html>
 

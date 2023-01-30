@@ -164,26 +164,27 @@ require_once('conexao.php');
                         <th scope="col">Professor</th>
                         <th scope="col">Andar</th>
                         <th scope="col">Sala</th>
-                        <th scope="col">Data</th>
                         <th scope="col">Horário</th>
+                        <th scope="col">Dia</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $sql = $con->query("");
+                    $sql = $con->query("SELECT * FROM `view_reservas`");
                     $aux_query = $sql->fetch_assoc();
 
                     while ($aux_query = $sql->fetch_assoc()) {
                         echo "<tr>";
-                        echo '<td>' . $aux_query['professor'] . "</td>";
+                        echo '<td>' . $aux_query['nome'] . "</td>";
                         echo "<td>" . $aux_query['andar'] . "</td>";
-                        echo "<td>" . $aux_query['sala'] . "</td>";
-                        echo "<td>" . $aux_query['data_inicio'] . " até " . $aux_query['data_fim'] . "</td>";
-                        echo "<td>" . $aux_query['hora'] . "</td>";
+                        echo "<td>" . $aux_query['numero'] . "</td>";
+                        echo "<td>" . $aux_query['inicio'] . " até " . $aux_query['fim'] . "</td>";
+                        echo "<td>" . $aux_query['dia'] . "</td>";
                         echo '<td><button type="button" class="btn btn-danger">Deletar</button></td>';
                         echo '<td><button type="button" class="btn btn-primary">Editar</button></td>';
                         echo "</tr>";
                     }
+                    $con->close();
                     ?>
                 </tbody>
             </table>
