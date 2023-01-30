@@ -87,7 +87,7 @@ require('conexao.php');
 									</thead>
 									<tbody>
 										<?php
-										$sql = $con->query("SELECT * FROM inventario");
+										$sql = $con->query("CALL `proc_salas_andar` ('1')");
 										$aux_query = $sql->fetch_assoc();
 
 										while ($aux_query = $sql->fetch_assoc()) {
@@ -144,7 +144,7 @@ require('conexao.php');
 									</thead>
 									<tbody>
 										<?php
-										$sql = $con->query("SELECT * FROM inventario");
+										$sql = $con->query("CALL `proc_salas_andar` ('2')");
 										$aux_query = $sql->fetch_assoc();
 
 										while ($aux_query = $sql->fetch_assoc()) {
@@ -201,7 +201,7 @@ require('conexao.php');
 									</thead>
 									<tbody>
 										<?php
-										$sql = $con->query("SELECT * FROM inventario");
+										$sql = $con->query("CALL `proc_salas_andar` ('3')");
 										$aux_query = $sql->fetch_assoc();
 
 										while ($aux_query = $sql->fetch_assoc()) {
@@ -258,7 +258,7 @@ require('conexao.php');
 									</thead>
 									<tbody>
 										<?php
-										$sql = $con->query("SELECT * FROM inventario ");
+										$sql = $con->query("CALL `proc_salas_andar` ('4')");
 										$aux_query = $sql->fetch_assoc();
 
 										while ($aux_query = $sql->fetch_assoc()) {
@@ -315,7 +315,7 @@ require('conexao.php');
 									</thead>
 									<tbody>
 										<?php
-										$sql = $con->query("SELECT * FROM inventario");
+										$sql = $con->query("CALL `proc_salas_andar` ('5')");
 										$aux_query = $sql->fetch_assoc();
 
 										while ($aux_query = $sql->fetch_assoc()) {
@@ -372,7 +372,7 @@ require('conexao.php');
 									</thead>
 									<tbody>
 										<?php
-										$sql = $con->query("SELECT * FROM inventario");
+										$sql = $con->query("CALL `proc_salas_andar` ('6')");
 										$aux_query = $sql->fetch_assoc();
 
 										while ($aux_query = $sql->fetch_assoc()) {
@@ -430,7 +430,7 @@ require('conexao.php');
 							</thead>
 							<tbody>
 								<?php
-								$sql = $con->query("SELECT * FROM inventario");
+								$sql = $con->query("CALL `proc_salas_andar` ('1')");
 								$aux_query = $sql->fetch_assoc();
 
 								while ($aux_query = $sql->fetch_assoc()) {
