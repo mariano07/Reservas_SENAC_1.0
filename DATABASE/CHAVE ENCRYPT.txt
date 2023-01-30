@@ -25,6 +25,8 @@ AES_ENCRYPT("[dado inserido]","@R353rV453n4C#")
 "CALL `proc_edit_inventario` ('$id_sala','$computador','$computador_prof','$monitor','$mouse','$teclado','$mesa','$cadeira','$televisao','$ar_condicionado','$controle_ar','$data_show','$apagador','$canetao_azul','$canetao_vermelho','$canetao_preto','$webcam')" - Atualiza itens do inventario.
 "CALL `proc_search_reservas` ('%$busca%')"  - Faz uma busca nas reservas existentes conforme oque o usuario digitou.
 "CALL `proc_reservas_user` ('$id_usuario')" - Faz uma busca nas reservas existentes conforme oque o ID do usuario.
+"CALL `proc_login` ('$matricula','$senha')" - Verifica se exite registro conforme a matricula e senha informada.
+"CALL `proc_new_senha` ('$id_usuario','$new_senha')" - Edita a senha do usuario.
 "SELECT * FROM `view_professores`" - Pesquisa por usuarios com a permissão de "USE".
 "SELECT * FROM `view_reservas`" - Busca todas as reservas.
 "SELECT * FROM `view_salas`" - Busca todas as salas e seus respectivos inventarios.
