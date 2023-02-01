@@ -1,3 +1,17 @@
+<?php
+require_once('conexao.php');
+
+if(isset($_POST['submit'])){
+  $nome = $_POST['nome'];
+  $telefone = $_POST['telefone'];
+  $email = $_POST['email'];
+  $matricula = $_POST['matricula'];
+  $senha = $_POST['senha'];
+  $cargo = $_POST['cargo'];
+  $con->query("CALL `proc_cadastrar` ('$nome','$telefone','$email','$matricula','$senha','$cargo','ADM')");
+}
+  
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -22,7 +36,7 @@
       <div class="centralizar" style="padding-top: 50px; margin-left: 100%;"></div>
       <h2 class="titulo">Cadastro</h2>
       <div class="col-md-7 col-lg-3">
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" novalidate action="#" method="post">
       </div>
 
     <table>
@@ -79,8 +93,8 @@
       <td>
           <br>
           <div class="col-12">
-            <label for="curso" class="form-label" style=" margin-left: 60px;">Curso</label>
-            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="text" class="form-control" name="curso" placeholder="Curso" required/>
+            <label for="cargo" class="form-label" style=" margin-left: 60px;">Cargo</label>
+            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="text" class="form-control" name="cargo" placeholder="Curso" required/>
           </div>
           </div>
       </td>
@@ -89,7 +103,7 @@
           <br>
         
           <br>
-          <div class="col-md-5 no-gutters"><input style="margin-left: 170px; margin-bottom: 50px;"type="submit" class="btn btn-warning btn-form" value="Proximo"></div>
+          <div class="col-md-5 no-gutters"><input style="margin-left: 170px; margin-bottom: 50px;"type="submit" name="submit" class="btn btn-warning btn-form" value="Proximo"></div>
           </div>
           </form>
         </div>
@@ -99,7 +113,5 @@
     <br>
     <br>
   </div>
-
-  <script></script>
 </body>
 </html>
