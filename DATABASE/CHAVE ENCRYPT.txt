@@ -20,6 +20,7 @@ matricula paulo
 
 AES_ENCRYPT("[dado inserido]","@R353rV453n4C#")
 
+"CALL `proc_search_reservas` ('$email')" - verifica a existencia de um email.
 "CALL `proc_cadastrar` ('$nome','$telefone','$email','$matricula','$senha','$cargo','$permissao')" - Cadastro de novos usuarios.
 "CALL `proc_agendar` ('$id_sala','$id_usuario','$dia','$inicio','$fim') - realiza o agendamento de uma sala.
 "CALL `proc_deleta_reserva` ('$id_reserva')" - Deleta uma reserva feita.
