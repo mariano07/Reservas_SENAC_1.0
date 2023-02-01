@@ -15,7 +15,9 @@ if (isset($_POST['submit'])) {
     if (!$con) {
         mysqli_connect_error();
     }
+    header("Location: index.php");
     $con->query("CALL `proc_new_senha` ('$id_usuario','$senha')");
+    
 }
 
 ?>

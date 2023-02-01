@@ -178,7 +178,7 @@ require_once('conexao.php');
                             echo '<td>' . $aux_query['nome'] . "</td>";
                             echo "<td>" . $aux_query['cargo'] . "</td>";
                             echo "<td>" . $aux_query['matricula'] . "</td>";
-                            echo '<td><a href="confirmacao_deletar.php"><button type="button" class="btn btn-danger">Deletar</button></a></td>';
+                            echo '<td><button type="button" class="btn btn-danger">Deletar</button></td>';
                             echo "</tr>";
                         }
                     } else if ($_SESSION['permissao'] === "PED") {
