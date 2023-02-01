@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
         mysqli_connect_error();
     }
     $con->query("CALL `proc_new_senha` ('$id_usuario','$senha')");
+    header("Location: minhas_reservas.php");
 }
 
 ?>
