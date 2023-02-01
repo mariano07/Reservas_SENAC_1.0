@@ -2,8 +2,7 @@
 session_start();
 require_once('conexao.php');
 include('email.php');
-$_SESSION['user']='arthur';
-$_SESSION['email'] = 'arthurrapach06@gmail.com';
+
 if(isset($_POST['submit'])){
   $nome = $_POST['nome'];
   $telefone = $_POST['telefone'];
