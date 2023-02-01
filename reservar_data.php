@@ -1,11 +1,7 @@
 <?php
 session_start();
 $_SESSION['sala'] = $_POST['sala'];
-// $con = mysqli_connect($servername, $username, $password, $database);
 
-// if(!$con){              
-//     mysqli_connect_error();
-// }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,7 +33,7 @@ $_SESSION['sala'] = $_POST['sala'];
 							<div class="form-header" style="margin-left: 175px;">
 								<img style="padding-left: 25%; padding-top: 5%;" src="images/senac_logo.png" style="width: 200px;">
 							</div>
-                            <form action="confirmacao.php" method="post">
+                            <form action="confirmacao_reserva.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group" style="margin-top: 40px;">

@@ -201,7 +201,7 @@ require_once('conexao.php');
             </thead>
             <tbody>
             <?php
-										$sql = $con->query("CALL `proc_reservas_user` ('$id_usuario')");
+										$sql = $con->query("CALL `proc_reservas_user` ('". $_SESSION['id_user']."')");
 										$aux_query = $sql->fetch_assoc();
 
 										while ($aux_query = $sql->fetch_assoc()) {

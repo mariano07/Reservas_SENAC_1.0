@@ -1,37 +1,38 @@
 <?php
 session_start();
-//require_once('conexao.php');
+require_once('conexao.php');
 
 if (isset($_POST['btn_entrar'])) {
     $matricula = $_POST['matricula'];
     $senha = $_POST['senha'];
     try {
         $sql = $con->query("CALL `proc_login` ('$matricula','$senha')"); //busca no banco 
-        $aux_query = $sql->fetch_assoc(); //guarda os dados na aux_query
-
-    if ($aux_query['permissao']==='ADM') {
-        $_SESSION['id_user'] = $aux_query['id'];
-        $_SESSION['user'] = $aux_query['nome'];
-        $_SESSION['permissao'] = $aux_query['permissao'];
-        $_SESSION['email'] = $aux_query['email'];
-        header("Location: dashboard.php"); //redireciona adm
-    }else if($aux_query['permissao']==='PED'){
-        $_SESSION['id_user'] = $aux_query['id'];
-        $_SESSION['user'] = $aux_query['nome'];
-        $_SESSION['permissao'] = $aux_query['permissao'];
-        $_SESSION['email'] = $aux_query['email'];
-        header("Location: dashboard.php"); //redireciona pedagogico
-    }else if($aux_query['permissao']==='USE'){
-        $_SESSION['id_user'] = $aux_query['id'];
-        $_SESSION['user'] = $aux_query['nome'];
-        $_SESSION['permissao'] = $aux_query['permissao'];
-        $_SESSION['email'] = $aux_query['email'];
-        header("Location: dashboard.php"); //redireciona professor
-    }else{
-        header("Location: index.php?passwd=error");
-    }
+        if($sql != false){
+            $aux_query = $sql->fetch_assoc();
+            if ($aux_query['permissao']==='ADM') {
+                $_SESSION['id_user'] = $aux_query['id'];
+                $_SESSION['user'] = $aux_query['nome'];
+                $_SESSION['permissao'] = $aux_query['permissao'];
+                $_SESSION['email'] = $aux_query['email'];
+                header("Location: minhas_reservas.php"); //redireciona adm
+            }else if($aux_query['permissao']==='PED'){
+                $_SESSION['id_user'] = $aux_query['id'];
+                $_SESSION['user'] = $aux_query['nome'];
+                $_SESSION['permissao'] = $aux_query['permissao'];
+                $_SESSION['email'] = $aux_query['email'];
+                header("Location: minhas_reservas.php"); //redireciona pedagogico
+            }else if($aux_query['permissao']==='USE'){
+                $_SESSION['id_user'] = $aux_query['id'];
+                $_SESSION['user'] = $aux_query['nome'];
+                $_SESSION['permissao'] = $aux_query['permissao'];
+                $_SESSION['email'] = $aux_query['email'];
+                header("Location: minhas_reservas.php"); //redireciona professor
+            }else{
+                header("Location: index.php?passwd=error");
+            }
+        } //guarda os dados na aux_query
     } catch (Exception $e) {
-        header("Location: index.php?user=error"); //atualiza a pagina com erro
+        header("Location: index.php"); //atualiza a pagina com erro
     }
 } 
 ?>
