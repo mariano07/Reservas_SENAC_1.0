@@ -4,6 +4,7 @@ include('email.php');
 $data = $_POST['data'];
 $hora = $_POST['hora'];
 $email = $_SESSION['email'];
+$_SESSION['sala']='201';
 
 if (isset($_POST['btn_confirmar'])) {
   $phpmail = new email;

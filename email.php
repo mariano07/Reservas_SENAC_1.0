@@ -21,19 +21,19 @@ class email
             $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomércio Sesc Senac Tramandaí');
+            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomércio Sesc Senac Tramandai');
             $mail->addAddress($email_usuario, $usuario); //Add a recipient
             $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', '');
 
 
             $mail->isHTML(true); //Set email format to HTML
             $mail->Subject = 'Redefinição de Senha';
-            $mail->Body = 'Olá, ' . $usuario . '!<br>
-        Foi realizado um pedido de redefinição de senha, aqui está uma senha temporária para você.<br>
-        Sua nova senha é: ' . $senha;
-            $mail->AltBody = 'Olá, ' . $usuario . '!
-        Foi realizado um pedido de redefinição de senha, aqui está uma senha temporária para você.
-        Sua nova senha é:' . $senha;
+            $mail->Body = 'Ola, ' . $usuario . '!<br>
+        Foi realizado um pedido de redefinicao de senha, aqui está uma senha temporária para voce.<br>
+        Sua nova senha e: ' . $senha;
+            $mail->AltBody = 'Ola, ' . $usuario . '!
+        Foi realizado um pedido de redefinicao de senha, aqui está uma senha temporária para voce.
+        Sua nova senha e:' . $senha;
 
             $mail->send();
         } catch (Exception $e) {
@@ -55,22 +55,22 @@ class email
             $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomercio Sesc Senac Tramandaí');
+            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomercio Sesc Senac Tramandai');
             $mail->addAddress($email, $usuario); //Add a recipient
             $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', '');
 
             $mail->isHTML(true); //Set email format to HTML
             $mail->Subject = 'Reserva de Sala';
-            $mail->Body = 'Olá, ' . $usuario . '!<br>
+            $mail->Body = 'Ola, ' . $usuario . '!<br>
             Foi realizado uma reserva em seu nome!<br>
             Sala = ' . $sala . '<br>
-            Horário = ' . $hora . '<br>
+            Horario = ' . $hora . '<br>
             Data = ' . $data . '<br>';
             $mail->AltBody =
-                'Olá, ' . $usuario . '!
+                'Ola, ' . $usuario . '!
             Foi realizado uma reserva em seu nome!';
             'Sala: ' . $sala;
-            'Horário: ' . $hora;
+            'Horario: ' . $hora;
             'Data: ' . $data;
 
             $mail->send();
@@ -94,16 +94,16 @@ class email
             $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomercio Sesc Senac Tramandaí');
+            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomercio Sesc Senac Tramandai');
             $mail->addAddress($email, $usuario); //Add a recipient
             $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', '');
 
             $mail->isHTML(true); //Set email format to HTML
             $mail->Subject = 'Sistema de Agendamento de Salas';
-            $mail->Body ='Olá, ' . $usuario . '!<br>
-            Seja Bem-Vindo ao sistema de Agendamento de Salas do Senac Tramandaí!<br>';
-            $mail->AltBody = 'Olá, ' . $usuario . '!<br>
-            Seja Bem-Vindo ao sistema de Agendamento de Salas do Senac Tramandaí!';
+            $mail->Body ='Ola, ' . $usuario . '!<br>
+            Seja Bem-Vindo ao sistema de Agendamento de Salas do Senac Tramandai!<br>';
+            $mail->AltBody = 'Ola, ' . $usuario . '!<br>
+            Seja Bem-Vindo ao sistema de Agendamento de Salas do Senac Tramandai!';
 
             $mail->send();
         } catch (Exception $e) {
@@ -125,16 +125,16 @@ class email
             $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomercio Sesc Senac Tramandaí');
+            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomercio Sesc Senac Tramandai');
             $mail->addAddress($email_adm, $adm); //Add a recipient
             $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', '');
 
             $mail->isHTML(true); //Set email format to HTML
             $mail->Subject = 'Cadastro efetuado com sucesso';
-            $mail->Body ='Olá, ' . $adm . '!<br>
-            Você acabou de cadastrar o usuário: '.$usuario.' no sistema de Agendamento de Salas do Senac Tramandaí!<br>';
-            $mail->AltBody = 'Olá, ' . $adm . '!
-            Você acabou de cadastrar o usuário: '.$usuario.' no sistema de Agendamento de Salas do Senac Tramandaí!';
+            $mail->Body ='Ola, ' . $adm . '!<br>
+            Voce acabou de cadastrar o usuario: '.$usuario.' no sistema de Agendamento de Salas do Senac Tramandai!<br>';
+            $mail->AltBody = 'Ola, ' . $adm . '!
+            Voce acabou de cadastrar o usuario: '.$usuario.' no sistema de Agendamento de Salas do Senac Tramandai!';
 
             $mail->send();
         } catch (Exception $e) {
