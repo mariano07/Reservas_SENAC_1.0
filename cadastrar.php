@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once('conexao.php');
+include('email.php');
 
 if(isset($_POST['submit'])){
   $nome = $_POST['nome'];
@@ -9,6 +11,10 @@ if(isset($_POST['submit'])){
   $senha = $_POST['senha'];
   $cargo = $_POST['cargo'];
   $con->query("CALL `proc_cadastrar` ('$nome','$telefone','$email','$matricula','$senha','$cargo','ADM')");
+  $phpmailer = new email;
+
+  $phpmailer->confirma_cadastro_usuario($nome, $email);
+  $phpmailer->confirma_cadastro_adm($_SESSION['user'],$_SESSION['email'],$nome);
 }
   
 ?>
