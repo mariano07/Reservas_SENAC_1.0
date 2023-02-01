@@ -1,6 +1,7 @@
 <?php
 session_start();
-//require_once('conexao.php');
+require_once('conexao.php');
+
 include('email.php');
 
 if (isset($_POST['submit'])) {

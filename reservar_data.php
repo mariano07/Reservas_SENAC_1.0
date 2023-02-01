@@ -1,11 +1,7 @@
 <?php
 session_start();
 $_SESSION['sala'] = $_POST['sala'];
-// $con = mysqli_connect($servername, $username, $password, $database);
 
-// if(!$con){              
-//     mysqli_connect_error();
-// }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
