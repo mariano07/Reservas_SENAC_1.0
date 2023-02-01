@@ -1,6 +1,6 @@
 <?php
 session_start();
-//require_once('conexao.php');
+require_once('conexao.php');
 
 if (isset($_POST['btn_entrar'])) {
     $matricula = $_POST['matricula'];
@@ -14,19 +14,19 @@ if (isset($_POST['btn_entrar'])) {
         $_SESSION['user'] = $aux_query['nome'];
         $_SESSION['permissao'] = $aux_query['permissao'];
         $_SESSION['email'] = $aux_query['email'];
-        header("Location: dashboard.php"); //redireciona adm
+        header("Location: minhas_reservas.php"); //redireciona adm
     }else if($aux_query['permissao']==='PED'){
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
         $_SESSION['permissao'] = $aux_query['permissao'];
         $_SESSION['email'] = $aux_query['email'];
-        header("Location: dashboard.php"); //redireciona pedagogico
+        header("Location: minhas_reservas.php"); //redireciona pedagogico
     }else if($aux_query['permissao']==='USE'){
         $_SESSION['id_user'] = $aux_query['id'];
         $_SESSION['user'] = $aux_query['nome'];
         $_SESSION['permissao'] = $aux_query['permissao'];
         $_SESSION['email'] = $aux_query['email'];
-        header("Location: dashboard.php"); //redireciona professor
+        header("Location: minhas_reservas.php"); //redireciona professor
     }else{
         header("Location: index.php?passwd=error");
     }
