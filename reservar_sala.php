@@ -467,7 +467,7 @@ require('conexao.php');
 				?>
 				<center>
 					<form method="post" action="#">
-						<a href="dashboard.php" class="btn btn-primary">Voltar</a>
+						<a href="minhas_reservas.php" class="btn btn-primary">Voltar</a>
 						<input type="submit" class="btn btn-primary" name="andar" value="1">
 						<input type="submit" class="btn btn-primary" name="andar" value="2">
 						<input type="submit" class="btn btn-primary" name="andar" value="3">
