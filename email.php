@@ -4,10 +4,10 @@
     use PHPMailer\PHPMailer\SMTP;
 
     require 'vendor/autoload.php';
-function nova_senha($email_usuario, $senha)
-{
+  class email{
+
+function nova_senha($email_usuario, $senha, $usuario){
     $mail = new PHPMailer(true);
-    $mensagem = "";
 
     try {
         //Server settings
@@ -20,21 +20,21 @@ function nova_senha($email_usuario, $senha)
         $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Mailer');
-        $mail->addAddress('cristopherpiussi@gmail.com', 'Joe User'); //Add a recipient
-        $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', 'Information');
+        $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomércio Sesc Senac Tramandaí');
+        $mail->addAddress($email_usuario, $usuario);     //Add a recipient
+        $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', '');
 
-        //Attachments
-        // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
         $mail->isHTML(true); //Set email format to HTML
-        $mail->Subject = 'Redefinir Senha';
-        $mail->Body = 'Sua nova senha é:';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail->Subject = 'Redefinição de Senha';
+        $mail->Body    = 'Olá, '.$usuario.'!<br>
+        Foi realizado um pedido de redefinição de senha, aqui está uma senha temporária para você.<br>
+        Sua nova senha é: ' . $senha;
+        $mail->AltBody = 'Olá, '.$usuario.'!
+        Foi realizado um pedido de redefinição de senha, aqui está uma senha temporária para você.
+        Sua nova senha é:'. $senha;
 
         $mail->send();
-        echo "foi";
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
@@ -42,41 +42,44 @@ function nova_senha($email_usuario, $senha)
 
     function reserva_sala($usuario,$sala, $email, $hora, $data){
         $mail= new PHPMailer(true);
-        $mensagem = "";
 
         try {
             //Server settings
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                                         //SMTP password
+            $mail->Username = 'mariano-bitelo@educar.rs.gov.br';        //SMTP username
+            $mail->Password = 'ioxbfjwuqmsotmxs';                       //SMTP password                          
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         
             //Recipients
-            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Mailer');
-            $mail->addAddress('cristopherpiussi@gmail.com', 'Joe User');     //Add a recipient
-            $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', 'Information');
-        
-            //Attachments
-            // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-            // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomercio Sesc Senac Tramandaí');
+            $mail->addAddress($email, $usuario);     //Add a recipient
+            $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', '');
                     
             $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Redefinir Senha';
-            $mail->Body    = 'Sua nova senha é:';
-            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+            $mail->Subject = 'Reserva de Sala';
+            $mail->Body    = 'Olá, '.$usuario.'!<br>
+            Foi realizado uma reserva em seu nome!<br>
+            Sala = '.$sala.'<br>
+            Horário = '.$hora.'<br>
+            Data = '.$data.'<br>';
+            $mail->AltBody =
+            'Olá, '.$usuario.'!
+            Foi realizado uma reserva em seu nome!';
+            'Sala: ' . $sala;
+            'Horário: '. $hora;
+            'Data: ' .$data;
             
             $mail->send();
-    echo "foi";
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
 
-    function delete_reserva($usuario, $sala, $data, $hora, $email){
+    function deleta_reserva($usuario, $sala, $data, $hora, $email){
         $mail= new PHPMailer(true);
-        $mensagem = "";
 
         try {
             //Server settings
@@ -89,23 +92,26 @@ function nova_senha($email_usuario, $senha)
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         
             //Recipients
-            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Mailer');
-            $mail->addAddress('cristopherpiussi@gmail.com', 'Joe User');     //Add a recipient
-            $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', 'Information');
-        
-            //Attachments
-            // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-            // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomercio Sesc Senac Tramandaí');
+            $mail->addAddress($email, $usuario);     //Add a recipient
+            $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', '');           
                     
             $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Redefinir Senha';
-            $mail->Body    = 'Sua nova senha é:';
-            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+            'Olá, ' . $usuario . '!<br>
+            Foi deletado uma reserva em seu nome hoje!<br>
+            Sala = '.$sala.'<br>
+            Horário = '.$hora.'<br>
+            Data = '.$data.'<br>';
+            $mail->AltBody = 'Olá, ' . $usuario . '!<br>
+            Foi deletado uma reserva em seu nome!';
+            'Sala: ' . $sala;
+            'Horário: '. $hora;
+            'Data: ' .$data;
             
             $mail->send();
-    echo "foi";
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
+  }
 ?>
