@@ -1,11 +1,12 @@
 <?php
 session_start();
-require('conexao.php');
+//require('conexao.php');
 ?>
 <!doctype html>
 <html lang="pt-br">
 
 <head>
+	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="images/senac_icone.png" type="image/x-icon" rel="shortcut icon">

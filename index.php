@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once('conexao.php');
+//require_once('conexao.php');
 
 if (isset($_POST['btn_entrar'])) {
     $matricula = $_POST['matricula'];
-    $passwd = $_POST['senha'];
+    $senha = $_POST['senha'];
     try {
         $sql = $con->query("CALL `proc_login` ('$matricula','$senha')"); //busca no banco 
         $aux_query = $sql->fetch_assoc(); //guarda os dados na aux_query
