@@ -1,15 +1,15 @@
 <?php
 session_start();
-// include('email.php');
-// $data = $_POST['data'];
-// $hora = $_POST['hora'];
-// $email = $_SESSION['email'];
+include('email.php');
+$data = $_POST['data'];
+$hora = $_POST['hora'];
+$email = $_SESSION['email'];
 
-// if (isset($_POST['btn_confirmar'])) {
-//   $phpmail = new email;
+if (isset($_POST['btn_confirmar'])) {
+  $phpmail = new email;
 
-//   $phpmail->reserva_sala($_SESSION['user'], $_SESSION['sala'], $email, $hora, $data);
-// }
+  $phpmail->reserva_sala($_SESSION['user'], $_SESSION['sala'], $email, $hora, $data);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
