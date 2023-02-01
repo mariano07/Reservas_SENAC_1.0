@@ -8,7 +8,7 @@ if (isset($_POST['btn_entrar'])) {
     try {
         $sql = $con->query("CALL `proc_login` ('$matricula','$senha')"); //busca no banco 
         $aux_query = $sql->fetch_assoc();
-        if (!$aux_query["FALSE"] == 1) {
+        if (!$aux_query["FALSE"] ) {
             if ($aux_query['permissao']==='ADM') {
                 $_SESSION['id_user'] = $aux_query['id'];
                 $_SESSION['user'] = $aux_query['nome'];
