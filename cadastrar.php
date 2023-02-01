@@ -1,7 +1,9 @@
 <?php
+session_start();
 require_once('conexao.php');
 include('email.php');
-
+$_SESSION['user']='arthur';
+$_SESSION['email'] = 'arthurrapach06@gmail.com';
 if(isset($_POST['submit'])){
   $nome = $_POST['nome'];
   $telefone = $_POST['telefone'];
@@ -9,10 +11,11 @@ if(isset($_POST['submit'])){
   $matricula = $_POST['matricula'];
   $senha = $_POST['senha'];
   $cargo = $_POST['cargo'];
-  $con->query("CALL `proc_cadastrar` ('$nome','$telefone','$email','$matricula','$senha','$cargo','USE')");
+  $con->query("CALL `proc_cadastrar` ('$nome','$telefone','$email','$matricula','$senha','$cargo','ADM')");
   $phpmailer = new email;
 
-  $phpmailer->confirma_cadastro($nome, $email);
+  $phpmailer->confirma_cadastro_usuario($nome, $email);
+  $phpmailer->confirma_cadastro_adm($_SESSION['user'],$_SESSION['email'],$nome);
 }
   
 ?>

@@ -79,7 +79,7 @@ class email
         }
     }
 
-    function confirma_cadastro($usuario, $email)
+    function confirma_cadastro_usuario($usuario, $email)
     {
         $mail = new PHPMailer(true);
 
@@ -99,10 +99,42 @@ class email
             $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', '');
 
             $mail->isHTML(true); //Set email format to HTML
+            $mail->Subject = 'Sistema de Agendamento de Salas';
             $mail->Body ='Olá, ' . $usuario . '!<br>
             Seja Bem-Vindo ao sistema de Agendamento de Salas do Senac Tramandaí!<br>';
             $mail->AltBody = 'Olá, ' . $usuario . '!<br>
             Seja Bem-Vindo ao sistema de Agendamento de Salas do Senac Tramandaí!';
+
+            $mail->send();
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+    }
+    function confirma_cadastro_adm($adm, $email_adm, $usuario)
+    {
+        $mail = new PHPMailer(true);
+
+        try {
+            //Server settings
+            $mail->isSMTP(); //Send using SMTP
+            $mail->Host = 'smtp.gmail.com'; //Set the SMTP server to send through
+            $mail->SMTPAuth = true; //Enable SMTP authentication
+            $mail->Username = 'mariano-bitelo@educar.rs.gov.br'; //SMTP username
+            $mail->Password = 'ioxbfjwuqmsotmxs'; //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //Enable implicit TLS encryption
+            $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+            //Recipients
+            $mail->setFrom('mariano-bitelo@educar.rs.gov.br', 'Fecomercio Sesc Senac Tramandaí');
+            $mail->addAddress($email_adm, $adm); //Add a recipient
+            $mail->addReplyTo('mariano-bitelo@educar.rs.gov.br', '');
+
+            $mail->isHTML(true); //Set email format to HTML
+            $mail->Subject = 'Cadastro efetuado com sucesso';
+            $mail->Body ='Olá, ' . $adm . '!<br>
+            Você acabou de cadastrar o usuário: '.$usuario.' no sistema de Agendamento de Salas do Senac Tramandaí!<br>';
+            $mail->AltBody = 'Olá, ' . $adm . '!
+            Você acabou de cadastrar o usuário: '.$usuario.' no sistema de Agendamento de Salas do Senac Tramandaí!';
 
             $mail->send();
         } catch (Exception $e) {
