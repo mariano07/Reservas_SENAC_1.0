@@ -21,7 +21,7 @@ matricula paulo
 AES_ENCRYPT("[dado inserido]","@R353rV453n4C#")
 
 "CALL `proc_cadastrar` ('$nome','$telefone','$email','$matricula','$senha','$cargo','$permissao')`" - Cadastro de novos usuarios.
-"CALL `proc_agendar` ($id_sala,$id_usuario,$dia,$inicio,$fim) - realiza o agendamento de uma sala.
+"CALL `proc_agendar` ('$id_sala','$id_usuario','$dia','$inicio','$fim') - realiza o agendamento de uma sala.
 "CALL `proc_deleta_reserva` ('$id_reserva')" - Deleta uma reserva feita.
 "CALL `proc_edit_inventario` ('$id_sala','$computador','$computador_prof','$monitor','$mouse','$teclado','$mesa','$cadeira','$televisao','$ar_condicionado','$controle_ar','$data_show','$apagador','$canetao_azul','$canetao_vermelho','$canetao_preto','$webcam')" - Atualiza itens do inventario.
 "CALL `proc_search_reservas` ('%$busca%')"  - Faz uma busca nas reservas existentes conforme oque o usuario digitou.
