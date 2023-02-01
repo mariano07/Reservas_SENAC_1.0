@@ -7,7 +7,7 @@ if (isset($_POST['btn_entrar'])) {
     $senha = $_POST['senha'];
     try {
         $sql = $con->query("CALL `proc_login` ('$matricula','$senha')"); //busca no banco 
-        if($sql != false){
+        if($sql){
             $aux_query = $sql->fetch_assoc();
             if ($aux_query['permissao']==='ADM') {
                 $_SESSION['id_user'] = $aux_query['id'];
@@ -29,6 +29,7 @@ if (isset($_POST['btn_entrar'])) {
                 header("Location: minhas_reservas.php"); //redireciona professor
             }else{
                 header("Location: index.php?passwd=error");
+                die($con->error);
             }
         } //guarda os dados na aux_query
     } catch (Exception $e) {
