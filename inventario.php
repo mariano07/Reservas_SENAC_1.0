@@ -192,7 +192,7 @@ require_once('conexao.php');
                     while ($aux_query = $sql->fetch_assoc()) {
                         $controle = $aux_query['canetao_azul'] + $aux_query['canetao_preto'] + $aux_query['canetao_vermelho'];
                         echo "<tr>";
-                        echo '<td>' . $aux_query['id_sala'] . "</td>";
+                        echo '<td>' . $aux_query['numero'] . "</td>";
                         echo "<td>" . $aux_query['computador'] . "</td>";
                         echo "<td>" . $aux_query['computador_prof'] . "</td>";
                         echo "<td>" . $aux_query['monitor'] . "</td>";
