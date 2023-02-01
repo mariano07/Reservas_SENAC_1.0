@@ -1,13 +1,17 @@
 <?php
 session_start();
 require_once('conexao.php');
+if (isset($_POST['submit'])) {
+    $con = mysqli_connect($servername, $username, $password, $database);
 
-$con = mysqli_connect($servername, $username, $password, $database);
-
-if (!$con) {
-     mysqli_connect_error();
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    if (!$con) {
+        mysqli_connect_error();
+    }
+    $con->query("CALL `proc_new_senha` ('$id_usuario','$senha')");
 }
- $con->query("CALL `proc_new_senha` ('$id_usuario','$new_senha')");
+
 ?>
 <html>
 
@@ -15,7 +19,7 @@ if (!$con) {
     <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; charset=iso-8859-1">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <link href="images/senac_icone.png" type="image/x-icon" rel="shortcut icon">
-    <title>Login - Sistema de Agendamentos</title>
+    <title>Recuperação de senha</title>
     <link href="https://apsweb.senacrs.com.br/lib/system/bootstrap/font-awesome/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://apsweb.senacrs.com.br/lib/system/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="https://apsweb.senacrs.com.br/resource/extjs/css/ext-all.css?380060" rel="stylesheet" type="text/css">
@@ -64,7 +68,7 @@ if (!$con) {
             </div>
             <div class="row" style="margin-top: 30px; margin-left: 80px;">
                 <div class="col-md-2"></div>
-                <div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="Recuperar"></div>
+                <div class="col-md-5 no-gutters"><input type="submit" name="submit" class="btn btn-primary btn-form" value="Recuperar"></div>
                 <div class="col-md-2"></div>
             </div>
         </div>

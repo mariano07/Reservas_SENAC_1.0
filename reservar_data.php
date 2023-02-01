@@ -21,7 +21,7 @@ $_SESSION['sala'] = $_POST['sala'];
 	<link href="https://apsweb.senacrs.com.br/resource/extjs/css/ext-overrides.css?380060" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/index.css">
 	<link href="images/senac_icone.png" type="image/x-icon" rel="shortcut icon">
-	<title>Reserva</title>
+	<title>Escolha da Data</title>
 </head>
 
 <body>
