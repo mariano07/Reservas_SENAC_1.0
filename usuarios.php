@@ -190,7 +190,7 @@ require_once('conexao.php');
                           echo '<td>' . $aux_query['nome'] . "</td>";
                           echo "<td>" . $aux_query['cargo'] . "</td>";
                           echo "<td>" . $aux_query['matricula'] . "</td>";
-                          echo "<td><a href='.php?nome=$aux_query[nome]' type='button' class='btn btn-danger'>Deletar</a></td>";
+                          echo "<td><a href='confirmacao_deletar_cadastro.php?nome=$aux_query[nome]' type='button' class='btn btn-danger'>Deletar</a></td>";
                           echo "</tr>";
                       }
                   } else if ($_SESSION['permissao'] === "USE") {
