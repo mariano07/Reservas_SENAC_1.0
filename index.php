@@ -7,13 +7,14 @@ if (isset($_POST['btn_entrar'])) {
     $senha = $_POST['senha'];
     try {
         $sql = $con->query("CALL `proc_login` ('$matricula','$senha')"); //busca no banco 
-            $aux_query = $sql->fetch_assoc();
+        $aux_query = $sql->fetch_assoc();
+        if (!$aux_query["FALSE"] ) {
             if ($aux_query['permissao']==='ADM') {
                 $_SESSION['id_user'] = $aux_query['id'];
                 $_SESSION['user'] = $aux_query['nome'];
                 $_SESSION['permissao'] = $aux_query['permissao'];
                 $_SESSION['email'] = $aux_query['email'];
-                header("Location: minhas_reservas.php"); //redireciona adm
+                header("Location:minhas_reservas.php"); //redireciona adm
             }else if($aux_query['permissao']==='PED'){
                 $_SESSION['id_user'] = $aux_query['id'];
                 $_SESSION['user'] = $aux_query['nome'];
@@ -26,9 +27,15 @@ if (isset($_POST['btn_entrar'])) {
                 $_SESSION['permissao'] = $aux_query['permissao'];
                 $_SESSION['email'] = $aux_query['email'];
                 header("Location: minhas_reservas.php"); //redireciona professor
-        } //guarda os dados na aux_query
-    } catch (Exception $e) {
-        header("Location: index.php"); //atualiza a pagina com erro
+            }else{
+                header("Location: index.php?passwd=error");
+            }
+        }else{
+            header("Locatio:index.php");
+        }
+            //guarda os dados na aux_query
+    }catch (Exception $e) {
+        //atualiza a pagina com erro
     }
 } 
 ?>
