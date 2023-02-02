@@ -175,10 +175,12 @@ require_once('conexao.php');
 
                         while ($aux_query = $sql->fetch_assoc()) {
                             echo "<tr>";
+                            echo '<form action="confirmacao_deletar.php" method="post">';                                                      
                             echo '<td>' . $aux_query['nome'] . "</td>";
                             echo "<td>" . $aux_query['cargo'] . "</td>";
                             echo "<td>" . $aux_query['matricula'] . "</td>";
-                            echo '<td><button type="button" class="btn btn-danger">Deletar</button></td>';
+                            echo '<td><input type="submit" class="btn btn-danger" value="Remover"></input></td>';
+                            echo '</form>';
                             echo "</tr>";
                         }
                     } else if ($_SESSION['permissao'] === "PED") {
@@ -187,10 +189,12 @@ require_once('conexao.php');
 
                         while ($aux_query = $sql->fetch_assoc()) {
                             echo "<tr>";
+                            echo '<form action="confirmacao_deletar.php" method="post">';                                                      
                             echo '<td>' . $aux_query['nome'] . "</td>";
                             echo "<td>" . $aux_query['cargo'] . "</td>";
                             echo "<td>" . $aux_query['matricula'] . "</td>";
-                            echo '<td><button type="button" class="btn btn-danger">Deletar</button></td>';
+                            echo '<td><input type="submit" class="btn btn-danger" value="Remover"></input></td>';
+                            echo '</form>';
                             echo "</tr>";
                         }
                     } else if ($_SESSION['permissao'] === "USE") {
