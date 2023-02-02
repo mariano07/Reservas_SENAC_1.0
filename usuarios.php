@@ -169,39 +169,35 @@ require_once('conexao.php');
                 <tbody>
 
                     <?php
-                    if ($_SESSION['permissao'] === "ADM") {
-                        $sql = $con->query("SELECT * FROM `view_usuarios`");
-                        $aux_query = $sql->fetch_assoc();
+                     if ($_SESSION['permissao'] === "ADM") {
+                      $sql = $con->query("SELECT * FROM `view_usuarios`");
+                      $aux_query = $sql->fetch_assoc();
 
-                        while ($aux_query = $sql->fetch_assoc()) {
-                            echo "<tr>";
-                            echo '<form action="confirmacao_deletar.php" method="post">';                                                      
-                            echo '<td>' . $aux_query['nome'] . "</td>";
-                            echo "<td>" . $aux_query['cargo'] . "</td>";
-                            echo "<td>" . $aux_query['matricula'] . "</td>";
-                            echo '<td><input type="submit" class="btn btn-danger" value="Remover"></input></td>';
-                            echo '</form>';
-                            echo "</tr>";
-                        }
-                    } else if ($_SESSION['permissao'] === "PED") {
-                        $sql = $con->query("SELECT * FROM `view_professores`");
-                        $aux_query = $sql->fetch_assoc();
+                      while ($aux_query = $sql->fetch_assoc()) {
+                          echo "<tr>";
+                          echo '<td>' . $aux_query['nome'] . "</td>";
+                          echo "<td>" . $aux_query['cargo'] . "</td>";
+                          echo "<td>" . $aux_query['matricula'] . "</td>";
+                          echo "<td><a href='.php?nome=$aux_query[nome]' type='button' class='btn btn-danger'>Deletar</a></td>";
+                          echo "</tr>";
+                      }
+                  } else if ($_SESSION['permissao'] === "PED") {
+                      $sql = $con->query("SELECT * FROM `view_professores`");
+                      $aux_query = $sql->fetch_assoc();
 
-                        while ($aux_query = $sql->fetch_assoc()) {
-                            echo "<tr>";
-                            echo '<form action="confirmacao_deletar.php" method="post">';                                                      
-                            echo '<td>' . $aux_query['nome'] . "</td>";
-                            echo "<td>" . $aux_query['cargo'] . "</td>";
-                            echo "<td>" . $aux_query['matricula'] . "</td>";
-                            echo '<td><input type="submit" class="btn btn-danger" value="Remover"></input></td>';
-                            echo '</form>';
-                            echo "</tr>";
-                        }
-                    } else if ($_SESSION['permissao'] === "USE") {
-                        header("Location:minhas_reservas.php");
-                    } else {
-                        header("Location:minhas_reservas.php");
-                    }
+                      while ($aux_query = $sql->fetch_assoc()) {
+                          echo "<tr>";
+                          echo '<td>' . $aux_query['nome'] . "</td>";
+                          echo "<td>" . $aux_query['cargo'] . "</td>";
+                          echo "<td>" . $aux_query['matricula'] . "</td>";
+                          echo "<td><a href='.php?nome=$aux_query[nome]' type='button' class='btn btn-danger'>Deletar</a></td>";
+                          echo "</tr>";
+                      }
+                  } else if ($_SESSION['permissao'] === "USE") {
+                      header("Location:minhas_reservas.php");
+                  } else {
+                      header("Location:minhas_reservas.php");
+                  }
                     ?>
                 </tbody>
             </table>
