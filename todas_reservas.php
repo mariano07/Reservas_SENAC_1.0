@@ -180,7 +180,7 @@ require_once('conexao.php');
                         echo "<td>" . $aux_query['numero'] . "</td>";
                         echo "<td>" . $aux_query['inicio'] . " até " . $aux_query['fim'] . "</td>";
                         echo "<td>" . $aux_query['dia'] . "</td>";
-                        echo '<td><button type="button" class="btn btn-danger">Deletar</button></td>';
+                        echo "<td><a href='confirmacao_deletar.php?nome=$aux_query[nome]' type='button' class='btn btn-danger'>Deletar</a></td>";
                         echo '<td><button type="button" class="btn btn-primary">Editar</button></td>';
                         echo "</tr>";
                     }
