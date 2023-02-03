@@ -107,8 +107,8 @@ if ($_SESSION['permissao'] == null) {
 											echo "<td>" . $aux_query['canetao_vermelho'] + $aux_query['canetao_preto'] + $aux_query['canetao_azul'] . "</td>";
 											echo "<td>" . $aux_query['webcam'] . "</td>";
 											echo '<form action="reservar_data.php" method="post">';
-												echo "<td><a href='confirmacao_deletar.php?sala=$aux_query[numero]' type='button' class='btn btn-danger'>Deletar</a></td>";
-												echo '<td><input class="btn btn-success" type="submit" name="submit" value="Reservar"></td>
+											echo '<input type="hidden" name="sala" value='.$aux_query['numero'].'">';
+											echo '<td><input class="btn btn-success" type="submit" name="submit" value="Reservar"></td>
 												</form>';
 											echo "</tr>";
 										}
