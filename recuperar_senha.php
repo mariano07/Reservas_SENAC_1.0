@@ -12,13 +12,12 @@ if (isset($_POST['submit'])) {
     $senha = $_POST['senha'];
 
     $phpmail->nova_senha($email, $senha, $_SESSION['user']);
-    $con = mysqli_connect($servername, $username, $password, $database);
 
     if (!$con) {
         mysqli_connect_error();
     }
+    $con->query("CALL `proc_new_senha` ('".$_SESSION['id_user']."','$senha')");
     header("Location: index.php");
-    $con->query("CALL `proc_new_senha` ('$id_usuario','$senha')");
 }
 
 ?>
