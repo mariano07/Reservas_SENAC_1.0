@@ -154,64 +154,64 @@ if ($_SESSION['permissao'] == null) {
   }
   ?>
 
-  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 id='titulo' class="h2">Reservas</h1>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 id='titulo' class="h2">Reservas</h1>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Matricula</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php
+                     if ($_SESSION['permissao'] === "ADM") {
+                      $sql = $con->query("SELECT * FROM `view_usuarios`");
+                      $aux_query = $sql->fetch_assoc();
+
+                      while ($aux_query = $sql->fetch_assoc()) {
+                          echo "<tr>";
+                          echo '<td>' . $aux_query['nome'] . "</td>";
+                          echo "<td>" . $aux_query['cargo'] . "</td>";
+                          echo "<td>" . $aux_query['matricula'] . "</td>";
+                          echo "<td><a href='.php?nome=$aux_query[nome]' type='button' class='btn btn-danger'>Deletar</a></td>";
+                          echo "</tr>";
+                      }
+                  } else if ($_SESSION['permissao'] === "PED") {
+                      $sql = $con->query("SELECT * FROM `view_professores`");
+                      $aux_query = $sql->fetch_assoc();
+
+                      while ($aux_query = $sql->fetch_assoc()) {
+                          echo "<tr>";
+                          echo '<td>' . $aux_query['nome'] . "</td>";
+                          echo "<td>" . $aux_query['cargo'] . "</td>";
+                          echo "<td>" . $aux_query['matricula'] . "</td>";
+                          echo "<td><a href='confirmacao_deletar_cadastro.php?nome=$aux_query[nome]' type='button' class='btn btn-danger'>Deletar</a></td>";
+                          echo "</tr>";
+                      }
+                  } else if ($_SESSION['permissao'] === "USE") {
+                      header("Location:minhas_reservas.php");
+                  } else {
+                      header("Location:minhas_reservas.php");
+                  }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </main>
     </div>
-
-    <div class="table-responsive">
-      <table class="table table-striped table-sm">
-        <thead>
-          <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Cargo</th>
-            <th scope="col">Matricula</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <?php
-          if ($_SESSION['permissao'] === "ADM") {
-            $sql = $con->query("SELECT * FROM `view_usuarios`");
-            $aux_query = $sql->fetch_assoc();
-
-            while ($aux_query = $sql->fetch_assoc()) {
-              echo "<tr>";
-              echo '<td>' . $aux_query['nome'] . "</td>";
-              echo "<td>" . $aux_query['cargo'] . "</td>";
-              echo "<td>" . $aux_query['matricula'] . "</td>";
-              echo '<td><button type="button" class="btn btn-danger">Deletar</button></td>';
-              echo "</tr>";
-            }
-          } else if ($_SESSION['permissao'] === "PED") {
-            $sql = $con->query("SELECT * FROM `view_professores`");
-            $aux_query = $sql->fetch_assoc();
-
-            while ($aux_query = $sql->fetch_assoc()) {
-              echo "<tr>";
-              echo '<td>' . $aux_query['nome'] . "</td>";
-              echo "<td>" . $aux_query['cargo'] . "</td>";
-              echo "<td>" . $aux_query['matricula'] . "</td>";
-              echo '<td><button type="button" class="btn btn-danger">Deletar</button></td>';
-              echo "</tr>";
-            }
-          } else if ($_SESSION['permissao'] === "USE") {
-            header("Location:minhas_reservas.php");
-          } else {
-            header("Location:minhas_reservas.php");
-          }
-          ?>
-        </tbody>
-      </table>
     </div>
-  </main>
-  </div>
-  </div>
-  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-  <script src="js/dashboard.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 
 </html>

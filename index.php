@@ -31,7 +31,7 @@ if (isset($_POST['btn_entrar'])) {
                 header("Location: index.php?passwd=error");
             }
         }else{
-            header("Locatio:index.php");
+            header("Location: index.php?passwd=error");
         }
             //guarda os dados na aux_query
     }catch (Exception $e) {
