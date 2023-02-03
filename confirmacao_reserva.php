@@ -8,12 +8,11 @@ if($_SESSION['permissao'] == null){
 $data = $_POST['data'];
 $hora = $_POST['hora'];
 $email = $_SESSION['email'];
-$_SESSION['sala']='201';
 
 if (isset($_POST['btn_confirmar'])) {
   $phpmail = new email;
-
   $phpmail->reserva_sala($_SESSION['user'], $_SESSION['sala'], $email, $hora, $data);
+  header("Location: minhas_reservas.php");
 }
 ?>
 <!DOCTYPE html>
