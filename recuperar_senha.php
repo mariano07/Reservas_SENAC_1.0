@@ -1,8 +1,10 @@
 <?php
 session_start();
 require_once('conexao.php');
-
 include('email.php');
+if ($_SESSION['permissao'] == null) {
+    header("Location: index.php");
+}
 
 if (isset($_POST['submit'])) {
     $phpmail = new email;
@@ -17,7 +19,6 @@ if (isset($_POST['submit'])) {
     }
     header("Location: index.php");
     $con->query("CALL `proc_new_senha` ('$id_usuario','$senha')");
-    
 }
 
 ?>

@@ -1,5 +1,8 @@
 <?php
 session_start();
+if ($_SESSION['permissao'] == null) {
+	header("Location: index.php");
+}
 $_SESSION['sala'] = $_POST['sala'];
 
 ?>
@@ -21,19 +24,19 @@ $_SESSION['sala'] = $_POST['sala'];
 </head>
 
 <body>
-	
+
 	<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container1">
 				<div class="row">
 					<div class="booking-form">
 						<div class="booking-bg"></div>
-						
-							<input type="hidden" value=>
-							<div class="form-header" style="margin-left: 175px;">
-								<img style="padding-left: 25%; padding-top: 5%;" src="images/senac_logo.png" style="width: 200px;">
-							</div>
-                            <form action="confirmacao_reserva.php" method="post">
+
+						<input type="hidden" value=>
+						<div class="form-header" style="margin-left: 175px;">
+							<img style="padding-left: 25%; padding-top: 5%;" src="images/senac_logo.png" style="width: 200px;">
+						</div>
+						<form action="confirmacao_reserva.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group" style="margin-top: 40px;">
@@ -54,7 +57,7 @@ $_SESSION['sala'] = $_POST['sala'];
 								<div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="proximo" name="proximo"></div>
 								<div class="col-md-2"></div>
 							</div>
-                            </form>					
+						</form>
 					</div>
 				</div>
 			</div>

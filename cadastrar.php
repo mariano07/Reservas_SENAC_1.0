@@ -2,8 +2,11 @@
 session_start();
 require_once('conexao.php');
 include('email.php');
+if ($_SESSION['permissao'] == null) {
+  header("Location: index.php");
+}
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
   $nome = $_POST['nome'];
   $telefone = $_POST['telefone'];
   $email = $_POST['email'];
@@ -14,9 +17,9 @@ if(isset($_POST['submit'])){
   $phpmailer = new email;
 
   $phpmailer->confirma_cadastro_usuario($nome, $email);
-  $phpmailer->confirma_cadastro_adm($_SESSION['user'],$_SESSION['email'],$nome);
+  $phpmailer->confirma_cadastro_adm($_SESSION['user'], $_SESSION['email'], $nome);
 }
-  
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -39,85 +42,86 @@ if(isset($_POST['submit'])){
   <div class="container">
     <main>
       <div class="py-2 text-center">
-      <div class="centralizar" style="padding-top: 50px; margin-left: 100%;"></div>
-      <h2 class="titulo">Cadastro</h2>
-      <div class="col-md-7 col-lg-3">
-        <form class="needs-validation" novalidate action="#" method="post">
-      </div>
-
-    <table>
-      <tr>
-      <td>
-      
-        <div class="invalid-feedback">
-          <label for="nome" class="form-label">Nome</label>
-          <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 11px;" type="text" class="form-control" name="nome" placeholder="Nome" value="" required/>
-      </td>
-          
-          <br>
-      <td>
-        <div class="col-12">
-          <label for="matricula" class="form-label" style=" margin-left: 60px;">Mátricula</label>
-          <span class="input-group-text"></span>
-          <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="text" class="form-control" name="matricula" placeholder="matricula" required/>
-      
+        <div class="centralizar" style="padding-top: 50px; margin-left: 100%;"></div>
+        <h2 class="titulo">Cadastro</h2>
+        <div class="col-md-7 col-lg-3">
+          <form class="needs-validation" novalidate action="#" method="post">
         </div>
-      </td>
-      </tr>
-    </table>
 
-    <table>
-      <tr>
-      <td>
-          <br>
-          <div class="col-12">
-            <label for="email" class="form-label">E-mail</label>
-            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 11px;" type="text" class="form-control" name="email" placeholder="seu@exemplo.com" required/>
-      </td>
-          </div>
-      <td>
-          <br>
-          <div class="col-12">
-            <label for="telefone" class="form-label" style=" margin-left: 60px;">Telefone</label>
-            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="tel" maxlength="15" class="form-control" name="telefone" placeholder="(xx) 9xxxx-xxxx" required/>
+        <table>
+          <tr>
+            <td>
 
-          </div>
-      </td>
-      </tr>
-    </table>
+              <div class="invalid-feedback">
+                <label for="nome" class="form-label">Nome</label>
+                <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 11px;" type="text" class="form-control" name="nome" placeholder="Nome" value="" required />
+            </td>
 
-    <table>
-      <tr>
-      <td>
-          <br>
-          <div class="col-12">
-            <label for="senha" class="form-label">Senha</label>
-            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 11px;" type="password" class="form-control" name="senha" placeholder="*****" required/>
-          </div>
-      </td>
+            <br>
+            <td>
+              <div class="col-12">
+                <label for="matricula" class="form-label" style=" margin-left: 60px;">Mátricula</label>
+                <span class="input-group-text"></span>
+                <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="text" class="form-control" name="matricula" placeholder="matricula" required />
 
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td>
+              <br>
+              <div class="col-12">
+                <label for="email" class="form-label">E-mail</label>
+                <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 11px;" type="text" class="form-control" name="email" placeholder="seu@exemplo.com" required />
+            </td>
+      </div>
       <td>
-          <br>
-          <div class="col-12">
-            <label for="cargo" class="form-label" style=" margin-left: 60px;">Cargo</label>
-            <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="text" class="form-control" name="cargo" placeholder="Curso" required/>
-          </div>
-          </div>
+        <br>
+        <div class="col-12">
+          <label for="telefone" class="form-label" style=" margin-left: 60px;">Telefone</label>
+          <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="tel" maxlength="15" class="form-control" name="telefone" placeholder="(xx) 9xxxx-xxxx" required />
+
+        </div>
       </td>
       </tr>
       </table>
-          <br>
-        
-          <br>
-          <div class="col-md-5 no-gutters"><input style="margin-left: 170px; margin-bottom: 50px;"type="submit" name="submit" class="btn btn-warning btn-form" value="Proximo"></div>
-          </div>
-          </form>
-        </div>
-      </div>
-    </main>
-    <br>
-    <br>
-    <br>
+
+      <table>
+        <tr>
+          <td>
+            <br>
+            <div class="col-12">
+              <label for="senha" class="form-label">Senha</label>
+              <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 11px;" type="password" class="form-control" name="senha" placeholder="*****" required />
+            </div>
+          </td>
+
+          <td>
+            <br>
+            <div class="col-12">
+              <label for="cargo" class="form-label" style=" margin-left: 60px;">Cargo</label>
+              <input style="padding: 20px; box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3); margin-left: 42px;" type="text" class="form-control" name="cargo" placeholder="Curso" required />
+            </div>
+  </div>
+  </td>
+  </tr>
+  </table>
+  <br>
+
+  <br>
+  <div class="col-md-5 no-gutters"><input style="margin-left: 170px; margin-bottom: 50px;" type="submit" name="submit" class="btn btn-warning btn-form" value="Proximo"></div>
+  </div>
+  </form>
+  </div>
+  </div>
+  </main>
+  <br>
+  <br>
+  <br>
   </div>
 </body>
+
 </html>

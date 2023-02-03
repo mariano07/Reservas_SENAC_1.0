@@ -1,6 +1,9 @@
 <?php
 session_start();
 require('conexao.php');
+if ($_SESSION['permissao'] == null) {
+	header("Location: index.php");
+}
 ?>
 <!doctype html>
 <html lang="pt-br">

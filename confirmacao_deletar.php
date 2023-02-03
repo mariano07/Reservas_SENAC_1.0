@@ -1,6 +1,9 @@
 <?php
 session_start();
 include('email.php');
+if($_SESSION['permissao'] == null){
+  header("Location: index.php");
+}
 $data = $_POST['data'];
 $hora = $_POST['hora'];
 $email = $_SESSION['email'];
