@@ -90,7 +90,7 @@ if ($_SESSION['permissao'] == null) {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="deslogar.php">
                 <span data-feather="log-out" class="align-text-bottom"></span>
                 Sair
               </a>
@@ -141,7 +141,7 @@ if ($_SESSION['permissao'] == null) {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="deslogar.php">
                 <span data-feather="log-out" class="align-text-bottom"></span>
                 Sair
               </a>
