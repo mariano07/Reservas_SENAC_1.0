@@ -36,10 +36,10 @@ if ($_SESSION['permissao'] == null) {
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <input class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procurar por Professor/Sala/Andar" aria-label="Search">
+      <input disabled class="form-control form-control-white w-100 rounded-0 border-0" type="text" placeholder="Procurar por Professor/Sala/Andar" aria-label="Search">
       <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-          <button type="submit" name="btn_pesquisar" class="btn btn-dark">Pesquisar</button>
+          <button disabled type="submit" name="btn_pesquisar" class="btn btn-dark">Pesquisar</button>
         </div>
       </div>
     </header>
