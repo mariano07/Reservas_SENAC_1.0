@@ -158,7 +158,7 @@ if ($_SESSION['permissao'] == null) {
 
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 id='titulo' class="h2">Reservas</h1>
+      <h1 id='titulo' class="h2">Inventario</h1>
     </div>
 
     <div class="table-responsive">
@@ -178,7 +178,9 @@ if ($_SESSION['permissao'] == null) {
             <th scope="col" id="">Controle Ar</th>
             <th scope="col" id="">Data Show</th>
             <th scope="col" id="">Apagador</th>
-            <th scope="col" id="">Canetão</th>
+            <th scope="col" id="">Canetão Azul</th>
+            <th scope="col" id="">Canetão Vermelho</th>
+            <th scope="col" id="">Canetão Preto</th>
             <th scope="col" id="">Webcam</th>
           </tr>
         </thead>
@@ -188,26 +190,29 @@ if ($_SESSION['permissao'] == null) {
           $aux_query = $sql->fetch_assoc();
 
           while ($aux_query = $sql->fetch_assoc()) {
-            $controle = $aux_query['canetao_azul'] + $aux_query['canetao_preto'] + $aux_query['canetao_vermelho'];
+            echo '<form action="editar.php" method="post">';
             echo "<tr>";
-            echo '<td>' . $aux_query['numero'] . "</td>";
-            echo "<td>" . $aux_query['computador'] . "</td>";
-            echo "<td>" . $aux_query['computador_prof'] . "</td>";
-            echo "<td>" . $aux_query['monitor'] . "</td>";
-            echo "<td>" . $aux_query['mouse'] . "</td>";
-            echo "<td>" . $aux_query['teclado'] . "</td>";
-            echo "<td>" . $aux_query['mesa'] . "</td>";
-            echo "<td>" . $aux_query['cadeira'] . "</td>";
-            echo "<td>" . $aux_query['televisao'] . "</td>";
-            echo "<td>" . $aux_query['ar_condicionado'] . "</td>";
-            echo "<td>" . $aux_query['controle_ar'] . "</td>";
-            echo "<td>" . $aux_query['data_show'] . "</td>";
-            echo "<td>" . $aux_query['apagador'] . "</td>";
-            echo "<td>" . $controle . "</td>";
-            echo "<td>" . $aux_query['webcam'] . "</td>";
-            echo '<td><button type="button" class="btn btn-danger">Deletar</button></td>';
-            echo '<td><button type="button" class="btn btn-primary">Editar</button></td>';
+            echo '<input type="hidden" name="idsala" value=' . $aux_query['id'] . '>';
+            echo '<td>'. $aux_query['numero'] .'</td>';
+            echo '<td> <input class="form-control" type="number" name="computador" value=' . $aux_query['computador'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="computador_prof" value=' . $aux_query['computador_prof'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="monitor" value=' . $aux_query['monitor'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="mouse" value=' . $aux_query['mouse'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="teclado" value=' . $aux_query['teclado'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="mesa" value=' . $aux_query['mesa'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="cadeira" value=' . $aux_query['cadeira'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="televisao" value=' . $aux_query['televisao'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="ar_condicionado" value=' . $aux_query['ar_condicionado'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="controle_ar" value=' . $aux_query['controle_ar'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="data_show" value=' . $aux_query['data_show'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="apagador" value=' . $aux_query['apagador'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="canetao_azul" value=' . $aux_query['canetao_azul'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="canetao_vermelho" value=' . $aux_query['canetao_vermelho'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="canetao_preto" value=' . $aux_query['canetao_preto'] . '></td>';
+            echo '<td> <input class="form-control" type="number" name="webcam" value=' . $aux_query['webcam'] . '></td>';
+            echo '<td> <input class="btn btn-primary" type="submit" name="editar" value="Editar"></td>';
             echo "</tr>";
+            echo "</form>";
           }
           ?>
         </tbody>

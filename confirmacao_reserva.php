@@ -1,18 +1,14 @@
 <?php
 session_start();
 include('email.php');
+require_once('conexao.php');
 if($_SESSION['permissao'] == null){
   header("Location: index.php");
 }
-$data = $_POST['data'];
-$hora = $_POST['hora'];
-$email = $_SESSION['email'];
+$_SESSION['data'] = $_POST['data'];
+$_SESSION['hora_inicio'] = $_POST['hora_inicio'] . ":00";
+$_SESSION['hora_fim'] = $_POST['hora_fim'] . ":00";
 
-if (isset($_POST['btn_confirmar'])) {
-  $phpmail = new email;
-  $phpmail->reserva_sala($_SESSION['user'], $_SESSION['sala'], $email, $hora, $data);
-  header("Location: minhas_reservas.php");
-}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -35,7 +31,7 @@ if (isset($_POST['btn_confirmar'])) {
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="bootstrap" viewBox="0 0 118 94">
-      <title>Bootstrap</title>
+      <title>Confirmar Reserva</title>
 
       <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
         <path
@@ -60,7 +56,7 @@ if (isset($_POST['btn_confirmar'])) {
 
 
 
-  <form action="#" method="post">
+  <form action="reservado.php" method="post">
     <div class="b-example-divider"></div>
 
     <div class="modal modal-tour position-static d-block py-5" tabindex="-1" role="dialog" id="modalTour">
@@ -75,10 +71,8 @@ if (isset($_POST['btn_confirmar'])) {
                   <use xlink:href="#exclamation-triangle-fill" />
                 </svg>
                 <div>
-                  <h5 class="mb-0">
-                    <?php echo $_SESSION['user']; ?>
-                  </h5>
-                  " "
+                  <h5 class="mb-0">Nome</h5>
+                  " <?php echo $_SESSION['user']; ?> "
                 </div>
               </li>
               <li class="d-flex gap-4">
@@ -88,7 +82,7 @@ if (isset($_POST['btn_confirmar'])) {
                 <div>
                   <h5 class="mb-0">Data</h5>
                   "
-                  <?php echo $data; ?>"
+                  <?php echo $_SESSION['data']; ?>"
                 </div>
               </li>
               <li class="d-flex gap-4">
@@ -98,7 +92,7 @@ if (isset($_POST['btn_confirmar'])) {
                 <div>
                   <h5 class="mb-0">Hora</h5>
                   "
-                  <?php echo $hora; ?>"
+                  <?php echo $_SESSION['hora_inicio']; ?>"
                 </div>
               </li>
               <li class="d-flex gap-4">
@@ -108,7 +102,7 @@ if (isset($_POST['btn_confirmar'])) {
                 <div>
                   <h5 class="mb-0">Sala</h5>
                   "
-                  <?php echo $_SESSION['sala']; ?>"
+                  <?php echo $_SESSION['sala']; ?>
                 </div>
               </li>
             </ul>

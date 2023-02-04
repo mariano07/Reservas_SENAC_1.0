@@ -4,6 +4,7 @@ if ($_SESSION['permissao'] == null) {
 	header("Location: index.php");
 }
 $_SESSION['sala'] = $_POST['sala'];
+$_SESSION['id_sala'] = $_POST['idsala']
 
 ?>
 <!DOCTYPE html>
@@ -46,13 +47,19 @@ $_SESSION['sala'] = $_POST['sala'];
 								</div>
 								<div class="col-md-6" style="margin-top: 40px;">
 									<div class="form-group">
-										<span class="form-label">hora</span>
-										<input class="form-control" type="time" required name="hora" id="hora">
+										<span class="form-label">Hora Inicio</span>
+										<input class="form-control" type="time" required name="hora_inicio" id="hora">
+									</div>
+								</div>
+								<div class="col-md-6" style="margin-top: 40px;">
+									<div class="form-group">
+										<span class="form-label">Hora final</span>
+										<input class="form-control" type="time" required name="hora_fim" id="hora">
 									</div>
 								</div>
 							</div>
 
-							<div class="row" style="margin-left: 80px; margin-top: 75px;">
+							<div class="row" style="margin-left: 80px; margin-top: 20px;">
 								<div class="col-md-2"></div>
 								<div class="col-md-5 no-gutters"><input type="submit" class="btn btn-primary btn-form" value="proximo" name="proximo"></div>
 								<div class="col-md-2"></div>

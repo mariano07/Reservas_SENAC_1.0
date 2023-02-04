@@ -43,14 +43,10 @@ if ($_SESSION['permissao'] == null) {
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item">
-							<strong><a class="nav-link active text-primary" aria-current="page" href="#">Reservar
-									Sala</a></strong>
+							<strong><a class="nav-link text-primary" href="minhas_reservas.php">Painel de Controle</a></strong>
 						</li>
 						<li class="nav-item">
-							<strong><a class="nav-link text-primary" href="#">Painel de Controle</a></strong>
-						</li>
-						<li class="nav-item">
-							<strong><a class="nav-link text-primary" href="#">Sair</a></strong>
+							<strong><a class="nav-link text-primary" href="deslogar.php">Sair</a></strong>
 						</li>
 					</ul>
 				</div>
@@ -107,7 +103,8 @@ if ($_SESSION['permissao'] == null) {
 											echo "<td>" . $aux_query['canetao_vermelho'] + $aux_query['canetao_preto'] + $aux_query['canetao_azul'] . "</td>";
 											echo "<td>" . $aux_query['webcam'] . "</td>";
 											echo '<form action="reservar_data.php" method="post">';
-											echo '<input type="hidden" name="sala" value='.$aux_query['numero'].'">';
+											echo '<input type="hidden" name="idsala" value='.$aux_query['id'].'>';
+											echo '<input type="hidden" name="sala" value='.$aux_query['numero'].'>';
 											echo '<td><input class="btn btn-success" type="submit" name="submit" value="Reservar"></td>
 												</form>';
 											echo "</tr>";
@@ -163,7 +160,8 @@ if ($_SESSION['permissao'] == null) {
 											echo "<td>" . $aux_query['webcam'] . "</td>";
 											echo '<td>
 									<form action="reservar_data.php" method="post">
-									<input type="hidden" name="sala" value="' . $aux_query['numero'] . '">
+									<input type="hidden" name="idsala" value='.$aux_query['id'].'>
+									<input type="hidden" name="sala" value="' . $aux_query['numero'] . '>
 									<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 									</form>
 									</td>';
@@ -220,7 +218,8 @@ if ($_SESSION['permissao'] == null) {
 											echo "<td>" . $aux_query['webcam'] . "</td>";
 											echo '<td>
 									<form action="reservar_data.php" method="post">
-									<input type="hidden" name="sala" value="' . $aux_query['numero'] . '">
+									<input type="hidden" name="idsala" value='.$aux_query['id'].'>
+									<input type="hidden" name="sala" value="' . $aux_query['numero'] . '>
 									<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 									</form>
 									</td>';
@@ -277,7 +276,8 @@ if ($_SESSION['permissao'] == null) {
 											echo "<td>" . $aux_query['webcam'] . "</td>";
 											echo '<td>
 									<form action="reservar_data.php" method="post">
-									<input type="hidden" name="sala" value="' . $aux_query['numero'] . '">
+									<input type="hidden" name="idsala" value='.$aux_query['id'].'>
+									<input type="hidden" name="sala" value="' . $aux_query['numero'] . '>
 									<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 									</form>
 									</td>';
@@ -334,7 +334,8 @@ if ($_SESSION['permissao'] == null) {
 											echo "<td>" . $aux_query['webcam'] . "</td>";
 											echo '<td>
 									<form action="reservar_data.php" method="post">
-									<input type="hidden" name="sala" value="' . $aux_query['numero'] . '">
+									<input type="hidden" name="idsala" value='.$aux_query['id'].'>
+									<input type="hidden" name="sala" value="' . $aux_query['numero'] . '>
 									<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 									</form>
 									</td>';
@@ -390,7 +391,8 @@ if ($_SESSION['permissao'] == null) {
 											echo "<td>" . $aux_query['webcam'] . "</td>";
 											echo '<td>
 									<form action="reservar_data.php" method="post">
-									<input type="hidden" name="sala" value="' . $aux_query['numero'] . '">
+									<input type="hidden" name="idsala" value='.$aux_query['id'].'>
+									<input type="hidden" name="sala" value="' . $aux_query['numero'] . '>
 									<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 									</form>
 									</td>';
@@ -447,7 +449,8 @@ if ($_SESSION['permissao'] == null) {
 											echo "<td>" . $aux_query['webcam'] . "</td>";
 											echo '<td>
 										<form action="reservar_data.php" method="post">
-										<input type="hidden" name="sala" value="' . $aux_query['numero'] . '">
+										<input type="hidden" name="idsala" value='.$aux_query['id'].'>
+										<input type="hidden" name="sala" value="' . $aux_query['numero'] .'>
 										<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 										</form>
 										</td>';
@@ -505,7 +508,8 @@ if ($_SESSION['permissao'] == null) {
 									echo "<td>" . $aux_query['webcam'] . "</td>";
 									echo '<td>
 									<form action="reservar_data.php" method="post">
-									<input type="hidden" name="sala" value="' . $aux_query['numero'] . '">
+									<input type="hidden" name="idsala" value='.$aux_query['id'].'>
+									<input type="hidden" name="sala" value="' . $aux_query['numero'] .'>
 									<input class="btn btn-success" type="submit" name="submit" value="Reservar">
 									</form>
 									</td>';

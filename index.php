@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('conexao.php');
+$_SESSION['permissao'] = null;
 
 if (isset($_POST['btn_entrar'])) {
     $matricula = $_POST['matricula'];
