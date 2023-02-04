@@ -3,7 +3,6 @@
     $database="reservasenac";
     $username="root";
     $password="reservas";
-    $cryptokey="@R353rV453n4C#";
 
     $con = mysqli_connect($servername, $username, $password, $database);
 
