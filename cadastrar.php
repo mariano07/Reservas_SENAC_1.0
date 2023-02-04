@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
   $matricula = $_POST['matricula'];
   $senha = $_POST['senha'];
   $cargo = $_POST['cargo'];
-  $con->query("CALL `proc_cadastrar` ('$nome','$telefone','$email','$matricula','$senha','$cargo','ADM')");
+  $con->query("CALL `proc_cadastrar` ('$nome','$telefone','$email','$matricula','$senha','$cargo','USE')");
   $phpmailer = new email;
 
   $phpmailer->confirma_cadastro_usuario($nome, $email);
