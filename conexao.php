@@ -1,5 +1,4 @@
 <?php
-    // header("Location:index.php");
     $servername="172.20.126.174";
     $database="reservasenac";
     $username="root";
